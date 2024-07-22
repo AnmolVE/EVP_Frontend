@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.primary-research-adjust {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.primary-research-container {
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin-top: 5rem;
+  height: 35rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.primary-research-nextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.primary-research-nextContainer-para {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.primary-research-dataGather {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.primary-research-interview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.primary-research-interview-inputField {
+  display: flex;
+  justify-content: space-between;
+}
+
+.primary-research-interview-inputField input {
+  width: 90%;
+}
+
+.primary-research-interview-inputField button {
+  width: 1rem;
+}
+
+.primary-research-interview-button {
+  width: 3rem;
+  height: 1.5rem;
+  margin-left: 32%;
+}
+
+.primary-research-thinkTanks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.primary-research-thinkTank {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.primary-research-thinkTank-label {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.primary-research-thinkTank-label button {
+  width: 1.3rem;
+}
+
+.primary-research-thinkTank-inputField {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.primary-research-thinkTank-inputField-more {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.primary-research-thinkTank-inputField-more input {
+  width: 90%;
+}
+
+.primary-research-thinkTank-inputField-more button {
+  width: 1rem;
+}
+
+.primary-research-thinkTank-button {
+  width: 3rem;
+  height: 1.5rem;
+  margin-left: 32%;
+}
+
+.design-container {
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin-top: 5rem;
+  height: 25rem;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.design-nextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.design-nextContainer-para {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.design-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  width: 70%;
+  position: relative;
+}
+
+.design-form svg {
+  position: absolute;
+  left: 0.2rem;
+  top: 10%;
+  cursor: pointer;
+}
+
+.design-button {
+  width: 45%;
+  height: 3rem;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.design-file-display-area {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-height: 100px;
+  overflow-y: auto;
+  text-align: center;
+  min-height: 2.5rem;
+  max-height: 5rem;
+  overflow-y: auto;
+}
+
+.design-file-name {
+  font-size: 1rem;
+  color: #655c5c;
+  font-weight: 500;
+}
