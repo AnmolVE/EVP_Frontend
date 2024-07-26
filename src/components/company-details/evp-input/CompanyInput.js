@@ -1,8 +1,8 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CompanyInput.css";
-import Navbar from "../bars/Navbar";
-import Loading from "../utils/loading/Loading";
+import Navbar from "../../bars/Navbar";
+import Loading from "../../utils/loading/Loading";
 
 function CompanyInput() {
   const accessToken = localStorage.getItem("accessToken");

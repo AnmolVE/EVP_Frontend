@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -34,7 +37,118 @@
 }
 
 .landing-page-section-1-top-right-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   width: 50%;
   height: 70%;
-  border: 1px solid red;
+}
+
+.landing-page-section-2 {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  gap: 1rem;
+}
+
+.landing-page-section-2-left {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  height: 100%;
+  border: 2px solid #c3c1c1;
+}
+
+.landing-page-section-2-left ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1rem;
+  height: 100%;
+}
+
+.landing-page-section-2-left li {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
+.landing-page-section-2-right {
+  display: grid;
+  grid-template-rows: 1fr 8fr 1fr;
+  gap: 0.5rem;
+}
+
+.landing-page-section-2-right-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-page-section-2-right-top p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: xxx-large;
+}
+
+.landing-page-section-2-right-center {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 1rem;
+}
+
+.landing-page-section-2-right-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-page-section-2-right-center-left {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 3rem;
+}
+
+.landing-page-section-2-right-center-left-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.landing-page-section-2-right-center-left-top div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c3c1c1;
+}
+
+.landing-page-section-2-right-center-left-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.landing-page-section-2-right-center-left-bottom div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #c3c1c1;
+}
+
+.landing-page-section-2-right-center-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-page-section-2-right-bottom input {
+  padding: 0.5rem;
+  border-color: #c3c1c1;
+  width: 100%;
+  height: 100%;
 }

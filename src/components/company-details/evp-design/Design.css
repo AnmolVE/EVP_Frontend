@@ -75,8 +75,8 @@ th {
 .evp-embedment {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 60%;
+  gap: 1.5rem;
+  height: 85%;
   width: 75%;
 }
 

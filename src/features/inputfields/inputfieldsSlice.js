@@ -34,6 +34,9 @@ const apiEndpoints = {
     "EVP Promise": "http://127.0.0.1:8000/api/evp-promise/",
     "EVP Audit": "http://127.0.0.1:8000/api/evp-audit/",
   },
+  deliver: {
+    "EVP Execution Plan": "http://127.0.0.1:8000/api/evp-execution-plan/",
+  },
 };
 
 export const fetchDataForSelectedItem = createAsyncThunk(
@@ -52,7 +55,8 @@ export const fetchDataForSelectedItem = createAsyncThunk(
       apiEndpoints.discover[selectedItem] ||
       apiEndpoints.develop[selectedItem] ||
       apiEndpoints.dissect[selectedItem] ||
-      apiEndpoints.design[selectedItem];
+      apiEndpoints.design[selectedItem] ||
+      apiEndpoints.deliver[selectedItem];
 
     if (!apiUrl) {
       return rejectWithValue("Invalid selected item");

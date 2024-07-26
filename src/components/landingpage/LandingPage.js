@@ -12,19 +12,19 @@ function LandingPage() {
           <div className="landing-page-section-1-top-right">
             <div className="landing-page-section-1-top-right-component">
               <img src="" alt="image"></img>
-              <p>Train STIMULAI</p>
+              <p>Company Profile</p>
             </div>
             <div className="landing-page-section-1-top-right-component">
               <img src="" alt="image"></img>
-              <p>Get Talent Insights</p>
+              <p>Talent Insights</p>
             </div>
             <div className="landing-page-section-1-top-right-component">
               <img src="" alt="image"></img>
-              <p>Know Latest Trends</p>
+              <p>Industry Trends</p>
             </div>
             <div className="landing-page-section-1-top-right-component">
               <img src="" alt="image"></img>
-              <p>View Dashboard</p>
+              <p>Dashboard</p>
             </div>
           </div>
         </div>
@@ -37,12 +37,13 @@ function LandingPage() {
       <section className="landing-page-section-2">
         <div className="landing-page-section-2-left">
           <ul>
-            <li>EBI</li>
-            <li>EVP</li>
-            <li>Campaigns</li>
-            <li>Content</li>
+            <li>Measure Employer Brand</li>
+            <li>Positioning Statement</li>
+            <li>Recruitment Campaign</li>
+            <li>Social & Digital Content</li>
             <li>Internal Comms</li>
             <li>Leadership Brand</li>
+            <li>Integration Comms</li>
           </ul>
         </div>
         <div className="landing-page-section-2-right">

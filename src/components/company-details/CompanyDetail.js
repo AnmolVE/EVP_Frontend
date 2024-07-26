@@ -11,9 +11,10 @@ import {
   DELIVER,
   listItemEndpointMapping,
 } from "../../staticData/labels";
-import Design from "./Design";
-import Discover from "./Discover";
+import Design from "./evp-design/Design";
+import Discover from "./evp-discover/Discover";
 import Loading from "../utils/loading/Loading";
+import Deliver from "./evp-deliver/Deliver";
 
 function CompanyDetail() {
   const { data } = useSelector((store) => store.inputField);
@@ -484,91 +485,9 @@ function CompanyDetail() {
                 newPillars={newPillars}
                 setPillars={setPillars}
                 setNewPillars={setNewPillars}
-                data={data}
               />
-            ) : currentListItem === "Touch Points" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Touch Points</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                  <div className="company-detail-below-secondContainer-div-div-buttons">
-                    <button type="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                    <button>Reset</button>
-                  </div>
-                </div>
-              </div>
-            ) : currentListItem === "EVP Phase" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>EVP Phase</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                </div>
-              </div>
-            ) : currentListItem === "EVP Details" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>EVP Details</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                </div>
-              </div>
-            ) : currentListItem === "EVP Audit" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>EVP Audit</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                </div>
-              </div>
-            ) : currentListItem === "Recommendations" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Recommendations</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                </div>
-              </div>
-            ) : currentListItem === "Creative" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Creative</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                </div>
-              </div>
-            ) : currentListItem === "Execution Plan" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Execution Plan</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name=""
-                    value=""
-                  ></textarea>
-                </div>
-              </div>
+            ) : pageName === "DELIVER" ? (
+              <Deliver currentListItem={currentListItem} />
             ) : (
               ""
             )}
