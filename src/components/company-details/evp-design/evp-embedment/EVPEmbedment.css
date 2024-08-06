@@ -1,0 +1,57 @@
+.evp-embedment-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.evp-embedment {
+  height: 34rem;
+  max-height: 34rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 75%;
+}
+
+.evp-embedment-selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+.evp-embedment-selection label {
+  font-size: 1.2rem;
+}
+
+.evp-embedment-selection-inside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  width: 35%;
+}
+
+.evp-embedment-selection-inside-select {
+  display: flex;
+  justify-content: space-between;
+}
+
+.evp-embedment-buttons {
+  width: 15%;
+  height: 2.5rem;
+}
+
+.evp-embedment-buttons button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0.3rem;
+  background-image: linear-gradient(to right, #9c4f98, #6193b8);
+  color: #fff;
+  font-family: "Roboto";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 2px #888888;
+}

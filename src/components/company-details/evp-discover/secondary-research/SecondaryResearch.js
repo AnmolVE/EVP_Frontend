@@ -1,8 +1,9 @@
 import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import "./CompanyInput.css";
-import Navbar from "../../bars/Navbar";
-import Loading from "../../utils/loading/Loading";
+import "./SecondaryResearch.css";
+import Loading from "../../../utils/loading/Loading";
+
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function CompanyInput() {
   const accessToken = localStorage.getItem("accessToken");
@@ -41,7 +42,7 @@ function CompanyInput() {
     // }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/search/", {
+      const response = await fetch(`${REACT_APP_BASE_URL}/search/`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -70,7 +71,6 @@ function CompanyInput() {
 
   return (
     <>
-      <Navbar />
       <div className="company-input-adjust">
         <div className="company-input-container-left">
           <p className="company-input-para">Add Company</p>

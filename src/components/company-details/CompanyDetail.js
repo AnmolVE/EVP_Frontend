@@ -15,6 +15,8 @@ import Design from "./evp-design/Design";
 import Discover from "./evp-discover/Discover";
 import Loading from "../utils/loading/Loading";
 import Deliver from "./evp-deliver/Deliver";
+import Develop from "./evp-develop/Develop";
+import Dissect from "./evp-dissect/Dissect";
 
 function CompanyDetail() {
   const { data } = useSelector((store) => store.inputField);
@@ -52,10 +54,6 @@ function CompanyDetail() {
     }
   }, [data]);
   // console.log(companyData);
-
-  const handleInputChange = (e) => {
-    setCompanyData({ ...companyData, [e.target.name]: e.target.value });
-  };
 
   const handleListItemClick = (listItem) => {
     setCurrentListItem(listItem);
@@ -285,199 +283,27 @@ function CompanyDetail() {
             handleListItemClick={handleListItemClick}
           />
           <div className="company-detail-below-secondContainer">
-            <h2>Company Name: {companyName}</h2>
             {pageName === "DISCOVER" ? (
               <Discover
                 currentListItem={currentListItem}
                 listItemEndpointMapping={listItemEndpointMapping}
+                companyName={companyName}
+                accessToken={accessToken}
               />
-            ) : currentListItem === "Attributes of Great Place" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Culture</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="culture"
-                    value={companyData?.culture || ""}
-                  ></textarea>
-                  <label>Purpose and Values</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="purpose_and_values"
-                    value={companyData?.purpose_and_values || ""}
-                  ></textarea>
-                  <label>Benefits and Perks</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="benefits_perks"
-                    value={companyData?.benefits_perks || ""}
-                  ></textarea>
-                  <label>Career Development</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="career_development"
-                    value={companyData?.career_development || ""}
-                  ></textarea>
-                  <label>Office and Facilities</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="office_and_facilities"
-                    value={companyData?.office_and_facilities || ""}
-                  ></textarea>
-                  <label>Leadership and Management</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="leadership_and_management"
-                    value={companyData?.leadership_and_management || ""}
-                  ></textarea>
-                  <label>Rewards and Recognition</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="rewards_and_recognition"
-                    value={companyData?.rewards_and_recognition || ""}
-                  ></textarea>
-                  <label>Teamwork and Collaboration</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="teamwork_and_collaboration"
-                    value={companyData?.teamwork_and_collaboration || ""}
-                  ></textarea>
-                  <label>Brand and Reputation</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="brand_and_reputation"
-                    value={companyData?.brand_and_reputation || ""}
-                  ></textarea>
-                  <label>Work Life Balance</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="work_life_balance"
-                    value={companyData?.work_life_balance || ""}
-                  ></textarea>
-                  <div className="company-detail-below-secondContainer-div-div-buttons">
-                    <button type="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                    <button>Reset</button>
-                  </div>
-                </div>
-              </div>
-            ) : currentListItem === "Key Themes" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Top Key Themes</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="top_key_themes"
-                    value={companyData?.top_key_themes || ""}
-                  ></textarea>
-                  <div className="company-detail-below-secondContainer-div-div-buttons">
-                    <button type="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                    <button>Reset</button>
-                  </div>
-                </div>
-              </div>
-            ) : currentListItem === "Audience-Wise Messaging" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>Existing Employees</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="existing_employees"
-                    value={companyData?.existing_employees || ""}
-                  ></textarea>
-                  <label>Alumni</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="alumni"
-                    value={companyData?.alumni || ""}
-                  ></textarea>
-                  <label>Targeted Talent</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="targeted_talent"
-                    value={companyData?.targeted_talent || ""}
-                  ></textarea>
-                  <label>Leadership</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="leadership"
-                    value={companyData?.leadership || ""}
-                  ></textarea>
-                  <label>Recruiters</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="recruiters"
-                    value={companyData?.recruiters || ""}
-                  ></textarea>
-                  <label>Clients</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="clients"
-                    value={companyData?.clients || ""}
-                  ></textarea>
-                  <label>Offer Drops</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="offer_drops"
-                    value={companyData?.offer_drops || ""}
-                  ></textarea>
-                  <div className="company-detail-below-secondContainer-div-div-buttons">
-                    <button type="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                    <button>Reset</button>
-                  </div>
-                </div>
-              </div>
-            ) : currentListItem === "Analysis" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>What is Working Well for the Organization</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="what_is_working_well_for_the_organization"
-                    value={
-                      companyData?.what_is_working_well_for_the_organization ||
-                      ""
-                    }
-                  ></textarea>
-                  <label>What is Not Working Well for the Organization</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="what_is_not_working_well_for_the_organization"
-                    value={
-                      companyData?.what_is_not_working_well_for_the_organization ||
-                      ""
-                    }
-                  ></textarea>
-                  <div className="company-detail-below-secondContainer-div-div-buttons">
-                    <button type="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                    <button>Reset</button>
-                  </div>
-                </div>
-              </div>
-            ) : currentListItem === "Alignment" ? (
-              <div className="company-detail-below-secondContainer-div">
-                <div className="company-detail-below-secondContainer-div-div">
-                  <label>What we want to be known for</label>
-                  <textarea
-                    onChange={handleInputChange}
-                    name="what_we_want_to_be_known_for"
-                    value={companyData?.what_we_want_to_be_known_for || ""}
-                  ></textarea>
-                  <div className="company-detail-below-secondContainer-div-div-buttons">
-                    <button type="submit" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                    <button>Reset</button>
-                  </div>
-                </div>
-              </div>
+            ) : pageName === "DEVELOP" ? (
+              <Develop
+                currentListItem={currentListItem}
+                listItemEndpointMapping={listItemEndpointMapping}
+                companyName={companyName}
+                accessToken={accessToken}
+              />
+            ) : pageName === "DISSECT" ? (
+              <Dissect
+                currentListItem={currentListItem}
+                listItemEndpointMapping={listItemEndpointMapping}
+                companyName={companyName}
+                accessToken={accessToken}
+              />
             ) : pageName === "DESIGN" ? (
               <Design
                 currentListItem={currentListItem}
@@ -485,6 +311,8 @@ function CompanyDetail() {
                 newPillars={newPillars}
                 setPillars={setPillars}
                 setNewPillars={setNewPillars}
+                companyName={companyName}
+                accessToken={accessToken}
               />
             ) : pageName === "DELIVER" ? (
               <Deliver currentListItem={currentListItem} />

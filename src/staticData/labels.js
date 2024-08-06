@@ -1,39 +1,10 @@
-import {
-  CompanyInfoIcon,
-  EmployeeInfoIcon,
-  MessagingIcon,
-  CommunicationChannelsIcon,
-  TalentAttractionIcon,
-  TalentAcquisitionIcon,
-  PerceptionIcon,
-} from "../assets/icons/icons";
-
-// export const DISCOVER = [
-//   "Company Info",
-//   "Employee Info",
-//   "Messaging",
-//   "Communication Channels",
-//   "Talent Attraction",
-//   "Talent Acquisition",
-//   "Perception",
-// ];
+import { CompanyInfoIcon } from "../assets/icons/icons";
 
 export const DISCOVER = [
-  { name: "Company Info", icon: CompanyInfoIcon },
-  { name: "Perception", icon: EmployeeInfoIcon },
-  { name: "Loyalty", icon: MessagingIcon },
-  { name: "Advocacy", icon: CommunicationChannelsIcon },
-  { name: "Attraction", icon: TalentAttractionIcon },
-  { name: "Influence", icon: TalentAcquisitionIcon },
-  { name: "Brand", icon: PerceptionIcon },
   { name: "Primary Research", icon: CompanyInfoIcon },
+  { name: "Secondary Research", icon: CompanyInfoIcon },
+  { name: "Company Info", icon: CompanyInfoIcon },
 ];
-
-// export const DEVELOP = [
-//   "Attributes of Great Place",
-//   "Key Themes",
-//   "Audience-Wise Messaging",
-// ];
 
 export const DEVELOP = [
   { name: "Attributes of Great Place", icon: CompanyInfoIcon },
@@ -41,18 +12,10 @@ export const DEVELOP = [
   { name: "Audience-Wise Messaging", icon: CompanyInfoIcon },
 ];
 
-// export const DISSECT = ["Analysis", "Alignment"];
-
 export const DISSECT = [
   { name: "Analysis", icon: CompanyInfoIcon },
   { name: "Alignment", icon: CompanyInfoIcon },
 ];
-
-// export const DESIGN = [
-//   "Messaging Hierarchy",
-//   "Creative Direction",
-//   "Touch Points",
-// ];
 
 export const DESIGN = [
   { name: "Top 4 Themes", icon: CompanyInfoIcon },
@@ -61,22 +24,12 @@ export const DESIGN = [
   { name: "EVP Promise", icon: CompanyInfoIcon },
   { name: "EVP Audit", icon: CompanyInfoIcon },
   { name: "EVP Embedment", icon: CompanyInfoIcon },
-  { name: "EVP Narrative", icon: CompanyInfoIcon },
+  { name: "EVP Handbook", icon: CompanyInfoIcon },
 ];
-
-// export const DELIVER = [
-//   "EVP Phase",
-//   "EVP Details",
-//   "EVP Audit",
-//   "Recommendations",
-//   "Creative",
-//   "Execution Plan",
-// ];
 
 export const DELIVER = [
   { name: "EVP Statement & Pillars", icon: CompanyInfoIcon },
   { name: "EVP Hero Creative", icon: CompanyInfoIcon },
-  { name: "EVP Narrative", icon: CompanyInfoIcon },
   { name: "EVP Talking Points", icon: CompanyInfoIcon },
   { name: "EVP Execution Plan", icon: CompanyInfoIcon },
 ];

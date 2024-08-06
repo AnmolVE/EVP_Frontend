@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
-import Navbar from "../bars/Navbar";
 
 import "./PrimaryResearch.css";
+
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function PrimaryResearch() {
   const companyName = localStorage.getItem("companyName");
@@ -101,7 +102,7 @@ function PrimaryResearch() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/transcript/${companyName}/`,
+        `${REACT_APP_BASE_URL}/transcript/${companyName}/`,
         {
           method: "POST",
           headers: {
@@ -147,7 +148,7 @@ function PrimaryResearch() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/design-principles/${companyName}/`,
+        `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
         {
           method: "POST",
           headers: {
@@ -170,7 +171,6 @@ function PrimaryResearch() {
 
   return (
     <>
-      <Navbar />
       <div className="primary-research-adjust">
         <div className="primary-research-container">
           <div className="primary-research-nextContainer">

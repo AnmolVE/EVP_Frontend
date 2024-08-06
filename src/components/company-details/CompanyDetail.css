@@ -10,13 +10,13 @@
 .company-detail-main-container {
   display: grid;
   grid-template-rows: auto 1fr;
-  height: 100vh;
+  max-height: 100%;
 }
 
 .company-detail-container {
   display: grid;
-  grid-template-rows: 100px 2fr;
-  /* gap: 2rem; */
+  grid-template-rows: 100px 1fr;
+  max-height: 100%;
 }
 
 .company-detail-navbar {
@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #80808040;
+  background-color: #fafafa;
   flex-wrap: wrap;
 }
 
@@ -42,11 +42,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
   font-size: x-large;
   cursor: pointer;
+}
+
+.company-detail-navbar li.active {
+  background-color: #f2f2f2;
+  color: rgb(172, 75, 151);
 }
 
 .company-detail-navbar li::after {
@@ -72,86 +74,24 @@
 }
 
 .company-detail-navbar li:hover {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #f2f2f2;
+  color: rgb(172, 75, 151);
   transition: background-color 0.8s ease, color 0.8s ease;
 }
 
 .company-detail-below {
+  height: 100%;
+  max-height: 100%;
   max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 4fr 2fr;
   gap: 2rem;
-  padding: 1rem;
-  grid-template-rows: 1fr;
-  height: 100%;
+  padding: 1rem 0 1rem 0;
 }
 
 .company-detail-below-secondContainer {
-  height: auto;
-  display: grid;
-  grid-template-rows: 1fr 13fr;
-  font-size: larger;
-  color: #413838;
+  max-height: 100%;
   padding: 1rem;
-  gap: 2rem;
-  max-height: 39rem;
-  overflow-y: auto;
-}
-
-.company-detail-below-secondContainer-div-div {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.4rem;
-}
-
-.company-detail-below-secondContainer-div-div textarea {
-  width: 100%;
-  min-height: 3rem;
-  box-sizing: border-box;
-  border: none;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  resize: vertical;
-  overflow-y: hidden;
-}
-
-/* .company-detail-below-secondContainer input {
-  padding: 0.4rem;
-  border: none;
-  background-color: #fafafa;
-} */
-
-.company-detail-below-secondContainer-div-div-buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.company-detail-below-secondContainer-div-div-buttons button {
-  width: 7rem;
-  height: 3rem;
-  margin-top: 1rem;
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  cursor: pointer;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: larger;
 }
 
 .company-detail-below-thirdContainer {
@@ -165,7 +105,6 @@
 .company-detail-below-thirdContainer-chatting {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   gap: 2rem;
   background-color: #fafafa;
   border-left: 0.1px solid #a3a0a0;

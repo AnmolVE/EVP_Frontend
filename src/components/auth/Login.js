@@ -16,7 +16,7 @@ function Login() {
     try {
       const userData = { email, password };
       await dispatch(login(userData)).unwrap();
-      navigate("/home");
+      navigate("/company-detail");
     } catch (error) {
       console.error("Login Failed", error);
     }
