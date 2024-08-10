@@ -3,7 +3,13 @@ import "./MessagingHierarchy.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function MessagingHierarchy({ pillars, newPillars, companyName, accessToken }) {
+function MessagingHierarchy({
+  setPageLoading,
+  pillars,
+  newPillars,
+  companyName,
+  accessToken,
+}) {
   const [mainTheme, setMainTheme] = useState("");
   const [selectedPillars, setSelectedPillars] = useState(["", "", ""]);
   const [tagline, setTagline] = useState("");
@@ -17,6 +23,7 @@ function MessagingHierarchy({ pillars, newPillars, companyName, accessToken }) {
 
   useEffect(() => {
     const fetchData = async () => {
+      setPageLoading(true);
       try {
         const response = await fetch(
           `${REACT_APP_BASE_URL}/messaging-hierarchy/${companyName}/`,
@@ -38,6 +45,7 @@ function MessagingHierarchy({ pillars, newPillars, companyName, accessToken }) {
           ]);
           setTagline(responseData.tagline || "");
         }
+        setPageLoading(false);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -111,10 +119,10 @@ function MessagingHierarchy({ pillars, newPillars, companyName, accessToken }) {
 
   return (
     <div className="messaging-hierarchy">
-      <h3>
+      <p>
         Choose the option to select the main theme and 3 pillars to generate a
         tagline
-      </h3>
+      </p>
       <div className="messaging-hierarchy-themes-and-pillars">
         <div className="messaging-hierarchy-themes-and-pillars-inside">
           <label>Overarching Theme</label>

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
-import "./AudienceWiseMessaging.css";
+import "./PrimaryResearchResults.css";
 
-function AudienceWiseMessaging({
+function PrimaryResearchResults({
   currentListItem,
   listItemEndpointMapping,
   companyName,
@@ -11,18 +11,17 @@ function AudienceWiseMessaging({
 }) {
   const { data } = useSelector((store) => store.inputField);
 
-  const [audienceWiseMessagingData, setAudienceWiseMessagingData] =
-    useState(null);
+  const [primaryResearchData, setPrimaryResearchData] = useState(null);
 
   useEffect(() => {
     if (data && data.length > 0) {
-      setAudienceWiseMessagingData(data[0]);
+      setPrimaryResearchData(data[0]);
     }
   }, [data]);
 
   const handleInputChange = (e) => {
-    setAudienceWiseMessagingData({
-      ...audienceWiseMessagingData,
+    setPrimaryResearchData({
+      ...primaryResearchData,
       [e.target.name]: e.target.value,
     });
   };
@@ -44,7 +43,7 @@ function AudienceWiseMessaging({
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
-        body: JSON.stringify(audienceWiseMessagingData),
+        body: JSON.stringify(primaryResearchData),
       });
       const responseData = await response.json();
       alert("Data updated successfully!");
@@ -55,65 +54,65 @@ function AudienceWiseMessaging({
 
   return (
     <>
-      <div className="audienceWiseMessaging-container">
-        <div className="audienceWiseMessaging-container-fields">
+      <div className="primaryResearchResults-container">
+        <div className="primaryResearchResults-container-fields">
           <label>Existing Employees</label>
           <textarea
             onChange={handleInputChange}
             name="existing_employees"
-            value={audienceWiseMessagingData?.existing_employees || ""}
+            value={primaryResearchData?.existing_employees || ""}
           ></textarea>
         </div>
-        <div className="audienceWiseMessaging-container-fields">
+        <div className="primaryResearchResults-container-fields">
           <label>Alumni</label>
           <textarea
             onChange={handleInputChange}
             name="alumni"
-            value={audienceWiseMessagingData?.alumni || ""}
+            value={primaryResearchData?.alumni || ""}
           ></textarea>
         </div>
-        <div className="audienceWiseMessaging-container-fields">
+        <div className="primaryResearchResults-container-fields">
           <label>Targeted Talent</label>
           <textarea
             onChange={handleInputChange}
             name="targeted_talent"
-            value={audienceWiseMessagingData?.targeted_talent || ""}
+            value={primaryResearchData?.targeted_talent || ""}
           ></textarea>
         </div>
-        <div className="audienceWiseMessaging-container-fields">
+        <div className="primaryResearchResults-container-fields">
           <label>Leadership</label>
           <textarea
             onChange={handleInputChange}
             name="leadership"
-            value={audienceWiseMessagingData?.leadership || ""}
+            value={primaryResearchData?.leadership || ""}
           ></textarea>
         </div>
-        <div className="audienceWiseMessaging-container-fields">
+        <div className="primaryResearchResults-container-fields">
           <label>Recruiters</label>
           <textarea
             onChange={handleInputChange}
             name="recruiters"
-            value={audienceWiseMessagingData?.recruiters || ""}
+            value={primaryResearchData?.recruiters || ""}
           ></textarea>
         </div>
-        <div className="audienceWiseMessaging-container-fields">
+        <div className="primaryResearchResults-container-fields">
           <label>Clients</label>
           <textarea
             onChange={handleInputChange}
             name="clients"
-            value={audienceWiseMessagingData?.clients || ""}
+            value={primaryResearchData?.clients || ""}
           ></textarea>
         </div>
-        <div className="audienceWiseMessaging-container-fields">
+        <div className="primaryResearchResults-container-fields">
           <label>Offer Drops</label>
           <textarea
             onChange={handleInputChange}
             name="offer_drops"
-            value={audienceWiseMessagingData?.offer_drops || ""}
+            value={primaryResearchData?.offer_drops || ""}
           ></textarea>
         </div>
       </div>
-      <div className="audienceWiseMessaging-buttons">
+      <div className="primaryResearchResults-buttons">
         <button type="submit" onClick={handleSubmit}>
           Submit
         </button>
@@ -122,4 +121,4 @@ function AudienceWiseMessaging({
   );
 }
 
-export default AudienceWiseMessaging;
+export default PrimaryResearchResults;

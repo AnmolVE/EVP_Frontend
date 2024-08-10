@@ -1,20 +1,16 @@
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import "./SecondaryResearch.css";
-import Loading from "../../../utils/loading/Loading";
+import "./MasterVectorDatabase.css";
+import Loading from "../../utils/loading/Loading";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function CompanyInput() {
+function MasterVectorDatabase() {
   const tokens = JSON.parse(localStorage.getItem("tokens"));
   const accessToken = tokens.access;
-  const [companyName, setCompanyName] = useState("");
-  const [companyWebsite, setCompanyWebsite] = useState("");
   const [fileNames, setFileNames] = useState(["Upload documents"]);
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
   const fileInputRef = useRef(null);
-  const navigate = useNavigate();
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -32,8 +28,6 @@ function CompanyInput() {
     setLoading(true);
 
     const formData = new FormData();
-    formData.append("company_name", companyName);
-    formData.append("company_website", companyWebsite);
     files.forEach((file) => {
       formData.append("documents", file);
     });
@@ -43,19 +37,21 @@ function CompanyInput() {
     // }
 
     try {
-      const response = await fetch(`${REACT_APP_BASE_URL}/search/`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: formData,
-      });
+      const response = await fetch(
+        `${REACT_APP_BASE_URL}/master-vector-database/`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: formData,
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
         console.log(data);
-        localStorage.setItem("companyName", companyName);
-        navigate("/company-detail");
+        alert("Documents uploaded successfully!!!");
       } else {
         console.error("Failed to add company:", response.statusText);
       }
@@ -72,22 +68,10 @@ function CompanyInput() {
 
   return (
     <>
-      <div className="company-input-adjust">
-        <div className="company-input-container-left">
-          <p className="company-input-para">Add Company</p>
-          <form className="company-input-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Company Name"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Company Website"
-              value={companyWebsite}
-              onChange={(e) => setCompanyWebsite(e.target.value)}
-            />
+      <div className="master-vector-database-adjust">
+        <div className="master-vector-database-container-left">
+          <p className="master-vector-database-para">Add Company</p>
+          <form className="master-vector-database-form" onSubmit={handleSubmit}>
             <input
               type="file"
               ref={fileInputRef}
@@ -102,7 +86,7 @@ function CompanyInput() {
                 </div>
               ))}
             </div>
-            <button type="submit" className="company-input-button">
+            <button type="submit" className="master-vector-database-button">
               Submit
             </button>
             <svg
@@ -129,4 +113,4 @@ function CompanyInput() {
   );
 }
 
-export default CompanyInput;
+export default MasterVectorDatabase;

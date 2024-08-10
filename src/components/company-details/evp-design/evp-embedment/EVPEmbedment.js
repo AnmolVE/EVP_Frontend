@@ -184,7 +184,7 @@ function EVPEmbedment({ companyName, accessToken }) {
 
   return (
     <div className="evp-embedment-container">
-      <h1>Add TouchPoints</h1>
+      <label>Add TouchPoints</label>
       <div className="evp-embedment">
         <div className="evp-embedment-selection">
           <label>Pre-hiring</label>

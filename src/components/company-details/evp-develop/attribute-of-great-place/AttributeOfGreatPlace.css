@@ -15,23 +15,22 @@
 }
 
 .attributeOfGreatPlace-container-fields label {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
-  color: #454444;
+  color: #636060;
 }
 
 .attributeOfGreatPlace-container-fields textarea {
-  min-height: 3rem;
+  width: 80%;
+  min-height: 6rem;
   border: 1px solid #dddcdc;
   border-radius: 4px;
   background-color: #f8f8f8;
   font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-size: 1.2rem;
-  color: #454444;
+  font-size: 1.5rem;
+  color: #918e8e;
   padding: 0.5rem;
   resize: vertical;
   overflow-y: hidden;

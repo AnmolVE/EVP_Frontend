@@ -3,13 +3,15 @@ import { CompanyInfoIcon } from "../assets/icons/icons";
 export const DISCOVER = [
   { name: "Primary Research", icon: CompanyInfoIcon },
   { name: "Secondary Research", icon: CompanyInfoIcon },
-  { name: "Company Info", icon: CompanyInfoIcon },
+  { name: "Company Dataset", icon: CompanyInfoIcon },
+  { name: "Talent Dataset", icon: CompanyInfoIcon },
 ];
 
 export const DEVELOP = [
   { name: "Attributes of Great Place", icon: CompanyInfoIcon },
   { name: "Key Themes", icon: CompanyInfoIcon },
-  { name: "Audience-Wise Messaging", icon: CompanyInfoIcon },
+  { name: "Primary Research Results", icon: CompanyInfoIcon },
+  { name: "Talent Insights", icon: CompanyInfoIcon },
 ];
 
 export const DISSECT = [
@@ -21,6 +23,7 @@ export const DESIGN = [
   { name: "Top 4 Themes", icon: CompanyInfoIcon },
   { name: "Messaging Hierarchy", icon: CompanyInfoIcon },
   { name: "Creative Direction", icon: CompanyInfoIcon },
+  { name: "EVP Definition", icon: CompanyInfoIcon },
   { name: "EVP Promise", icon: CompanyInfoIcon },
   { name: "EVP Audit", icon: CompanyInfoIcon },
   { name: "EVP Embedment", icon: CompanyInfoIcon },
@@ -35,7 +38,7 @@ export const DELIVER = [
 ];
 
 export const listItemEndpointMapping = {
-  "Company Info": "http://127.0.0.1:8000/api/companies",
+  "Company Dataset": "http://127.0.0.1:8000/api/companies",
   Perception: "http://127.0.0.1:8000/api/perception",
   Loyalty: "http://127.0.0.1:8000/api/loyalty",
   Advocacy: "http://127.0.0.1:8000/api/advocacy",

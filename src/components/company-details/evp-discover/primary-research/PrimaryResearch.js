@@ -6,7 +6,8 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function PrimaryResearch() {
   const companyName = localStorage.getItem("companyName");
-  const accessToken = localStorage.getItem("accessToken");
+  const tokens = JSON.parse(localStorage.getItem("tokens"));
+  const accessToken = tokens.access;
 
   const [interviewInputFields, setInterviewInputFields] = useState([
     { id: 1, value: "" },

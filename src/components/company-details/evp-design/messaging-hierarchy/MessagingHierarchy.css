@@ -6,6 +6,14 @@
   gap: 1rem;
 }
 
+.messaging-hierarchy p {
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #636060;
+}
+
 .messaging-hierarchy-themes-and-pillars {
   display: flex;
   flex-direction: column;
@@ -20,8 +28,11 @@
 
 .messaging-hierarchy-themes-and-pillars-inside label {
   width: 30%;
-  font-size: 1rem;
-  font-weight: 600;
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #636060;
 }
 
 .messaging-hierarchy-themes-and-pillars button {
@@ -53,10 +64,8 @@
   border-radius: 4px;
   background-color: #f8f8f8;
   font-family: "Josefin Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-size: 1rem;
-  color: #454444;
+  font-size: 1.5rem;
+  color: #918e8e;
   padding: 0.5rem;
   resize: vertical;
 }

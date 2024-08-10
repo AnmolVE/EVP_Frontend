@@ -5,7 +5,7 @@ import "./EVPHandbook.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function EVPHandbook({ companyName, accessToken }) {
+function EVPHandbook({ setPageLoading, companyName, accessToken }) {
   const { data } = useSelector((store) => store.inputField);
 
   const [evpHandbookData, setEvpHandbookData] = useState(null);
@@ -17,6 +17,7 @@ function EVPHandbook({ companyName, accessToken }) {
   }, [data]);
 
   const handleEVPHandbookSubmit = async () => {
+    setPageLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/evp-handbook/`, {
         method: "POST",
@@ -32,7 +33,7 @@ function EVPHandbook({ companyName, accessToken }) {
       if (response.ok) {
         const responseData = await response.json();
         console.log(responseData);
-        alert("Data Submitted successfully!!!");
+        setPageLoading(false);
       }
     } catch (error) {
       console.error("Error:", error);

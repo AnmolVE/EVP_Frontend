@@ -6,6 +6,14 @@
   gap: 2rem;
 }
 
+.evp-embedment-container label {
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #636060;
+}
+
 .evp-embedment {
   height: 34rem;
   max-height: 34rem;

@@ -4,12 +4,14 @@ const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const apiEndpoints = {
   discover: {
-    "Company Info": `${REACT_APP_BASE_URL}/companies/`,
+    "Company Dataset": `${REACT_APP_BASE_URL}/companies/`,
+    "Talent Dataset": `${REACT_APP_BASE_URL}/talent-dataset/`,
   },
   develop: {
     "Attributes of Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
     "Key Themes": `${REACT_APP_BASE_URL}/key-themes/`,
-    "Audience-Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
+    "Primary Research Results": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
+    "Talent Insights": `${REACT_APP_BASE_URL}/talent-insights/`,
   },
   dissect: {
     Analysis: `${REACT_APP_BASE_URL}/swot-analysis/`,
@@ -17,6 +19,7 @@ const apiEndpoints = {
   },
   design: {
     "Creative Direction": `${REACT_APP_BASE_URL}/creative-direction/`,
+    "EVP Definition": `${REACT_APP_BASE_URL}/evp-definition/`,
     "EVP Promise": `${REACT_APP_BASE_URL}/evp-promise/`,
     "EVP Audit": `${REACT_APP_BASE_URL}/evp-audit/`,
     "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
@@ -34,7 +37,8 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     if (!companyName) {
       return rejectWithValue("Company name not found in local storage");
     }
-    const accessToken = localStorage.getItem("accessToken");
+    const tokens = JSON.parse(localStorage.getItem("tokens"));
+    const accessToken = tokens.access;
     if (!accessToken) {
       return rejectWithValue("Access Token not found in local storage");
     }
@@ -51,7 +55,10 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     if (
+      selectedItem === "Talent Dataset" ||
+      selectedItem === "Talent Insights" ||
       selectedItem === "Creative Direction" ||
+      selectedItem === "EVP Definition" ||
       selectedItem === "EVP Promise" ||
       selectedItem === "EVP Audit" ||
       selectedItem === "EVP Handbook"

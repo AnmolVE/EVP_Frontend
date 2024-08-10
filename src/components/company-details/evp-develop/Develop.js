@@ -3,9 +3,11 @@ import React from "react";
 import "./Develop.css";
 import AttributeOfGreatPlace from "./attribute-of-great-place/AttributeOfGreatPlace";
 import KeyThemes from "./key-themes/KeyThemes";
-import AudienceWiseMessaging from "./audience-wise-messaging/AudienceWiseMessaging";
+import PrimaryResearchResults from "./primary-research-results/PrimaryResearchResults";
+import TalentInsights from "./talent-insights/TalentInsights";
 
 function Develop({
+  setLoading,
   currentListItem,
   listItemEndpointMapping,
   companyName,
@@ -31,9 +33,19 @@ function Develop({
             accessToken={accessToken}
           />
         </div>
-      ) : currentListItem === "Audience-Wise Messaging" ? (
+      ) : currentListItem === "Primary Research Results" ? (
         <div className="develop-main-container">
-          <AudienceWiseMessaging
+          <PrimaryResearchResults
+            currentListItem={currentListItem}
+            listItemEndpointMapping={listItemEndpointMapping}
+            companyName={companyName}
+            accessToken={accessToken}
+          />
+        </div>
+      ) : currentListItem === "Talent Insights" ? (
+        <div className="develop-main-container">
+          <TalentInsights
+            setLoading={setLoading}
             currentListItem={currentListItem}
             listItemEndpointMapping={listItemEndpointMapping}
             companyName={companyName}

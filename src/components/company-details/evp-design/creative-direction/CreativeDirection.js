@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function CreativeDirection({ companyName, accessToken }) {
+function CreativeDirection({ setPageLoading, companyName, accessToken }) {
   const { data } = useSelector((store) => store.inputField);
   const [creativeDirectionData, setCreativeDirectionData] = useState({
     creative_direction_data: "",
@@ -29,6 +29,7 @@ function CreativeDirection({ companyName, accessToken }) {
         company_name: companyName,
         creative_direction_data: creativeDirectionData.creative_direction_data,
       };
+      setPageLoading(true);
       try {
         const response = await fetch(
           `${REACT_APP_BASE_URL}/creative-direction/`,
@@ -45,7 +46,7 @@ function CreativeDirection({ companyName, accessToken }) {
           const responseData = await response.json();
           console.log(responseData);
           setCreativeDirectionData(responseData);
-          alert("Data submitted successfully!!!");
+          setPageLoading(false);
         } else {
           alert("Error submitting data");
         }
@@ -58,7 +59,7 @@ function CreativeDirection({ companyName, accessToken }) {
   return (
     <div className="creative-direction">
       <div className="creative-direction-data">
-        <h1>Creative Direction</h1>
+        <label>Creative Direction</label>
         <textarea
           onChange={handleCreativeDirectionChange}
           value={creativeDirectionData.creative_direction_data}

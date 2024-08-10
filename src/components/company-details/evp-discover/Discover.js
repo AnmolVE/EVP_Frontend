@@ -4,6 +4,7 @@ import "./Discover.css";
 import PrimaryResearch from "./primary-research/PrimaryResearch";
 import SecondaryResearch from "./secondary-research/SecondaryResearch";
 import CompanyInfo from "./company-info/CompanyInfo";
+import TalentDataset from "./talent-dataset/TalentDataset";
 
 function Discover({
   currentListItem,
@@ -17,9 +18,18 @@ function Discover({
         <PrimaryResearch />
       ) : currentListItem === "Secondary Research" ? (
         <SecondaryResearch />
-      ) : currentListItem === "Company Info" ? (
+      ) : currentListItem === "Company Dataset" ? (
         <div className="discover-main-container">
           <CompanyInfo
+            currentListItem={currentListItem}
+            listItemEndpointMapping={listItemEndpointMapping}
+            companyName={companyName}
+            accessToken={accessToken}
+          />
+        </div>
+      ) : currentListItem === "Talent Dataset" ? (
+        <div className="discover-main-container">
+          <TalentDataset
             currentListItem={currentListItem}
             listItemEndpointMapping={listItemEndpointMapping}
             companyName={companyName}

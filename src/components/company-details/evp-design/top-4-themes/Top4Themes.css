@@ -24,28 +24,27 @@
 }
 
 .top-4-themes-tabs input {
-  width: 50%;
+  width: 40%;
   border: 1px solid #dddcdc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #454444;
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #636060;
   padding: 0.5rem;
 }
 
 .top-4-themes-tabs textarea {
+  width: 80%;
   min-height: 3rem;
   border: 1px solid #dddcdc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-size: 1.2rem;
-  color: #454444;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  color: #918e8e;
   padding: 0.5rem;
   resize: vertical;
   overflow-y: hidden;

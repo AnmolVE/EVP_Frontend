@@ -4,12 +4,14 @@ import "./Design.css";
 import Top4Themes from "./top-4-themes/Top4Themes";
 import MessagingHierarchy from "./messaging-hierarchy/MessagingHierarchy";
 import CreativeDirection from "./creative-direction/CreativeDirection";
+import EVPDefinition from "./evp-definition/EVPDefinition";
 import EVPPromise from "./evp-promise/EVPPromise";
 import EVPAudit from "./evp-audit/EVPAudit";
 import EVPEmbedment from "./evp-embedment/EVPEmbedment";
 import EVPHandbook from "./evp-handbook/EVPHandbook";
 
 function Design({
+  setPageLoading,
   currentListItem,
   pillars,
   newPillars,
@@ -26,6 +28,7 @@ function Design({
         />
       ) : currentListItem === "Messaging Hierarchy" ? (
         <MessagingHierarchy
+          setPageLoading={setPageLoading}
           companyName={companyName}
           accessToken={accessToken}
           pillars={pillars}
@@ -33,9 +36,12 @@ function Design({
         />
       ) : currentListItem === "Creative Direction" ? (
         <CreativeDirection
+          setPageLoading={setPageLoading}
           companyName={companyName}
           accessToken={accessToken}
         />
+      ) : currentListItem === "EVP Definition" ? (
+        <EVPDefinition />
       ) : currentListItem === "EVP Promise" ? (
         <EVPPromise />
       ) : currentListItem === "EVP Audit" ? (
@@ -43,7 +49,11 @@ function Design({
       ) : currentListItem === "EVP Embedment" ? (
         <EVPEmbedment companyName={companyName} accessToken={accessToken} />
       ) : currentListItem === "EVP Handbook" ? (
-        <EVPHandbook companyName={companyName} accessToken={accessToken} />
+        <EVPHandbook
+          setPageLoading={setPageLoading}
+          companyName={companyName}
+          accessToken={accessToken}
+        />
       ) : null}
     </>
   );

@@ -1,39 +1,39 @@
 .evp-promise-main-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 2rem;
 }
 
-.table-container {
+.evp-promise-table-container {
   width: 100%;
   height: 39rem;
   max-height: 39rem;
   overflow-y: auto;
 }
 
-table {
+.evp-promise-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 20px 0;
   background-color: #fff;
 }
 
-th,
-td {
+.evp-promise-table-thead-th,
+.evp-promise-table-tbody-td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-size: 1.1rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  color: #918e8e;
 }
 
 .fixed-column {
   background-color: #f9f9f9;
-  font-weight: bold;
+  font-family: "Source Sans 3", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.6rem;
+  color: #636060;
 }
 
 .evp-promise-buttons {

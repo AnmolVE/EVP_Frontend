@@ -3,12 +3,21 @@ import "./CompanyDetailLeftbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchDataForSelectedItem } from "../../features/inputfields/inputfieldsSlice";
 
-function CompanyDetailsLeftbar({ listItems, handleListItemClick }) {
+function CompanyDetailsLeftbar({
+  listItems,
+  currentListItem,
+  handleListItemClick,
+}) {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
 
   const dispatch = useDispatch();
 
   const { data, loading, error } = useSelector((store) => store.inputField);
+
+  useEffect(() => {
+    const index = listItems.findIndex((item) => item.name === currentListItem);
+    setSelectedItemIndex(index);
+  }, [currentListItem, listItems]);
 
   // console.log("data: ", data);
 
@@ -21,7 +30,7 @@ function CompanyDetailsLeftbar({ listItems, handleListItemClick }) {
   const onItemClick = (index) => {
     const selectedItem = listItems[index];
     handleListItemClick(selectedItem.name);
-    setSelectedItemIndex(index); // Use functional update
+    setSelectedItemIndex(index);
     dispatch(fetchDataForSelectedItem(selectedItem.name));
   };
 

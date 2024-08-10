@@ -17,24 +17,38 @@ function EVPPromise() {
 
   return (
     <div className="evp-promise-main-container">
-      <div className="table-container">
-        <table>
+      <div className="evp-promise-table-container">
+        <table className="evp-promise-table">
           <thead>
-            <tr>
-              <th>Themes</th>
-              <th>What makes this theme distinctive</th>
-              <th>What employees can expect</th>
-              <th>What is expected of employees</th>
+            <tr className="evp-promise-table-thead-tr">
+              <th className="evp-promise-table-thead-th">Themes</th>
+              <th className="evp-promise-table-thead-th">
+                What makes this theme distinctive
+              </th>
+              <th className="evp-promise-table-thead-th">
+                What employees can expect
+              </th>
+              <th className="evp-promise-table-thead-th">
+                What is expected of employees
+              </th>
             </tr>
           </thead>
           <tbody>
             {Array.isArray(evpPromiseData) &&
               evpPromiseData.map((item) => (
                 <tr key={item.id}>
-                  <td className="fixed-column">{item.theme}</td>
-                  <td>{item.what_makes_this_theme_distinctive}</td>
-                  <td>{item.what_employees_can_expect}</td>
-                  <td>{item.what_is_expected_of_employees}</td>
+                  <td className="evp-promise-table-tbody-td fixed-column">
+                    {item.theme}
+                  </td>
+                  <td className="evp-promise-table-tbody-td">
+                    {item.what_makes_this_theme_distinctive}
+                  </td>
+                  <td className="evp-promise-table-tbody-td">
+                    {item.what_employees_can_expect}
+                  </td>
+                  <td className="evp-promise-table-tbody-td">
+                    {item.what_is_expected_of_employees}
+                  </td>
                 </tr>
               ))}
           </tbody>
