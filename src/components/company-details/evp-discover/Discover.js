@@ -5,17 +5,21 @@ import PrimaryResearch from "./primary-research/PrimaryResearch";
 import SecondaryResearch from "./secondary-research/SecondaryResearch";
 import CompanyInfo from "./company-info/CompanyInfo";
 import TalentDataset from "./talent-dataset/TalentDataset";
+import EVPJourney from "./evp-journey/EVPJourney";
 
 function Discover({
   setPageLoading,
   currentListItem,
+  setCurrentListItem,
   listItemEndpointMapping,
   companyName,
   accessToken,
 }) {
   return (
     <>
-      {currentListItem === "Primary Research" ? (
+      {currentListItem === "EVP Journey" ? (
+        <EVPJourney setCurrentListItem={setCurrentListItem} />
+      ) : currentListItem === "Primary Research" ? (
         <PrimaryResearch />
       ) : currentListItem === "Secondary Research" ? (
         <SecondaryResearch setPageLoading={setPageLoading} />
@@ -23,6 +27,7 @@ function Discover({
         <div className="discover-main-container">
           <CompanyInfo
             currentListItem={currentListItem}
+            setCurrentListItem={setCurrentListItem}
             listItemEndpointMapping={listItemEndpointMapping}
             companyName={companyName}
             accessToken={accessToken}

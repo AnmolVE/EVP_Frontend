@@ -8,8 +8,8 @@
 }
 
 .company-detail-main-container {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: grid;
   grid-template-rows: auto 1fr;
 }

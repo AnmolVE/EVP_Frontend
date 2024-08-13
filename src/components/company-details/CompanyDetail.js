@@ -191,6 +191,7 @@ function CompanyDetail() {
               <Discover
                 setPageLoading={setPageLoading}
                 currentListItem={currentListItem}
+                setCurrentListItem={setCurrentListItem}
                 listItemEndpointMapping={listItemEndpointMapping}
                 companyName={companyName}
                 accessToken={accessToken}

@@ -19,7 +19,7 @@ function MasterVectorDatabase() {
     setFiles(selectedFiles);
   };
 
-  const handleSVGClick = () => {
+  const handleMasterVectorDatabaseSVGClick = () => {
     fileInputRef.current.click();
   };
 
@@ -79,9 +79,12 @@ function MasterVectorDatabase() {
               style={{ display: "none" }}
               multiple
             />
-            <div className="file-display-area">
+            <div
+              className="master-vector-database-file-display-area"
+              onClick={handleMasterVectorDatabaseSVGClick}
+            >
               {fileNames.map((name, index) => (
-                <div key={index} className="file-name">
+                <div key={index} className="master-vector-database-file-name">
                   {name}
                 </div>
               ))}
@@ -90,7 +93,6 @@ function MasterVectorDatabase() {
               Submit
             </button>
             <svg
-              onClick={handleSVGClick}
               fill="#000000"
               height="20"
               width="20"

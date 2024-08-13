@@ -1,31 +1,37 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.secondaryResearch-main-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  padding: 1rem;
 }
 
-.company-input-adjust {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.secondaryResearch-information {
+  width: 100%;
+  height: 50%;
 }
 
-.company-input-container-left {
+.secondaryResearch-information p {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.5rem;
+  color: #918e8e;
+}
+
+.secondaryResearch-uploadContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
-  width: 30%;
-  margin-top: 5rem;
-  height: 30rem;
+  width: 100%;
+  height: 40rem;
   border-radius: 1rem;
 }
 
-.company-input-para {
+.secondaryResearch-para {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
@@ -33,7 +39,7 @@
   font-size: 1.8rem;
 }
 
-.company-input-form {
+.secondaryResearch-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,9 +49,9 @@
   position: relative;
 }
 
-.company-input-form input[type="email"],
-.company-input-form input[type="url"],
-.company-input-form input[type="text"] {
+.secondaryResearch-form input[type="email"],
+.secondaryResearch-form input[type="url"],
+.secondaryResearch-form input[type="text"] {
   width: 100%;
   padding: 0.5rem;
   border-radius: 0.4rem;
@@ -55,7 +61,7 @@
   text-align: center;
 }
 
-.company-input-button {
+.secondaryResearch-button {
   width: 45%;
   height: 3rem;
   background-color: black;
@@ -70,19 +76,19 @@
   cursor: pointer;
 }
 
-.company-input-container-right {
+.secondaryResearch-container-right {
   font-size: large;
   font-weight: 500;
 }
 
-.company-input-form svg {
+.secondaryResearch-form svg {
   position: absolute;
   left: 0.2rem;
   top: 49%;
   cursor: pointer;
 }
 
-.file-display-area {
+.secondaryResearch-file-display-area {
   width: 100%;
   margin-top: 0.5rem;
   padding: 0.5rem;
@@ -97,9 +103,10 @@
   min-height: 2.5rem;
   max-height: 5rem;
   overflow-y: auto;
+  cursor: pointer;
 }
 
-.file-name {
+.secondaryResearch-file-name {
   font-size: 1rem;
   color: #655c5c;
   font-weight: 500;

@@ -74,10 +74,23 @@ function CompanyInput({ setPageLoading }) {
 
   return (
     <>
-      <div className="company-input-adjust">
-        <div className="company-input-container-left">
-          <p className="company-input-para">Add Company</p>
-          <form className="company-input-form" onSubmit={handleSubmit}>
+      <div className="secondaryResearch-main-container">
+        <div className="secondaryResearch-information">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+        <div className="secondaryResearch-uploadContainer">
+          <p className="secondaryResearch-para">Add Company</p>
+          <form className="secondaryResearch-form" onSubmit={handleSubmit}>
             <input
               type="text"
               placeholder="Company Name"
@@ -97,18 +110,20 @@ function CompanyInput({ setPageLoading }) {
               style={{ display: "none" }}
               multiple
             />
-            <div className="file-display-area">
+            <div
+              className="secondaryResearch-file-display-area"
+              onClick={handleSVGClick}
+            >
               {fileNames.map((name, index) => (
-                <div key={index} className="file-name">
+                <div key={index} className="secondaryResearch-file-name">
                   {name}
                 </div>
               ))}
             </div>
-            <button type="submit" className="company-input-button">
+            <button type="submit" className="secondaryResearch-button">
               Submit
             </button>
             <svg
-              onClick={handleSVGClick}
               fill="#000000"
               height="20"
               width="20"

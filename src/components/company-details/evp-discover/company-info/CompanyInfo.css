@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,300&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 
 .company-info-container {
-  height: 39rem;
+  height: 90%;
   max-height: 39rem;
   width: 100%;
   display: flex;

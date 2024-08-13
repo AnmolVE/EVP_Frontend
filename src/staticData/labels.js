@@ -1,6 +1,9 @@
 import { CompanyInfoIcon } from "../assets/icons/icons";
 
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export const DISCOVER = [
+  { name: "EVP Journey", icon: CompanyInfoIcon },
   { name: "Primary Research", icon: CompanyInfoIcon },
   { name: "Secondary Research", icon: CompanyInfoIcon },
   { name: "Company Dataset", icon: CompanyInfoIcon },
@@ -38,18 +41,16 @@ export const DELIVER = [
 ];
 
 export const listItemEndpointMapping = {
-  "Company Dataset": "http://127.0.0.1:8000/api/companies",
-  Perception: "http://127.0.0.1:8000/api/perception",
-  Loyalty: "http://127.0.0.1:8000/api/loyalty",
-  Advocacy: "http://127.0.0.1:8000/api/advocacy",
-  Attraction: "http://127.0.0.1:8000/api/attraction",
-  Influence: "http://127.0.0.1:8000/api/influence",
-  Brand: "http://127.0.0.1:8000/api/brand",
-  "Attributes of Great Place":
-    "http://127.0.0.1:8000/api/attributes-of-great-workplace",
-  "Key Themes": "http://127.0.0.1:8000/api/key-themes",
-  "Audience-Wise Messaging":
-    "http://127.0.0.1:8000/api/audience-wise-messaging",
-  Analysis: "http://127.0.0.1:8000/api/swot-analysis",
-  Alignment: "http://127.0.0.1:8000/api/alignment",
+  "Company Dataset": `${REACT_APP_BASE_URL}/companies`,
+  Perception: `${REACT_APP_BASE_URL}/perception`,
+  Loyalty: `${REACT_APP_BASE_URL}/loyalty`,
+  Advocacy: `${REACT_APP_BASE_URL}/advocacy`,
+  Attraction: `${REACT_APP_BASE_URL}/attraction`,
+  Influence: `${REACT_APP_BASE_URL}/influence`,
+  Brand: `${REACT_APP_BASE_URL}/brand`,
+  "Attributes of Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace`,
+  "Key Themes": `${REACT_APP_BASE_URL}/key-themes`,
+  "Audience-Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging`,
+  Analysis: `${REACT_APP_BASE_URL}/swot-analysis`,
+  Alignment: `${REACT_APP_BASE_URL}/alignment`,
 };

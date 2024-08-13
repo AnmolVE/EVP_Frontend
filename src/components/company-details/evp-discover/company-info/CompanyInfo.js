@@ -5,6 +5,7 @@ import "./CompanyInfo.css";
 
 function CompanyInfo({
   currentListItem,
+  setCurrentListItem,
   listItemEndpointMapping,
   companyName,
   accessToken,
@@ -27,7 +28,6 @@ function CompanyInfo({
     event.preventDefault();
 
     const baseApiEndpoint = listItemEndpointMapping[currentListItem];
-    console.log(baseApiEndpoint);
     if (!baseApiEndpoint) {
       alert("API endpoint not configured for this section");
       return;
@@ -43,11 +43,13 @@ function CompanyInfo({
         body: JSON.stringify(companyInfoData),
       });
       const responseData = await response.json();
-      alert("Data updated successfully!");
+      setCurrentListItem("Talent Dataset");
+      // alert("Data updated successfully!");
     } catch (error) {
       alert(`Error: ${error.message}`);
     }
   };
+  console.log(currentListItem);
 
   return (
     <>
