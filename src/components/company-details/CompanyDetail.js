@@ -20,6 +20,8 @@ import Deliver from "./evp-deliver/Deliver";
 
 import Loading from "../utils/loading/Loading";
 
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
 function CompanyDetail() {
   const { loading } = useSelector((store) => store.inputField);
 
@@ -47,7 +49,7 @@ function CompanyDetail() {
   const handleDevelopClick = async () => {
     setPageLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/develop/`, {
+      const response = await fetch(`${REACT_APP_BASE_URL}/develop/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +72,7 @@ function CompanyDetail() {
   const handleDissectClick = async () => {
     setPageLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/dissect/`, {
+      const response = await fetch(`${REACT_APP_BASE_URL}/dissect/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -93,7 +95,7 @@ function CompanyDetail() {
   const handleDesignClick = async () => {
     setPageLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/design/`, {
+      const response = await fetch(`${REACT_APP_BASE_URL}/design/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -187,6 +189,7 @@ function CompanyDetail() {
           <div className="company-detail-below-secondContainer">
             {pageName === "DISCOVER" ? (
               <Discover
+                setPageLoading={setPageLoading}
                 currentListItem={currentListItem}
                 listItemEndpointMapping={listItemEndpointMapping}
                 companyName={companyName}

@@ -7,6 +7,7 @@ import CompanyInfo from "./company-info/CompanyInfo";
 import TalentDataset from "./talent-dataset/TalentDataset";
 
 function Discover({
+  setPageLoading,
   currentListItem,
   listItemEndpointMapping,
   companyName,
@@ -17,7 +18,7 @@ function Discover({
       {currentListItem === "Primary Research" ? (
         <PrimaryResearch />
       ) : currentListItem === "Secondary Research" ? (
-        <SecondaryResearch />
+        <SecondaryResearch setPageLoading={setPageLoading} />
       ) : currentListItem === "Company Dataset" ? (
         <div className="discover-main-container">
           <CompanyInfo

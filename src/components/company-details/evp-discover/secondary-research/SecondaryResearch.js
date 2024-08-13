@@ -5,7 +5,7 @@ import Loading from "../../../utils/loading/Loading";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
-function CompanyInput() {
+function CompanyInput({ setPageLoading }) {
   const tokens = JSON.parse(localStorage.getItem("tokens"));
   const accessToken = tokens.access;
   const [companyName, setCompanyName] = useState("");
@@ -42,6 +42,7 @@ function CompanyInput() {
     //   console.log(`${key}: ${value}`);
     // }
 
+    setPageLoading(true);
     try {
       const response = await fetch(`${REACT_APP_BASE_URL}/search/`, {
         method: "POST",
@@ -59,6 +60,7 @@ function CompanyInput() {
       } else {
         console.error("Failed to add company:", response.statusText);
       }
+      setPageLoading(false);
     } catch (error) {
       console.error("Error adding company:", error);
     } finally {
