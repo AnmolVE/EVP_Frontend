@@ -4,42 +4,62 @@ import "./EVPJourney.css";
 
 function EVPJourney({ setCurrentListItem }) {
   return (
-    <div className="evp-journey">
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum. It is a long established fact that a reader will be
-        distracted by the readable content of a page when looking at its layout.
-        The point of using Lorem Ipsum is that it has a more-or-less normal
-        distribution of letters, as opposed to using 'Content here, content
-        here', making it look like readable English. Many desktop publishing
-        packages and web page editors now use Lorem Ipsum as their default model
-        text, and a search for 'lorem ipsum' will uncover many web sites still
-        in their infancy. Various versions have evolved over the years,
-        sometimes by accident, sometimes on purpose injected humour and the like
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book. It has survived not only five
-        centuries, but also the leap into electronic typesetting, remaining
-        essentially unchanged. It was popularised in the 1960s with the release
-        of Letraset sheets containing Lorem Ipsum passages, and more recently
-        with desktop publishing software like Aldus PageMaker including versions
-        of Lorem Ipsum. It is a long established fact that a reader will be
-        distracted by the readable content of a page when looking at its layout.
-        The point of using Lorem Ipsum is that it has a more-or-less normal
-        distribution of letters, as opposed to using 'Content here, content
-        here', making it look like readable English. Many desktop publishing
-        packages and web page editors now use Lorem Ipsum as their default model
-        text, and a search for 'lorem ipsum' will uncover many web sites still
-        in their infancy.
-      </p>
+    <div className="evp-journey-main-container">
+      <h1>EVP Journey</h1>
+      <div className="evp-journey-top">
+        <div className="evp-journey-top-left">
+          <p>
+            An Employee Value Proposition is the essence of your employer brand.
+            The unique selling point that sets you apart from competition to
+            attract and retain top talent. Organizations with a clear EVP
+            experience bottom line impact. A well-defined EVP drives tangible
+            business results, including up to 50% more qualified candidates, a
+            30% reduction in attrition, and up to 2X faster time-to-fill.
+          </p>
+        </div>
+        <div className="evp-journey-top-right">
+          <p>
+            We collect, segment, and analyze the following datasets to arrive at
+            your EVP:
+          </p>
+          <div className="evp-journey-top-right-list">
+            <ul className="evp-journey-top-right-unordered-list">
+              <li>Company Dataset</li>
+              <li>Industry</li>
+              <li>Talent Dataset</li>
+              <li>STIMULAI's EVP Dataset</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="evp-journey-middle">
+        <p>The process we follow in this module:</p>
+        <div className="evp-journey-middle-main-content">
+          <ul className="evp-journey-middle-main-content-unordered-list">
+            <li>
+              Discovery - all of the research and data points collected from
+              internal and external sources, secondary and primary research
+            </li>
+            <li>
+              Develop - here the data is segmented into appropriate EVP-relevant
+              categories
+            </li>
+            <li>
+              Dissect - here the data has now turned into insights after
+              undergoing SWOT and sentiment analyses
+            </li>
+            <li>
+              Design - finally, the insights have now turned into messaging
+              providing you with the key pillars of your EVP and the positioning
+              statement and other deliverables
+            </li>
+            <li>
+              Deliver - if you've chosen this feature, we will then bring your
+              EVP to life via ready-to-use creatives
+            </li>
+          </ul>
+        </div>
+      </div>
       <div className="evp-journey-buttons">
         <button onClick={() => setCurrentListItem("Primary Research")}>
           Get Started

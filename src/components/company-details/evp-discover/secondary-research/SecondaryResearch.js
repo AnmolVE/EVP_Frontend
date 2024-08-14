@@ -76,20 +76,27 @@ function CompanyInput({ setPageLoading }) {
     <>
       <div className="secondaryResearch-main-container">
         <div className="secondaryResearch-information">
+          <h1>Secondary Research</h1>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            This is the data that makes the EVP true to who you are. Use this
+            section to upload your company's information, especially feedback
+            and surveys collecting during internal interventions. Recommended
+            documents to be uploaded
           </p>
+          <ul className="secondaryResearch-information-unordered-list">
+            <li>Exit Interviews</li>
+            <li>Employee Feedback</li>
+            <li>Employee Satisfaction Survey Results</li>
+            <li>Vision, Mission, Purpose, Culture statements</li>
+            <li>Open / frequently advertised job positions</li>
+            <li>
+              Design Principles - this is what you would like to be known as
+              amongst talent
+            </li>
+          </ul>
         </div>
         <div className="secondaryResearch-uploadContainer">
-          <p className="secondaryResearch-para">Add Company</p>
+          <h1 className="secondaryResearch-para">Add Company</h1>
           <form className="secondaryResearch-form" onSubmit={handleSubmit}>
             <input
               type="text"

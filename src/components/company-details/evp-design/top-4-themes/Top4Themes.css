@@ -8,8 +8,7 @@
 
 .top-4-themes-data {
   width: 100%;
-  height: 39rem;
-  max-height: 39rem;
+  height: 38rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -78,4 +77,10 @@
   font-weight: 700;
   font-size: 1.2rem;
   box-shadow: 2px 2px 2px #888888;
+}
+
+@media (max-width: 1440px) {
+  .top-4-themes-main-container {
+    max-height: 35rem;
+  }
 }

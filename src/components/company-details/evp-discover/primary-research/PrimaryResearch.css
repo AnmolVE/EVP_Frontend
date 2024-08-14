@@ -11,13 +11,24 @@
 
 .primaryResearch-information {
   width: 100%;
-  height: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 }
 
-.primaryResearch-information p {
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 1.5rem;
-  color: #918e8e;
+.primaryResearch-information-headings {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.primaryResearch-information-unordered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 1rem;
+  list-style-type: decimal;
 }
 
 .primaryResearch-uploadContainer {
@@ -300,4 +311,14 @@
   font-size: 1rem;
   color: #655c5c;
   font-weight: 500;
+}
+
+@media (max-width: 1440px) {
+  .primaryResearch-main-container {
+    max-height: 39rem;
+  }
+
+  .primaryResearch-uploadContainer {
+    height: 100%;
+  }
 }

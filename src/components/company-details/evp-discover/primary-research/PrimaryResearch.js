@@ -174,23 +174,39 @@ function PrimaryResearch() {
     <>
       <div className="primaryResearch-main-container">
         <div className="primaryResearch-information">
+          <div className="primaryResearch-information-headings">
+            <h1>Primary Research</h1>
+          </div>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Conducting first-hand, primary research further strengthens the
+            credibility of your data resulting in a strong and compelling EVP
+            that's equal parts credible and aspirational Use the first section
+            to add details of employees, ex-employees etc and send them meeting
+            invites to conduct interviews and think tank sessions Next, upload
+            the transcripts from those sessions into the relevant box.
           </p>
+          {/* <ul className="primaryResearch-information-unordered-list">
+            <li>
+              Conducting first-hand, primary research further strengthens the
+              credibility of your data resulting in a strong and compelling EVP
+              that's equal parts credible and aspirational
+            </li>
+            <li>
+              Use the first section to add details of employees, ex-employees
+              etc and send them meeting invites to conduct interviews and think
+              tank sessions
+            </li>
+            <li>
+              Next, upload the transcripts from those sessions into the relevant
+              box.
+            </li>
+          </ul> */}
         </div>
         <div className="primaryResearch-uploadContainer">
           <div className="primary-research-container">
             <div className="primary-research-nextContainer">
               <p className="primary-research-nextContainer-para">
-                Primary Research
+                Conduct Research
               </p>
               <div className="primary-research-dataGather">
                 <div className="primary-research-interview">

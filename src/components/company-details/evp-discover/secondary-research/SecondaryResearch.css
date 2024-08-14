@@ -2,22 +2,36 @@
 
 .secondaryResearch-main-container {
   height: 100%;
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 10rem;
   padding: 1rem;
 }
 
 .secondaryResearch-information {
   width: 100%;
-  height: 50%;
+  height: 75%;
+  display: grid;
+  grid-template-rows: 0.5fr 1fr 2fr;
+  gap: 1rem;
 }
 
 .secondaryResearch-information p {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 1.5rem;
   color: #918e8e;
+}
+
+.secondaryResearch-information h1 {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.secondaryResearch-information-unordered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 1rem;
 }
 
 .secondaryResearch-uploadContainer {
@@ -25,18 +39,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 40rem;
   border-radius: 1rem;
 }
 
 .secondaryResearch-para {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.8rem;
+  font-family: "Source Sans 3", sans-serif;
 }
 
 .secondaryResearch-form {
@@ -45,7 +55,7 @@
   align-items: center;
   margin-top: 2rem;
   gap: 2rem;
-  width: 70%;
+  width: 50%;
   position: relative;
 }
 
@@ -110,4 +120,14 @@
   font-size: 1rem;
   color: #655c5c;
   font-weight: 500;
+}
+
+@media (max-width: 1440px) {
+  .secondaryResearch-main-container {
+    height: 39rem;
+  }
+
+  .secondaryResearch-uploadContainer {
+    height: 100%;
+  }
 }

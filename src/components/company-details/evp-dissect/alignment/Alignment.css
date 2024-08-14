@@ -1,5 +1,5 @@
 .alignment-container {
-  height: 39rem;
+  height: 90%;
   max-height: 39rem;
   width: 100%;
   display: flex;
@@ -54,4 +54,10 @@
   font-weight: 700;
   font-size: 1.2rem;
   box-shadow: 2px 2px 2px #888888;
+}
+
+@media (max-width: 1440px) {
+  .alignment-container {
+    max-height: 35rem;
+  }
 }
