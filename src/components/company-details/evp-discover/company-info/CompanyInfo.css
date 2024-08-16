@@ -3,7 +3,7 @@
 .company-info-container {
   height: 90%;
   max-height: 39rem;
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -14,10 +14,11 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .company-info-container-fields label {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1.6rem;
@@ -25,12 +26,12 @@
 }
 
 .company-info-container-fields textarea {
-  width: 80%;
+  width: 100%;
   min-height: 6rem;
   border: 1px solid #dddcdc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Roboto";
   font-size: 1.5rem;
   color: #918e8e;
   padding: 0.5rem;

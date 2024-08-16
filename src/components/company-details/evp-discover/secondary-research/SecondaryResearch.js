@@ -76,27 +76,25 @@ function CompanyInput({ setPageLoading }) {
     <>
       <div className="secondaryResearch-main-container">
         <div className="secondaryResearch-information">
-          <h1>Secondary Research</h1>
-          <p>
-            This is the data that makes the EVP true to who you are. Use this
-            section to upload your company's information, especially feedback
-            and surveys collecting during internal interventions. Recommended
-            documents to be uploaded
-          </p>
-          <ul className="secondaryResearch-information-unordered-list">
-            <li>Exit Interviews</li>
-            <li>Employee Feedback</li>
-            <li>Employee Satisfaction Survey Results</li>
-            <li>Vision, Mission, Purpose, Culture statements</li>
-            <li>Open / frequently advertised job positions</li>
-            <li>
-              Design Principles - this is what you would like to be known as
-              amongst talent
-            </li>
-          </ul>
+          <div className="secondaryResearch-information-top">
+            <h1>Secondary Research</h1>
+            <p>First-hand information adds credibility to your research</p>
+          </div>
+          <div className="secondaryResearch-information-bottom">
+            <h4>Talent Cohorts to Cover</h4>
+            <ul className="secondaryResearch-information-bottom-unordered-list">
+              <li>Current Employees</li>
+              <li>Ex-Employees</li>
+              <li>Interviewing Candidates</li>
+              <li>Candidates who refused to offer</li>
+              <li>Clients (if possible)</li>
+              <li>Headhunters and recruiters</li>
+              <li>Core EVP team</li>
+            </ul>
+          </div>
         </div>
         <div className="secondaryResearch-uploadContainer">
-          <h1 className="secondaryResearch-para">Add Company</h1>
+          <h1>Add Documents</h1>
           <form className="secondaryResearch-form" onSubmit={handleSubmit}>
             <input
               type="text"

@@ -27,7 +27,7 @@
   border: 1px solid #dddcdc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1.6rem;
@@ -41,7 +41,7 @@
   border: 1px solid #dddcdc;
   border-radius: 4px;
   background-color: #f8f8f8;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Roboto";
   font-size: 1.5rem;
   color: #918e8e;
   padding: 0.5rem;
@@ -82,5 +82,11 @@
 @media (max-width: 1440px) {
   .top-4-themes-main-container {
     max-height: 35rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  .top-4-themes-main-container {
+    max-height: 40rem;
   }
 }

@@ -7,7 +7,7 @@
 }
 
 .evp-embedment-container label {
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1.6rem;
@@ -30,6 +30,7 @@
 }
 
 .evp-embedment-selection label {
+  font-family: "Roboto";
   font-size: 1.2rem;
 }
 
@@ -63,4 +64,17 @@
   font-weight: 700;
   font-size: 1.2rem;
   box-shadow: 2px 2px 2px #888888;
+}
+
+@media (max-width: 1440px) {
+  .evp-embedment {
+    max-height: 30rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .evp-embedment {
+    max-height: 31rem;
+    width: 84%;
+  }
 }

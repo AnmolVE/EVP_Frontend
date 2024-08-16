@@ -45,9 +45,12 @@ function PrimaryResearch() {
       .map((field) => field.value)
       .filter((email) => email);
     if (interviewEmailAddresses.length > 0) {
+      const subject = "Interview Invitation";
+      const body = `Dear Candidate, \n\nWe would like to invite you for a 1-on-1 interview. Please let us know your availability.\n\nBest regards,\n${companyName}`;
+
       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
         interviewEmailAddresses.join(",")
-      )}`;
+      )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.open(gmailLink, "_blank");
     } else {
       alert("Please enter at least one email address");
@@ -174,40 +177,27 @@ function PrimaryResearch() {
     <>
       <div className="primaryResearch-main-container">
         <div className="primaryResearch-information">
-          <div className="primaryResearch-information-headings">
+          <div className="primaryResearch-information-top">
             <h1>Primary Research</h1>
+            <p>First-hand information adds credibility to your research</p>
           </div>
-          <p>
-            Conducting first-hand, primary research further strengthens the
-            credibility of your data resulting in a strong and compelling EVP
-            that's equal parts credible and aspirational Use the first section
-            to add details of employees, ex-employees etc and send them meeting
-            invites to conduct interviews and think tank sessions Next, upload
-            the transcripts from those sessions into the relevant box.
-          </p>
-          {/* <ul className="primaryResearch-information-unordered-list">
-            <li>
-              Conducting first-hand, primary research further strengthens the
-              credibility of your data resulting in a strong and compelling EVP
-              that's equal parts credible and aspirational
-            </li>
-            <li>
-              Use the first section to add details of employees, ex-employees
-              etc and send them meeting invites to conduct interviews and think
-              tank sessions
-            </li>
-            <li>
-              Next, upload the transcripts from those sessions into the relevant
-              box.
-            </li>
-          </ul> */}
+          <div className="primaryResearch-information-bottom">
+            <h4>Talent Cohorts to Cover</h4>
+            <ul className="primaryResearch-information-bottom-unordered-list">
+              <li>Current Employees</li>
+              <li>Ex-Employees</li>
+              <li>Interviewing Candidates</li>
+              <li>Candidates who refused to offer</li>
+              <li>Clients (if possible)</li>
+              <li>Headhunters and recruiters</li>
+              <li>Core EVP team</li>
+            </ul>
+          </div>
         </div>
         <div className="primaryResearch-uploadContainer">
           <div className="primary-research-container">
             <div className="primary-research-nextContainer">
-              <p className="primary-research-nextContainer-para">
-                Conduct Research
-              </p>
+              <h1>Send Meeting Requests</h1>
               <div className="primary-research-dataGather">
                 <div className="primary-research-interview">
                   <label>1-on-1-interview</label>
@@ -300,9 +290,7 @@ function PrimaryResearch() {
           </div>
           <div className="transcript-container">
             <div className="transcript-nextContainer">
-              <p className="transcript-nextContainer-para">
-                Interview Transcript
-              </p>
+              <h1>Upload Transcripts</h1>
               <form
                 className="transcript-form"
                 onSubmit={handleTranscriptSubmit}
@@ -348,7 +336,7 @@ function PrimaryResearch() {
           </div>
           <div className="design-container">
             <div className="design-nextContainer">
-              <p className="design-nextContainer-para">DESIGN</p>
+              <h1>Design Principles</h1>
               <form className="design-form" onSubmit={handleDesignSubmit}>
                 <input
                   type="file"

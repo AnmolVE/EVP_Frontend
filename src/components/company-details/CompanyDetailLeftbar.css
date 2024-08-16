@@ -7,7 +7,6 @@
   flex-direction: column;
   gap: 1rem;
   padding-top: 2rem;
-  background-color: #f8f8f8;
   border-right: 0.1px solid #a3a0a0;
 }
 
@@ -18,19 +17,22 @@
   display: flex;
   padding-left: 2.5rem;
   align-items: center;
-  color: #5d5a5a;
-  font-family: "Source Sans 3", sans-serif;
-  font-weight: 500;
-  font-size: 1.6rem;
+  color: #242e7fe6;
+  font-family: "Roboto";
+  font-size: 1.7rem;
   cursor: pointer;
 }
 
 .company-detail-below-firstContainer li.active {
-  background-color: #f2f2f2;
-  color: rgb(172, 75, 151);
+  color: #071475e6;
 }
 
 .company-detail-below-firstContainer li:hover {
-  background-color: #f2f2f2;
-  color: rgb(172, 75, 151);
+  color: #071475e6;
+}
+
+@media (max-width: 1024px) {
+  .company-detail-below-firstContainer ul {
+    gap: 0.7rem;
+  }
 }

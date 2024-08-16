@@ -6,28 +6,52 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
-  padding: 1rem;
+  padding: 1rem 4rem 1rem 1rem;
 }
 
 .primaryResearch-information {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-.primaryResearch-information-headings {
+.primaryResearch-information-top {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.primaryResearch-information-unordered-list {
+.primaryResearch-information-top h1 {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #071475e6;
+}
+
+.primaryResearch-information-top p {
+  font-family: "Roboto";
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.primaryResearch-information-bottom {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-left: 1rem;
+}
+
+.primaryResearch-information-bottom h4 {
+  font-family: "Roboto";
+  font-size: 2rem;
+  color: #071475e6;
+}
+
+.primaryResearch-information-bottom-unordered-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding-left: 1.5rem;
+  font-family: "Roboto";
+  font-size: 1.5rem;
   list-style-type: decimal;
 }
 
@@ -35,20 +59,24 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  width: 75%;
   height: 40rem;
   max-height: 40rem;
   overflow-y: auto;
-  border-radius: 1rem;
+}
+
+.primaryResearch-uploadContainer h1 {
+  font-family: "Roboto";
+  font-size: 2rem;
+  color: #071475e6;
 }
 
 .primary-research-container {
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: auto;
-  border-radius: 1rem;
   padding: 1rem;
+  background-color: #efeeee;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
 }
 
 .primary-research-nextContainer {
@@ -57,15 +85,6 @@
   align-items: center;
   gap: 2rem;
   height: 100%;
-}
-
-.primary-research-nextContainer-para {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.8rem;
-  display: inline-block;
 }
 
 .primary-research-dataGather {
@@ -150,11 +169,10 @@
 }
 
 .design-container {
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 25rem;
-  border-radius: 1rem;
   padding: 1rem;
+  background-color: #efeeee;
 }
 
 .design-nextContainer {
@@ -164,15 +182,6 @@
   gap: 2rem;
   height: 100%;
   overflow-y: auto;
-}
-
-.design-nextContainer-para {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.8rem;
-  display: inline-block;
 }
 
 .design-form {
@@ -195,16 +204,16 @@
 .design-button {
   width: 45%;
   height: 3rem;
-  background-color: black;
-  color: white;
   border: none;
-  border-radius: 0.5rem;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.4rem;
   cursor: pointer;
+  border-radius: 0.3rem;
+  background-image: linear-gradient(to right, #9c4f98, #6193b8);
+  color: #fff;
+  font-family: "Roboto";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 2px #888888;
 }
 
 .design-file-display-area {
@@ -232,11 +241,10 @@
 }
 
 .transcript-container {
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
   width: 100%;
   height: 25rem;
-  border-radius: 1rem;
   padding: 1rem;
+  background-color: #efeeee;
 }
 
 .transcript-nextContainer {
@@ -246,15 +254,6 @@
   gap: 2rem;
   height: 100%;
   overflow-y: auto;
-}
-
-.transcript-nextContainer-para {
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.8rem;
-  display: inline-block;
 }
 
 .transcript-form {
@@ -277,16 +276,16 @@
 .transcript-button {
   width: 45%;
   height: 3rem;
-  background-color: black;
-  color: white;
   border: none;
-  border-radius: 0.5rem;
-  font-family: "Open Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 1.4rem;
   cursor: pointer;
+  border-radius: 0.3rem;
+  background-image: linear-gradient(to right, #9c4f98, #6193b8);
+  color: #fff;
+  font-family: "Roboto";
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 2px #888888;
 }
 
 .transcript-file-display-area {

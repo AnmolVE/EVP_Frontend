@@ -43,7 +43,7 @@ function EVPHandbook({ setPageLoading, companyName, accessToken }) {
   return (
     <div className="evp-handbook">
       <div className="evp-handbook-data">
-        <h1>Handbook</h1>
+        <label>Handbook</label>
         <textarea
           value={evpHandbookData ? evpHandbookData.handbook_data : ""}
           onChange={(e) =>
