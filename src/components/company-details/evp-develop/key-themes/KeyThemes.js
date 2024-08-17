@@ -54,8 +54,14 @@ function KeyThemes({
 
   return (
     <>
-      <div className="keyThemes-container">
-        <div className="keyThemes-container-fields">
+      <div className="keyThemes-top">
+        <p className="keyThemes-para-heading">Key Themes</p>
+        <p className="keyThemes-para">
+          Validate your Key Themes data before it goes to next step.
+        </p>
+      </div>
+      <div className="keyThemes-information">
+        <div className="keyThemes-information-fields">
           <label>Top Key Themes</label>
           <textarea
             onChange={handleInputChange}

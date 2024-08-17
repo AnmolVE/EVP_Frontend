@@ -1,21 +1,40 @@
-.analysis-container {
-  height: 90%;
-  max-height: 39rem;
+.analysis-top {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.analysis-para-heading {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #247d97;
+}
+
+.analysis-para {
+  font-family: "Roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.analysis-information {
+  height: 100%;
+  max-height: 30rem;
   width: 80%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 1rem;
+  background-color: #f7f6f6;
   overflow-y: auto;
 }
 
-.analysis-container-fields {
+.analysis-information-fields {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding-right: 0.5rem;
 }
 
-.analysis-container-fields label {
+.analysis-information-fields label {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -23,7 +42,7 @@
   color: #636060;
 }
 
-.analysis-container-fields textarea {
+.analysis-information-fields textarea {
   width: 100%;
   min-height: 6rem;
   border: 1px solid #dddcdc;
@@ -58,7 +77,7 @@
 }
 
 @media (max-width: 1440px) {
-  .analysis-container {
+  .analysis-information {
     max-height: 35rem;
   }
 }

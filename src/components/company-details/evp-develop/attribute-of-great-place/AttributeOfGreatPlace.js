@@ -55,8 +55,16 @@ function AttributeOfGreatPlace({
 
   return (
     <>
-      <div className="attributeOfGreatPlace-container">
-        <div className="attributeOfGreatPlace-container-fields">
+      <div className="attributeOfGreatPlace-top">
+        <p className="attributeOfGreatPlace-para-heading">
+          Attributes of Great Place
+        </p>
+        <p className="attributeOfGreatPlace-para">
+          Validate your Attributes data before goes to next step.
+        </p>
+      </div>
+      <div className="attributeOfGreatPlace-information">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Culture</label>
           <textarea
             onChange={handleInputChange}
@@ -64,7 +72,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.culture || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Purpose and Values</label>
           <textarea
             onChange={handleInputChange}
@@ -72,7 +80,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.purpose_and_values || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Benefits and Perks</label>
           <textarea
             onChange={handleInputChange}
@@ -80,7 +88,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.benefits_perks || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Career Development</label>
           <textarea
             onChange={handleInputChange}
@@ -88,7 +96,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.career_development || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Office and Facilities</label>
           <textarea
             onChange={handleInputChange}
@@ -96,7 +104,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.office_and_facilities || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Leadership and Management</label>
           <textarea
             onChange={handleInputChange}
@@ -104,7 +112,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.leadership_and_management || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Rewards and Recognition</label>
           <textarea
             onChange={handleInputChange}
@@ -112,7 +120,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.rewards_and_recognition || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Teamwork and Collaboration</label>
           <textarea
             onChange={handleInputChange}
@@ -120,7 +128,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.teamwork_and_collaboration || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Brand and Reputation</label>
           <textarea
             onChange={handleInputChange}
@@ -128,7 +136,7 @@ function AttributeOfGreatPlace({
             value={attributeOfGreatPlaceData?.brand_and_reputation || ""}
           ></textarea>
         </div>
-        <div className="attributeOfGreatPlace-container-fields">
+        <div className="attributeOfGreatPlace-information-fields">
           <label>Work Life Balance</label>
           <textarea
             onChange={handleInputChange}

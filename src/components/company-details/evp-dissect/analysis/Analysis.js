@@ -54,8 +54,14 @@ function Analysis({
 
   return (
     <>
-      <div className="analysis-container">
-        <div className="analysis-container-fields">
+      <div className="analysis-top">
+        <p className="analysis-para-heading">Analysis</p>
+        <p className="analysis-para">
+          Validate your Analysis data before it goes to next step.
+        </p>
+      </div>
+      <div className="analysis-information">
+        <div className="analysis-information-fields">
           <label>What is Working Well for the Organization</label>
           <textarea
             onChange={handleInputChange}
@@ -65,7 +71,7 @@ function Analysis({
             }
           ></textarea>
         </div>
-        <div className="analysis-container-fields">
+        <div className="analysis-information-fields">
           <label>What is Not Working Well for the Organization</label>
           <textarea
             onChange={handleInputChange}

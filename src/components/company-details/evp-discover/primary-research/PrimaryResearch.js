@@ -178,9 +178,19 @@ function PrimaryResearch() {
       <div className="primaryResearch-main-container">
         <div className="primaryResearch-information">
           <div className="primaryResearch-information-top">
-            <h1>Primary Research</h1>
-            <p>First-hand information adds credibility to your research</p>
+            <p className="primaryResearch-information-top-para-heading">
+              Primary Research
+            </p>
+            <p className="primaryResearch-para">
+              First-hand information adds credibility to your research
+            </p>
+            <p className="primaryResearch-info-para">
+              The result is a strong and compelling EVP that is equal parts
+              credible as well as aspirational and accurately represents the
+              views of the most important stakeholders.
+            </p>
           </div>
+          <hr />
           <div className="primaryResearch-information-bottom">
             <h4>Talent Cohorts to Cover</h4>
             <ul className="primaryResearch-information-bottom-unordered-list">

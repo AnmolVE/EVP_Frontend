@@ -36,17 +36,37 @@ function CompanyDetailsLeftbar({
 
   return (
     <div className="company-detail-below-firstContainer">
-      <ul>
-        {listItems.map((listItem, index) => (
-          <li
+      {listItems.map((listItem, index) =>
+        listItem?.name === "EVP Journey" ? (
+          <div
+            className="company-detail-below-firstContainer-evp-journey"
             key={index}
-            onClick={() => onItemClick(index)}
-            className={index === selectedItemIndex ? "active" : ""}
           >
-            {listItem.name}
-          </li>
-        ))}
-      </ul>
+            <p
+              className={index === selectedItemIndex ? "active" : ""}
+              onClick={() => onItemClick(index)}
+            >
+              {listItem.name}
+            </p>
+            <div className="company-detail-below-firstContainer-evp-journey-progress-bar">
+              <span></span>
+            </div>
+          </div>
+        ) : (
+          <div
+            className="company-detail-below-firstContainer-list-items"
+            key={index}
+          >
+            <p
+              className={index === selectedItemIndex ? "active" : ""}
+              onClick={() => onItemClick(index)}
+            >
+              {listItem.name}
+            </p>
+            <span>completed</span>
+          </div>
+        )
+      )}
     </div>
   );
 }

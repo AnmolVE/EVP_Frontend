@@ -2,7 +2,7 @@
 
 .secondaryResearch-main-container {
   height: 100%;
-  width: 90%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10rem;
@@ -12,7 +12,7 @@
 .secondaryResearch-information {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .secondaryResearch-information-top {
@@ -21,16 +21,22 @@
   gap: 1rem;
 }
 
-.secondaryResearch-information-top h1 {
+.secondaryResearch-information-top-para-heading {
   font-family: "Roboto";
   font-size: 3rem;
-  color: #071475e6;
+  color: #247d97;
 }
 
-.secondaryResearch-information-top p {
+.secondaryResearch-para {
   font-family: "Roboto";
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 400;
+}
+
+.secondaryResearch-info-para {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  color: #808080;
 }
 
 .secondaryResearch-information-bottom {
@@ -41,8 +47,7 @@
 
 .secondaryResearch-information-bottom h4 {
   font-family: "Roboto";
-  font-size: 2rem;
-  color: #071475e6;
+  font-size: 1.7rem;
 }
 
 .secondaryResearch-information-bottom-unordered-list {
@@ -51,24 +56,24 @@
   gap: 0.7rem;
   padding-left: 1.5rem;
   font-family: "Roboto";
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  color: #808080;
   list-style-type: decimal;
 }
 
 .secondaryResearch-uploadContainer {
+  width: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 100%;
   background-color: #efeeee;
 }
 
 .secondaryResearch-uploadContainer h1 {
   font-family: "Roboto";
-  font-size: 3rem;
-  color: #071475e6;
+  font-size: 2rem;
 }
 
 .secondaryResearch-form {
@@ -147,6 +152,18 @@
 @media (max-width: 1440px) {
   .secondaryResearch-main-container {
     height: 39rem;
+  }
+
+  .secondaryResearch-information {
+    gap: 1rem;
+  }
+
+  .secondaryResearch-info-para {
+    font-size: 1.2rem;
+  }
+
+  .secondaryResearch-information-bottom-unordered-list {
+    font-size: 1.2rem;
   }
 
   .secondaryResearch-uploadContainer {

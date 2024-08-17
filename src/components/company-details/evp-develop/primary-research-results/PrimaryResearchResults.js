@@ -54,8 +54,16 @@ function PrimaryResearchResults({
 
   return (
     <>
-      <div className="primaryResearchResults-container">
-        <div className="primaryResearchResults-container-fields">
+      <div className="primaryResearchResults-top">
+        <p className="primaryResearchResults-para-heading">
+          Primary Research Results
+        </p>
+        <p className="primaryResearchResults-para">
+          Validate your Primary Research data before it goes to next step.
+        </p>
+      </div>
+      <div className="primaryResearchResults-information">
+        <div className="primaryResearchResults-information-fields">
           <label>Existing Employees</label>
           <textarea
             onChange={handleInputChange}
@@ -63,7 +71,7 @@ function PrimaryResearchResults({
             value={primaryResearchData?.existing_employees || ""}
           ></textarea>
         </div>
-        <div className="primaryResearchResults-container-fields">
+        <div className="primaryResearchResults-information-fields">
           <label>Alumni</label>
           <textarea
             onChange={handleInputChange}
@@ -71,7 +79,7 @@ function PrimaryResearchResults({
             value={primaryResearchData?.alumni || ""}
           ></textarea>
         </div>
-        <div className="primaryResearchResults-container-fields">
+        <div className="primaryResearchResults-information-fields">
           <label>Targeted Talent</label>
           <textarea
             onChange={handleInputChange}
@@ -79,7 +87,7 @@ function PrimaryResearchResults({
             value={primaryResearchData?.targeted_talent || ""}
           ></textarea>
         </div>
-        <div className="primaryResearchResults-container-fields">
+        <div className="primaryResearchResults-information-fields">
           <label>Leadership</label>
           <textarea
             onChange={handleInputChange}
@@ -87,7 +95,7 @@ function PrimaryResearchResults({
             value={primaryResearchData?.leadership || ""}
           ></textarea>
         </div>
-        <div className="primaryResearchResults-container-fields">
+        <div className="primaryResearchResults-information-fields">
           <label>Recruiters</label>
           <textarea
             onChange={handleInputChange}
@@ -95,7 +103,7 @@ function PrimaryResearchResults({
             value={primaryResearchData?.recruiters || ""}
           ></textarea>
         </div>
-        <div className="primaryResearchResults-container-fields">
+        <div className="primaryResearchResults-information-fields">
           <label>Clients</label>
           <textarea
             onChange={handleInputChange}
@@ -103,7 +111,7 @@ function PrimaryResearchResults({
             value={primaryResearchData?.clients || ""}
           ></textarea>
         </div>
-        <div className="primaryResearchResults-container-fields">
+        <div className="primaryResearchResults-information-fields">
           <label>Offer Drops</label>
           <textarea
             onChange={handleInputChange}

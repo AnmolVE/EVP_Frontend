@@ -54,8 +54,14 @@ function Alignment({
 
   return (
     <>
-      <div className="alignment-container">
-        <div className="alignment-container-fields">
+      <div className="alignment-top">
+        <p className="alignment-para-heading">Alignment</p>
+        <p className="alignment-para">
+          Validate your Alignment data before it goes to next section.
+        </p>
+      </div>
+      <div className="alignment-information">
+        <div className="alignment-information-fields">
           <label>What we want to be known for</label>
           <textarea
             onChange={handleInputChange}

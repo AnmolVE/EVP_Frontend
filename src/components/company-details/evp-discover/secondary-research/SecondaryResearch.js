@@ -77,9 +77,19 @@ function CompanyInput({ setPageLoading }) {
       <div className="secondaryResearch-main-container">
         <div className="secondaryResearch-information">
           <div className="secondaryResearch-information-top">
-            <h1>Secondary Research</h1>
-            <p>First-hand information adds credibility to your research</p>
+            <p className="secondaryResearch-information-top-para-heading">
+              Secondary Research
+            </p>
+            <p className="secondaryResearch-para">
+              First-hand information adds credibility to your research
+            </p>
+            <p className="secondaryResearch-info-para">
+              In addition to processing your documents, the platform will crawl
+              hundreds of curated online sources to conduct comprehensive
+              secondary research.
+            </p>
           </div>
+          <hr />
           <div className="secondaryResearch-information-bottom">
             <h4>Talent Cohorts to Cover</h4>
             <ul className="secondaryResearch-information-bottom-unordered-list">

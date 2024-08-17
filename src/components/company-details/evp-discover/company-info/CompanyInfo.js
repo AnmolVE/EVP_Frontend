@@ -53,8 +53,14 @@ function CompanyInfo({
 
   return (
     <>
-      <div className="company-info-container">
-        <div className="company-info-container-fields">
+      <div className="company-info-top">
+        <p className="company-info-para-heading">Company Dataset</p>
+        <p className="company-info-para">
+          Validate your Company data before it goes to next step.
+        </p>
+      </div>
+      <div className="company-info-information">
+        <div className="company-info-information-fields">
           <label>Headquarters</label>
           <textarea
             onChange={handleInputChange}
@@ -62,7 +68,7 @@ function CompanyInfo({
             value={companyInfoData?.headquarters}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Established date</label>
           <textarea
             onChange={handleInputChange}
@@ -70,7 +76,7 @@ function CompanyInfo({
             value={companyInfoData?.established_date}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>About the company</label>
           <textarea
             onChange={handleInputChange}
@@ -78,7 +84,7 @@ function CompanyInfo({
             value={companyInfoData?.about_the_company}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Industry</label>
           <textarea
             onChange={handleInputChange}
@@ -86,7 +92,7 @@ function CompanyInfo({
             value={companyInfoData?.industry}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Company Financials</label>
           <textarea
             onChange={handleInputChange}
@@ -94,7 +100,7 @@ function CompanyInfo({
             value={companyInfoData?.company_financials}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Company History</label>
           <textarea
             onChange={handleInputChange}
@@ -102,7 +108,7 @@ function CompanyInfo({
             value={companyInfoData?.company_history}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Top 3 Competitors</label>
           <textarea
             onChange={handleInputChange}
@@ -110,7 +116,7 @@ function CompanyInfo({
             value={companyInfoData?.top_3_competitors}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Number of Employees</label>
           <textarea
             onChange={handleInputChange}
@@ -118,7 +124,7 @@ function CompanyInfo({
             value={companyInfoData?.number_of_employees}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Number of Geographies</label>
           <textarea
             onChange={handleInputChange}
@@ -126,7 +132,7 @@ function CompanyInfo({
             value={companyInfoData?.number_of_geographies}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>LinkedIn Info</label>
           <textarea
             onChange={handleInputChange}
@@ -134,7 +140,7 @@ function CompanyInfo({
             value={companyInfoData?.linked_info}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Instagram Info</label>
           <textarea
             onChange={handleInputChange}
@@ -142,7 +148,7 @@ function CompanyInfo({
             value={companyInfoData?.instagram_info}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Tiktok Info</label>
           <textarea
             onChange={handleInputChange}
@@ -150,7 +156,7 @@ function CompanyInfo({
             value={companyInfoData?.tiktok_info}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Facebook Info</label>
           <textarea
             onChange={handleInputChange}
@@ -158,7 +164,7 @@ function CompanyInfo({
             value={companyInfoData?.facebook_info}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Twitter Info</label>
           <textarea
             onChange={handleInputChange}
@@ -166,7 +172,7 @@ function CompanyInfo({
             value={companyInfoData?.twitter_info}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Internal Comms Channels</label>
           <textarea
             placeholder="User Input"
@@ -175,7 +181,7 @@ function CompanyInfo({
             value={companyInfoData?.internal_comms_channels}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Exit Interview Feedback</label>
           <textarea
             placeholder="User Input"
@@ -184,7 +190,7 @@ function CompanyInfo({
             value={companyInfoData?.exit_interview_feedback}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Employee Feedback Summary</label>
           <textarea
             placeholder="User Input"
@@ -193,7 +199,7 @@ function CompanyInfo({
             value={companyInfoData?.employee_feedback_summary}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Engagement Survey Results</label>
           <textarea
             placeholder="User Input"
@@ -202,7 +208,7 @@ function CompanyInfo({
             value={companyInfoData?.engagement_survey_results}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Glassdoor Score</label>
           <textarea
             placeholder="User Input"
@@ -211,7 +217,7 @@ function CompanyInfo({
             value={companyInfoData?.glassdoor_score}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Online Forums Mentions</label>
           <textarea
             placeholder="User Input"
@@ -220,7 +226,7 @@ function CompanyInfo({
             value={companyInfoData?.online_forums_mentions}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>What Retains Talent</label>
           <textarea
             placeholder="User Input"
@@ -229,7 +235,7 @@ function CompanyInfo({
             value={companyInfoData?.what_retains_talent}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>What Attracts Talent</label>
           <textarea
             placeholder="User Input"
@@ -238,7 +244,7 @@ function CompanyInfo({
             value={companyInfoData?.what_attracts_talent}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Employee Value Proposition</label>
           <textarea
             placeholder="User Input"
@@ -247,7 +253,7 @@ function CompanyInfo({
             value={companyInfoData?.employee_value_proposition}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Culture and Values</label>
           <textarea
             placeholder="User Input"
@@ -256,7 +262,7 @@ function CompanyInfo({
             value={companyInfoData?.culture_and_values}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Purpose</label>
           <textarea
             placeholder="User Input"
@@ -265,7 +271,7 @@ function CompanyInfo({
             value={companyInfoData?.purpose}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Customer Value Proposition</label>
           <textarea
             placeholder="User Input"
@@ -274,7 +280,7 @@ function CompanyInfo({
             value={companyInfoData?.customer_value_proposition}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Vision</label>
           <textarea
             placeholder="User Input"
@@ -283,7 +289,7 @@ function CompanyInfo({
             value={companyInfoData?.vision}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Mission</label>
           <textarea
             placeholder="User Input"
@@ -292,7 +298,7 @@ function CompanyInfo({
             value={companyInfoData?.mission}
           ></textarea>
         </div>
-        <div className="company-info-container-fields">
+        <div className="company-info-information-fields">
           <label>Brand Guidelines</label>
           <textarea
             placeholder="User Input"

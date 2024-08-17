@@ -12,7 +12,7 @@
 .primaryResearch-information {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .primaryResearch-information-top {
@@ -21,16 +21,22 @@
   gap: 1rem;
 }
 
-.primaryResearch-information-top h1 {
+.primaryResearch-information-top-para-heading {
   font-family: "Roboto";
   font-size: 3rem;
-  color: #071475e6;
+  color: #247d97;
 }
 
-.primaryResearch-information-top p {
+.primaryResearch-para {
   font-family: "Roboto";
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 400;
+}
+
+.primaryResearch-info-para {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  color: #808080;
 }
 
 .primaryResearch-information-bottom {
@@ -41,8 +47,7 @@
 
 .primaryResearch-information-bottom h4 {
   font-family: "Roboto";
-  font-size: 2rem;
-  color: #071475e6;
+  font-size: 1.7rem;
 }
 
 .primaryResearch-information-bottom-unordered-list {
@@ -51,7 +56,8 @@
   gap: 0.7rem;
   padding-left: 1.5rem;
   font-family: "Roboto";
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  color: #808080;
   list-style-type: decimal;
 }
 
@@ -68,7 +74,6 @@
 .primaryResearch-uploadContainer h1 {
   font-family: "Roboto";
   font-size: 2rem;
-  color: #071475e6;
 }
 
 .primary-research-container {
@@ -76,7 +81,6 @@
   height: auto;
   padding: 1rem;
   background-color: #efeeee;
-  box-shadow: 0 0 80px rgba(0, 0, 0, 0.1);
 }
 
 .primary-research-nextContainer {
@@ -315,6 +319,18 @@
 @media (max-width: 1440px) {
   .primaryResearch-main-container {
     max-height: 39rem;
+  }
+
+  .primaryResearch-information {
+    gap: 1rem;
+  }
+
+  .primaryResearch-info-para {
+    font-size: 1.2rem;
+  }
+
+  .primaryResearch-information-bottom-unordered-list {
+    font-size: 1.2rem;
   }
 
   .primaryResearch-uploadContainer {
