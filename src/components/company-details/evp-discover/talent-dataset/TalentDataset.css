@@ -1,24 +1,44 @@
 .talent-dataset-main-container {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 7rem 1fr 2rem;
+  gap: 2rem;
+}
+
+.talent-dataset-top {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.talent-dataset-para-heading {
+  font-family: "Roboto";
+  font-size: 3rem;
+  color: #247d97;
+}
+
+.talent-dataset-para {
+  font-family: "Roboto";
+  font-size: 2.2rem;
+  font-weight: 400;
 }
 
 .talent-dataset-table-container {
   width: 100%;
-  height: 39rem;
+  height: 100%;
+  max-height: 25rem;
+  padding: 1rem;
   overflow-y: auto;
 }
 
 .talent-dataset-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #fff;
 }
 
 .talent-dataset-table-thead-th,
 .talent-dataset-table-tbody-td {
-  border: 1px solid #ddd;
+  border-top: 2px solid #ddd;
   padding: 8px;
   text-align: left;
   font-family: "Josefin Sans", sans-serif;
@@ -26,13 +46,12 @@
   color: #918e8e;
 }
 
-.fixed-column {
-  background-color: #f9f9f9;
-  font-family: "Source Sans 3", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.6rem;
-  color: #636060;
+.talent-dataset-table tbody tr:nth-child(odd) {
+  background-color: #f7f6f6;
+}
+
+.talent-dataset-fixed-column {
+  padding-left: 1.5rem;
 }
 
 .talent-dataset-buttons {

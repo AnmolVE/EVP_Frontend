@@ -54,76 +54,78 @@ function PrimaryResearchResults({
 
   return (
     <>
-      <div className="primaryResearchResults-top">
-        <p className="primaryResearchResults-para-heading">
-          Primary Research Results
-        </p>
-        <p className="primaryResearchResults-para">
-          Validate your Primary Research data before it goes to next step.
-        </p>
-      </div>
-      <div className="primaryResearchResults-information">
-        <div className="primaryResearchResults-information-fields">
-          <label>Existing Employees</label>
-          <textarea
-            onChange={handleInputChange}
-            name="existing_employees"
-            value={primaryResearchData?.existing_employees || ""}
-          ></textarea>
+      <div className="primaryResearchResults-main-container">
+        <div className="primaryResearchResults-top">
+          <p className="primaryResearchResults-para-heading">
+            Primary Research Results
+          </p>
+          <p className="primaryResearchResults-para">
+            Validate your Primary Research data before it goes to next step.
+          </p>
         </div>
-        <div className="primaryResearchResults-information-fields">
-          <label>Alumni</label>
-          <textarea
-            onChange={handleInputChange}
-            name="alumni"
-            value={primaryResearchData?.alumni || ""}
-          ></textarea>
+        <div className="primaryResearchResults-information">
+          <div className="primaryResearchResults-information-fields">
+            <label>Existing Employees</label>
+            <textarea
+              onChange={handleInputChange}
+              name="existing_employees"
+              value={primaryResearchData?.existing_employees || ""}
+            ></textarea>
+          </div>
+          <div className="primaryResearchResults-information-fields">
+            <label>Alumni</label>
+            <textarea
+              onChange={handleInputChange}
+              name="alumni"
+              value={primaryResearchData?.alumni || ""}
+            ></textarea>
+          </div>
+          <div className="primaryResearchResults-information-fields">
+            <label>Targeted Talent</label>
+            <textarea
+              onChange={handleInputChange}
+              name="targeted_talent"
+              value={primaryResearchData?.targeted_talent || ""}
+            ></textarea>
+          </div>
+          <div className="primaryResearchResults-information-fields">
+            <label>Leadership</label>
+            <textarea
+              onChange={handleInputChange}
+              name="leadership"
+              value={primaryResearchData?.leadership || ""}
+            ></textarea>
+          </div>
+          <div className="primaryResearchResults-information-fields">
+            <label>Recruiters</label>
+            <textarea
+              onChange={handleInputChange}
+              name="recruiters"
+              value={primaryResearchData?.recruiters || ""}
+            ></textarea>
+          </div>
+          <div className="primaryResearchResults-information-fields">
+            <label>Clients</label>
+            <textarea
+              onChange={handleInputChange}
+              name="clients"
+              value={primaryResearchData?.clients || ""}
+            ></textarea>
+          </div>
+          <div className="primaryResearchResults-information-fields">
+            <label>Offer Drops</label>
+            <textarea
+              onChange={handleInputChange}
+              name="offer_drops"
+              value={primaryResearchData?.offer_drops || ""}
+            ></textarea>
+          </div>
         </div>
-        <div className="primaryResearchResults-information-fields">
-          <label>Targeted Talent</label>
-          <textarea
-            onChange={handleInputChange}
-            name="targeted_talent"
-            value={primaryResearchData?.targeted_talent || ""}
-          ></textarea>
+        <div className="primaryResearchResults-buttons">
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
         </div>
-        <div className="primaryResearchResults-information-fields">
-          <label>Leadership</label>
-          <textarea
-            onChange={handleInputChange}
-            name="leadership"
-            value={primaryResearchData?.leadership || ""}
-          ></textarea>
-        </div>
-        <div className="primaryResearchResults-information-fields">
-          <label>Recruiters</label>
-          <textarea
-            onChange={handleInputChange}
-            name="recruiters"
-            value={primaryResearchData?.recruiters || ""}
-          ></textarea>
-        </div>
-        <div className="primaryResearchResults-information-fields">
-          <label>Clients</label>
-          <textarea
-            onChange={handleInputChange}
-            name="clients"
-            value={primaryResearchData?.clients || ""}
-          ></textarea>
-        </div>
-        <div className="primaryResearchResults-information-fields">
-          <label>Offer Drops</label>
-          <textarea
-            onChange={handleInputChange}
-            name="offer_drops"
-            value={primaryResearchData?.offer_drops || ""}
-          ></textarea>
-        </div>
-      </div>
-      <div className="primaryResearchResults-buttons">
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
       </div>
     </>
   );

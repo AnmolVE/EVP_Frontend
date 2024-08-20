@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../bars/Navbar";
+import Footer from "../bars/Footer";
 import "./CompanyDetail.css";
 import CompanyDetailsLeftbar from "./CompanyDetailsLeftbar";
 import { useSelector } from "react-redux";
@@ -229,6 +230,7 @@ function CompanyDetail() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

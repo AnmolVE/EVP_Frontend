@@ -9,6 +9,7 @@ import UserProfile from "./components/user-profile/UserProfile";
 import PrivateRoutes from "./components/utils/privateroutes/PrivateRoutes";
 import LandingPage from "./components/landingpage/LandingPage";
 import MasterVectorDatabase from "./components/admin/master-vector-database/MasterVectorDatabase";
+import Footer from "./components/bars/Footer";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           </Route>
           <Route element={<Login />} path="/login" />
           <Route element={<Navbar />} path="/navbar" />
+          <Route element={<Footer />} path="/footer" />
         </Routes>
       </BrowserRouter>
     </>

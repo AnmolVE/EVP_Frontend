@@ -54,26 +54,28 @@ function Alignment({
 
   return (
     <>
-      <div className="alignment-top">
-        <p className="alignment-para-heading">Alignment</p>
-        <p className="alignment-para">
-          Validate your Alignment data before it goes to next section.
-        </p>
-      </div>
-      <div className="alignment-information">
-        <div className="alignment-information-fields">
-          <label>What we want to be known for</label>
-          <textarea
-            onChange={handleInputChange}
-            name="what_we_want_to_be_known_for"
-            value={alignmentData?.what_we_want_to_be_known_for || ""}
-          ></textarea>
+      <div className="alignment-main-container">
+        <div className="alignment-top">
+          <p className="alignment-para-heading">Alignment</p>
+          <p className="alignment-para">
+            Validate your Alignment data before it goes to next section.
+          </p>
         </div>
-      </div>
-      <div className="alignment-buttons">
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
+        <div className="alignment-information">
+          <div className="alignment-information-fields">
+            <label>What we want to be known for</label>
+            <textarea
+              onChange={handleInputChange}
+              name="what_we_want_to_be_known_for"
+              value={alignmentData?.what_we_want_to_be_known_for || ""}
+            ></textarea>
+          </div>
+        </div>
+        <div className="alignment-buttons">
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
       </div>
     </>
   );

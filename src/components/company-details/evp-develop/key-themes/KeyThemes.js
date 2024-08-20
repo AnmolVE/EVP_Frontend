@@ -54,26 +54,28 @@ function KeyThemes({
 
   return (
     <>
-      <div className="keyThemes-top">
-        <p className="keyThemes-para-heading">Key Themes</p>
-        <p className="keyThemes-para">
-          Validate your Key Themes data before it goes to next step.
-        </p>
-      </div>
-      <div className="keyThemes-information">
-        <div className="keyThemes-information-fields">
-          <label>Top Key Themes</label>
-          <textarea
-            onChange={handleInputChange}
-            name="top_key_themes"
-            value={keyThemesData?.top_key_themes || ""}
-          ></textarea>
+      <div className="keyThemes-main-container">
+        <div className="keyThemes-top">
+          <p className="keyThemes-para-heading">Key Themes</p>
+          <p className="keyThemes-para">
+            Validate your Key Themes data before it goes to next step.
+          </p>
         </div>
-      </div>
-      <div className="keyThemes-buttons">
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
+        <div className="keyThemes-information">
+          <div className="keyThemes-information-fields">
+            <label>Top Key Themes</label>
+            <textarea
+              onChange={handleInputChange}
+              name="top_key_themes"
+              value={keyThemesData?.top_key_themes || ""}
+            ></textarea>
+          </div>
+        </div>
+        <div className="keyThemes-buttons">
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
       </div>
     </>
   );

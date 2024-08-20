@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 
 import "./PrimaryResearch.css";
 
@@ -9,8 +10,10 @@ function PrimaryResearch() {
   const tokens = JSON.parse(localStorage.getItem("tokens"));
   const accessToken = tokens.access;
 
+  const [calendlyLink, setCalendlyLink] = useState("");
+
   const [interviewInputFields, setInterviewInputFields] = useState([
-    { id: 1, value: "" },
+    { id: 1, name: "", email: "" },
   ]);
   const maxInterviewInputFields = 5;
 
@@ -25,15 +28,17 @@ function PrimaryResearch() {
   const [transcriptFiles, setTranscriptFiles] = useState([]);
   const fileInputRef = useRef(null);
 
-  const [designFileNames, setDesignFileNames] = useState(["Upload documents"]);
-  const [designFiles, setDesignFiles] = useState([]);
-  const designFileInputRef = useRef(null);
+  const handleInterviewInputFieldChange = (index, field, value) => {
+    const newFields = [...interviewInputFields];
+    newFields[index][field] = value;
+    setInterviewInputFields(newFields);
+  };
 
   const handleAddInterviewInputField = () => {
     if (interviewInputFields.length < maxInterviewInputFields) {
       setInterviewInputFields([
         ...interviewInputFields,
-        { id: interviewInputFields.length + 1, value: "" },
+        { id: interviewInputFields.length + 1, name: "", email: "" },
       ]);
     } else {
       alert("Not allowed to add more than 5 input fields");
@@ -42,11 +47,11 @@ function PrimaryResearch() {
 
   const handleSendInterviewEmails = () => {
     const interviewEmailAddresses = interviewInputFields
-      .map((field) => field.value)
+      .map((field) => field.name && field.email)
       .filter((email) => email);
     if (interviewEmailAddresses.length > 0) {
       const subject = "Interview Invitation";
-      const body = `Dear Candidate, \n\nWe would like to invite you for a 1-on-1 interview. Please let us know your availability.\n\nBest regards,\n${companyName}`;
+      const body = `Dear Candidate,\n\nYou have been selected to participate in an Employee Value Proposition (EVP) development exercise.\nPlease click on the link below to select a suitable slot for the 1-to-1 interview:\n\n${calendlyLink}\n\nBest regards,\n${companyName}`;
 
       const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
         interviewEmailAddresses.join(",")
@@ -127,52 +132,6 @@ function PrimaryResearch() {
     }
   };
 
-  const handleDesignFileChange = (event) => {
-    const selectedFiles = Array.from(event.target.files);
-    const designFileNames = selectedFiles.map((file) => file.name);
-    setDesignFileNames(designFileNames);
-    setDesignFiles(selectedFiles);
-  };
-
-  const handleDesignSVGClick = () => {
-    designFileInputRef.current.click();
-  };
-
-  const handleDesignSubmit = async (e) => {
-    e.preventDefault();
-
-    const formData = new FormData();
-    designFiles.forEach((file) => {
-      formData.append("documents", file);
-    });
-
-    // for (let [key, value] of formData.entries()) {
-    //   console.log(`${key}: ${value}`);
-    // }
-
-    try {
-      const response = await fetch(
-        `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${accessToken}`,
-          },
-          body: formData,
-        }
-      );
-
-      if (response.ok) {
-        const data = await response.json();
-        console.log(data);
-      } else {
-        console.error("Failed to submit design principles:");
-      }
-    } catch (error) {
-      console.error("Error submitting design principles:", error);
-    }
-  };
-
   return (
     <>
       <div className="primaryResearch-main-container">
@@ -209,6 +168,21 @@ function PrimaryResearch() {
             <div className="primary-research-nextContainer">
               <h1>Send Meeting Requests</h1>
               <div className="primary-research-dataGather">
+                <div className="primary-research-calendly">
+                  <label>Add Calendly Account Link</label>
+                  <input
+                    type="text"
+                    value={calendlyLink}
+                    onChange={(e) => setCalendlyLink(e.target.value)}
+                  />
+                  <a
+                    href="https://calendly.com/login"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Create Calendly Account
+                  </a>
+                </div>
                 <div className="primary-research-interview">
                   <label>1-on-1-interview</label>
                   {interviewInputFields.map((field, index) => (
@@ -217,13 +191,27 @@ function PrimaryResearch() {
                       className="primary-research-interview-inputField"
                     >
                       <input
+                        type="text"
+                        placeholder="Enter name"
+                        value={field.name}
+                        onChange={(e) => {
+                          handleInterviewInputFieldChange(
+                            index,
+                            "name",
+                            e.target.value
+                          );
+                        }}
+                      />
+                      <input
                         type="email"
                         placeholder="Enter email address"
-                        value={field.value}
+                        value={field.email}
                         onChange={(e) => {
-                          const newFields = [...interviewInputFields];
-                          newFields[index].value = e.target.value;
-                          setInterviewInputFields(newFields);
+                          handleInterviewInputFieldChange(
+                            index,
+                            "email",
+                            e.target.value
+                          );
                         }}
                       />
                       {index === interviewInputFields.length - 1 &&
@@ -239,7 +227,7 @@ function PrimaryResearch() {
                     className="primary-research-interview-button"
                     onClick={handleSendInterviewEmails}
                   >
-                    Send
+                    Create
                   </button>
                 </div>
                 <div className="primary-research-thinkTanks">
@@ -323,49 +311,6 @@ function PrimaryResearch() {
                   ))}
                 </div>
                 <button type="submit" className="transcript-button">
-                  Submit
-                </button>
-                <svg
-                  fill="#000000"
-                  height="20"
-                  width="20"
-                  version="1.1"
-                  id="Layer_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <g>
-                    <g>
-                      <path d="M256,0c-54.013,0-97.955,43.943-97.955,97.955v338.981c0,41.39,33.674,75.064,75.064,75.064c41.39,0,75.064-33.674,75.064-75.064V122.511c0-28.327-23.046-51.375-51.375-51.375c-28.327,0-51.374,23.047-51.374,51.375v296.911h31.347V122.511c0-11.042,8.984-20.028,20.028-20.028s20.028,8.985,20.028,20.028v314.424c0,24.106-19.612,43.717-43.718,43.717c-24.106,0-43.717-19.612-43.717-43.717V97.955c0-36.727,29.88-66.608,66.608-66.608s66.608,29.881,66.608,66.608v321.467h31.347V97.955C353.955,43.943,310.013,0,256,0z" />
-                    </g>
-                  </g>
-                </svg>
-                <br />
-              </form>
-            </div>
-          </div>
-          <div className="design-container">
-            <div className="design-nextContainer">
-              <h1>Design Principles</h1>
-              <form className="design-form" onSubmit={handleDesignSubmit}>
-                <input
-                  type="file"
-                  ref={designFileInputRef}
-                  onChange={handleDesignFileChange}
-                  style={{ display: "none" }}
-                  multiple
-                />
-                <div
-                  className="design-file-display-area"
-                  onClick={handleDesignSVGClick}
-                >
-                  {designFileNames.map((name, index) => (
-                    <div key={index} className="design-file-name">
-                      {name}
-                    </div>
-                  ))}
-                </div>
-                <button type="submit" className="design-button">
                   Submit
                 </button>
                 <svg

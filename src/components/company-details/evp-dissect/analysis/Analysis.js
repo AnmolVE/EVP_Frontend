@@ -54,38 +54,41 @@ function Analysis({
 
   return (
     <>
-      <div className="analysis-top">
-        <p className="analysis-para-heading">Analysis</p>
-        <p className="analysis-para">
-          Validate your Analysis data before it goes to next step.
-        </p>
-      </div>
-      <div className="analysis-information">
-        <div className="analysis-information-fields">
-          <label>What is Working Well for the Organization</label>
-          <textarea
-            onChange={handleInputChange}
-            name="what_is_working_well_for_the_organization"
-            value={
-              analysisData?.what_is_working_well_for_the_organization || ""
-            }
-          ></textarea>
+      <div className="analysis-main-container">
+        <div className="analysis-top">
+          <p className="analysis-para-heading">Analysis</p>
+          <p className="analysis-para">
+            Validate your Analysis data before it goes to next step.
+          </p>
         </div>
-        <div className="analysis-information-fields">
-          <label>What is Not Working Well for the Organization</label>
-          <textarea
-            onChange={handleInputChange}
-            name="what_is_not_working_well_for_the_organization"
-            value={
-              analysisData?.what_is_not_working_well_for_the_organization || ""
-            }
-          ></textarea>
+        <div className="analysis-information">
+          <div className="analysis-information-fields">
+            <label>What is Working Well for the Organization</label>
+            <textarea
+              onChange={handleInputChange}
+              name="what_is_working_well_for_the_organization"
+              value={
+                analysisData?.what_is_working_well_for_the_organization || ""
+              }
+            ></textarea>
+          </div>
+          <div className="analysis-information-fields">
+            <label>What is Not Working Well for the Organization</label>
+            <textarea
+              onChange={handleInputChange}
+              name="what_is_not_working_well_for_the_organization"
+              value={
+                analysisData?.what_is_not_working_well_for_the_organization ||
+                ""
+              }
+            ></textarea>
+          </div>
         </div>
-      </div>
-      <div className="analysis-buttons">
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
+        <div className="analysis-buttons">
+          <button type="submit" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
       </div>
     </>
   );

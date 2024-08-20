@@ -118,6 +118,13 @@ function TalentDataset() {
 
   return (
     <div className="talent-dataset-main-container">
+      <div className="talent-dataset-top">
+        <p className="talent-dataset-para-heading">Talent Dataset</p>
+        <p className="talent-dataset-para">
+          Validate current or frequently hired-for job opportunities before it
+          goes to Develop section.
+        </p>
+      </div>
       <div className="talent-dataset-table-container">
         <table className="talent-dataset-table">
           <thead>
@@ -133,7 +140,7 @@ function TalentDataset() {
             {talentDatasetData &&
               talentDatasetData.map((data, index) => (
                 <tr key={data.id}>
-                  <td className="talent-dataset-table-tbody-td">{`${
+                  <td className="talent-dataset-table-tbody-td talent-dataset-fixed-column">{`${
                     index + 1
                   }`}</td>
                   <td className="talent-dataset-table-tbody-td">{data.area}</td>

@@ -15,8 +15,7 @@
 }
 
 .evp-embedment {
-  height: 34rem;
-  max-height: 34rem;
+  height: 30rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
