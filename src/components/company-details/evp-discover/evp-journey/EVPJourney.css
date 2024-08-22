@@ -32,7 +32,6 @@
 .evp-journey-info-para {
   font-family: "Roboto";
   font-size: 1.3rem;
-  color: #808080;
 }
 
 .evp-journey-information-bottom {
@@ -54,7 +53,6 @@
   font-family: "Roboto";
   font-size: 1.3rem;
   list-style-type: decimal;
-  color: #808080;
 }
 
 .evp-journey-image {
@@ -75,7 +73,41 @@
 }
 
 @media (max-width: 1440px) {
+  .evp-journey-information {
+    gap: 2rem;
+  }
+
+  .evp-journey-information-top-para-heading {
+    font-size: 2.5rem;
+  }
+
+  .evp-journey-para {
+    font-size: 2rem;
+  }
+
+  .evp-journey-info-para {
+    font-size: 1.15rem;
+  }
+
+  .evp-journey-information-bottom-unordered-list {
+    font-size: 1.15rem;
+  }
+
   .evp-journey-image-figure {
     width: 85%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .evp-journey-para {
+    font-size: 1.7rem;
+  }
+
+  .evp-journey-information {
+    gap: 1rem;
+  }
+
+  .evp-journey-image-figure {
+    width: 100%;
   }
 }

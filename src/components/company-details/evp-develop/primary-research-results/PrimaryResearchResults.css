@@ -46,7 +46,6 @@
   font-style: normal;
   font-weight: 500;
   font-size: 1.6rem;
-  color: #636060;
 }
 
 .primaryResearchResults-information-fields textarea {
@@ -54,7 +53,6 @@
   min-height: 6rem;
   border: 1px solid #dddcdc;
   border-radius: 4px;
-  background-color: #f8f8f8;
   font-family: "Roboto";
   font-size: 1.5rem;
   color: #918e8e;
@@ -64,27 +62,40 @@
 }
 
 .primaryResearchResults-buttons {
-  width: 15%;
+  width: 10%;
   height: 2.5rem;
 }
 
 .primaryResearchResults-buttons button {
   width: 100%;
   height: 100%;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.3rem;
-  background-image: linear-gradient(to right, #9c4f98, #6193b8);
-  color: #fff;
   font-family: "Roboto";
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-size: 1.2rem;
-  box-shadow: 2px 2px 2px #888888;
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media (max-width: 1440px) {
   .primaryResearchResults-information {
-    max-height: 35rem;
+    max-height: 21rem;
+  }
+
+  .primaryResearchResults-main-container {
+    grid-template-rows: 6rem 1fr 2rem;
+  }
+
+  .primaryResearchResults-para-heading {
+    font-size: 2.5rem;
+  }
+
+  .primaryResearchResults-para {
+    font-size: 2rem;
+  }
+
+  .primaryResearchResults-information-fields textarea {
+    min-height: 3rem;
+    font-size: 1.4rem;
   }
 }

@@ -23,9 +23,6 @@ function EVPPromise() {
             <tr className="evp-promise-table-thead-tr">
               <th className="evp-promise-table-thead-th">Themes</th>
               <th className="evp-promise-table-thead-th">
-                What makes this theme distinctive
-              </th>
-              <th className="evp-promise-table-thead-th">
                 What employees can expect
               </th>
               <th className="evp-promise-table-thead-th">
@@ -39,9 +36,6 @@ function EVPPromise() {
                 <tr key={item.id}>
                   <td className="evp-promise-table-tbody-td fixed-column">
                     {item.theme}
-                  </td>
-                  <td className="evp-promise-table-tbody-td">
-                    {item.what_makes_this_theme_distinctive}
                   </td>
                   <td className="evp-promise-table-tbody-td">
                     {item.what_employees_can_expect}

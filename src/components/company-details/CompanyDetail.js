@@ -231,6 +231,9 @@ function CompanyDetail() {
         </div>
       </div>
       <Footer />
+      {/* <div className="company-detail-next-button">
+        <button>Next</button>
+      </div> */}
     </div>
   );
 }

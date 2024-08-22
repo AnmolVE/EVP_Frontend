@@ -47,9 +47,10 @@ function Top4Themes({ pillars, companyName, accessToken }) {
       <div className="top-4-themes-data">
         {pillarState.map((pillar) => (
           <div className="top-4-themes-tabs" key={pillar.id}>
-            <input
+            <textarea
               className="top-4-themes-tabs-input-1"
               type="text"
+              placeholder="Enter Theme name"
               value={pillar.tab_name}
               onChange={(e) =>
                 handleThemesInputChange(pillar.id, "tab_name", e.target.value)
@@ -58,6 +59,7 @@ function Top4Themes({ pillars, companyName, accessToken }) {
             <textarea
               className="top-4-themes-tabs-input-2"
               type="text"
+              placeholder="Enter Description"
               value={pillar.tabs_data}
               onChange={(e) =>
                 handleThemesInputChange(pillar.id, "tabs_data", e.target.value)

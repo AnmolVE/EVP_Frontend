@@ -5,7 +5,6 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   padding-top: 2rem;
   border-right: 0.1px solid #a3a0a0;
 }
@@ -30,18 +29,42 @@
 
 .company-detail-below-firstContainer-list-items {
   padding-left: 23%;
+  padding-top: 0.5rem;
+  padding-bottom: 0.8rem;
 }
 
 .company-detail-below-firstContainer-evp-journey-progress-bar {
   width: 70%;
   height: 10px;
   margin-top: 0.5rem;
-  background-color: #f1efef;
+  background-color: #b3b0b0;
 }
 
 .company-detail-below-firstContainer-evp-journey-progress-bar span {
   display: block;
   width: 50%;
   height: 100%;
-  background-color: #bbbaba;
+  background-color: #716e6e;
+}
+
+.active {
+  background-color: #f5f3f3;
+}
+
+.company-detail-below-firstContainer-list-items:hover {
+  background-color: #f5f3f3;
+}
+
+@media (max-width: 1024px) {
+  .company-detail-below-firstContainer {
+    gap: 0.5rem;
+  }
+
+  .company-detail-below-firstContainer-list-items {
+    padding-left: 18%;
+  }
+
+  .company-detail-below-firstContainer p {
+    font-size: 1.4rem;
+  }
 }

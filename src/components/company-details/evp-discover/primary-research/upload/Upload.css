@@ -1,0 +1,83 @@
+.upload-main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+}
+
+.upload-container {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.upload-header {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.upload-header-para-heading {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.upload-header-para {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.upload-documents {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.upload-file-display-area {
+  width: 100%;
+  min-height: 2.5rem;
+  max-height: 10rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-file-name {
+  font-size: 1rem;
+  color: #655c5c;
+  font-weight: 500;
+}
+
+.upload-button {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-button button {
+  height: 100%;
+  width: 65%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}

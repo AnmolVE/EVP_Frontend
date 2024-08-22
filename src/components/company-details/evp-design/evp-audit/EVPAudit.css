@@ -23,6 +23,9 @@
   text-align: left;
   font-family: "Roboto";
   font-size: 1.5rem;
+}
+
+.evp-audit-table-tbody-td {
   color: #918e8e;
 }
 

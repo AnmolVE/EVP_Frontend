@@ -2,6 +2,10 @@ import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import "./PrimaryResearch.css";
+import Interview from "./interview/Interview";
+import ThinkTank from "./think-tank/ThinkTank";
+import Survey from "./survey/Survey";
+import Upload from "./upload/Upload";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -9,6 +13,8 @@ function PrimaryResearch() {
   const companyName = localStorage.getItem("companyName");
   const tokens = JSON.parse(localStorage.getItem("tokens"));
   const accessToken = tokens.access;
+
+  const [activeTab, setActiveTab] = useState("Interview");
 
   const [calendlyLink, setCalendlyLink] = useState("");
 
@@ -141,7 +147,7 @@ function PrimaryResearch() {
               Primary Research
             </p>
             <p className="primaryResearch-para">
-              First-hand information adds credibility to your research
+              First-hand information adds credibility and depth to your research
             </p>
             <p className="primaryResearch-info-para">
               The result is a strong and compelling EVP that is equal parts
@@ -163,174 +169,51 @@ function PrimaryResearch() {
             </ul>
           </div>
         </div>
-        <div className="primaryResearch-uploadContainer">
-          <div className="primary-research-container">
-            <div className="primary-research-nextContainer">
-              <h1>Send Meeting Requests</h1>
-              <div className="primary-research-dataGather">
-                <div className="primary-research-calendly">
-                  <label>Add Calendly Account Link</label>
-                  <input
-                    type="text"
-                    value={calendlyLink}
-                    onChange={(e) => setCalendlyLink(e.target.value)}
-                  />
-                  <a
-                    href="https://calendly.com/login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Create Calendly Account
-                  </a>
-                </div>
-                <div className="primary-research-interview">
-                  <label>1-on-1-interview</label>
-                  {interviewInputFields.map((field, index) => (
-                    <div
-                      key={field.id}
-                      className="primary-research-interview-inputField"
-                    >
-                      <input
-                        type="text"
-                        placeholder="Enter name"
-                        value={field.name}
-                        onChange={(e) => {
-                          handleInterviewInputFieldChange(
-                            index,
-                            "name",
-                            e.target.value
-                          );
-                        }}
-                      />
-                      <input
-                        type="email"
-                        placeholder="Enter email address"
-                        value={field.email}
-                        onChange={(e) => {
-                          handleInterviewInputFieldChange(
-                            index,
-                            "email",
-                            e.target.value
-                          );
-                        }}
-                      />
-                      {index === interviewInputFields.length - 1 &&
-                        interviewInputFields.length <
-                          maxInterviewInputFields && (
-                          <button onClick={handleAddInterviewInputField}>
-                            +
-                          </button>
-                        )}
-                    </div>
-                  ))}
-                  <button
-                    className="primary-research-interview-button"
-                    onClick={handleSendInterviewEmails}
-                  >
-                    Create
-                  </button>
-                </div>
-                <div className="primary-research-thinkTanks">
-                  {thinkTanks.map((thinkTank, thinkTankIndex) => (
-                    <div
-                      key={thinkTank.id}
-                      className="primary-research-thinkTank"
-                    >
-                      <div className="primary-research-thinkTank-label">
-                        <label>Think Tank</label>
-                        {thinkTankIndex === thinkTanks.length - 1 &&
-                          thinkTanks.length < maxThinkTanks && (
-                            <button onClick={handleAddThinkTank}>+</button>
-                          )}
-                      </div>
-                      <div className="primary-research-thinkTank-inputField">
-                        <input type="text" placeholder="Enter name" />
-                        <input type="text" placeholder="Enter description" />
-                        {thinkTank.emails.map((email, emailIndex) => (
-                          <div
-                            key={email.id}
-                            className="primary-research-thinkTank-inputField-more"
-                          >
-                            <input
-                              type="email"
-                              placeholder="Enter email address"
-                              value={email.value}
-                              onChange={(e) => {
-                                const newThinkTanks = [...thinkTanks];
-                                newThinkTanks[thinkTankIndex].emails[
-                                  emailIndex
-                                ].value = e.target.value;
-                                setThinkTanks(newThinkTanks);
-                              }}
-                            />
-                            {emailIndex === thinkTank.emails.length - 1 &&
-                              thinkTank.emails.length <
-                                maxThinkTankInputFields && (
-                                <button
-                                  onClick={() =>
-                                    handleAddThinkTankInputField(thinkTankIndex)
-                                  }
-                                >
-                                  +
-                                </button>
-                              )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                  <button className="primary-research-thinkTank-button">
-                    Send
-                  </button>
-                </div>
-              </div>
+        <div className="primaryResearch-dataGather">
+          <div className="primaryResearch-dataGather-tabs">
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Interview" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Interview")}
+            >
+              <p>Interview</p>
+            </div>
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Think Tank" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Think Tank")}
+            >
+              <p>Think Tank</p>
+            </div>
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Survey" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Survey")}
+            >
+              <p>Survey</p>
+            </div>
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Upload" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Upload")}
+            >
+              <p>Upload</p>
             </div>
           </div>
-          <div className="transcript-container">
-            <div className="transcript-nextContainer">
-              <h1>Upload Transcripts</h1>
-              <form
-                className="transcript-form"
-                onSubmit={handleTranscriptSubmit}
-              >
-                <input
-                  type="file"
-                  ref={fileInputRef}
-                  onChange={handleTranscriptFileChange}
-                  style={{ display: "none" }}
-                  multiple
-                />
-                <div
-                  className="transcript-file-display-area"
-                  onClick={handleTranscriptSVGClick}
-                >
-                  {fileNames.map((name, index) => (
-                    <div key={index} className="transcript-file-name">
-                      {name}
-                    </div>
-                  ))}
-                </div>
-                <button type="submit" className="transcript-button">
-                  Submit
-                </button>
-                <svg
-                  fill="#000000"
-                  height="20"
-                  width="20"
-                  version="1.1"
-                  id="Layer_1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 512 512"
-                >
-                  <g>
-                    <g>
-                      <path d="M256,0c-54.013,0-97.955,43.943-97.955,97.955v338.981c0,41.39,33.674,75.064,75.064,75.064c41.39,0,75.064-33.674,75.064-75.064V122.511c0-28.327-23.046-51.375-51.375-51.375c-28.327,0-51.374,23.047-51.374,51.375v296.911h31.347V122.511c0-11.042,8.984-20.028,20.028-20.028s20.028,8.985,20.028,20.028v314.424c0,24.106-19.612,43.717-43.718,43.717c-24.106,0-43.717-19.612-43.717-43.717V97.955c0-36.727,29.88-66.608,66.608-66.608s66.608,29.881,66.608,66.608v321.467h31.347V97.955C353.955,43.943,310.013,0,256,0z" />
-                    </g>
-                  </g>
-                </svg>
-                <br />
-              </form>
-            </div>
+          <div className="primaryResearch-dataGather-content">
+            {activeTab === "Interview" ? (
+              <Interview />
+            ) : activeTab === "Think Tank" ? (
+              <ThinkTank />
+            ) : activeTab === "Survey" ? (
+              <Survey />
+            ) : activeTab === "Upload" ? (
+              <Upload />
+            ) : null}
           </div>
         </div>
       </div>

@@ -41,8 +41,11 @@
   border-top: 2px solid #ddd;
   padding: 8px;
   text-align: left;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Roboto";
   font-size: 1.5rem;
+}
+
+.talent-dataset-table-tbody-td {
   color: #918e8e;
 }
 
@@ -55,27 +58,31 @@
 }
 
 .talent-dataset-buttons {
-  width: 15%;
+  width: 10%;
   height: 2.5rem;
 }
 
 .talent-dataset-buttons button {
   width: 100%;
   height: 100%;
-  border: none;
-  cursor: pointer;
-  border-radius: 0.3rem;
-  background-image: linear-gradient(to right, #9c4f98, #6193b8);
-  color: #fff;
   font-family: "Roboto";
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-size: 1.2rem;
-  box-shadow: 2px 2px 2px #888888;
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
 }
 
 @media (max-width: 1440px) {
   .talent-dataset-table-container {
-    height: 34rem;
+    height: 20rem;
+  }
+
+  .talent-dataset-para-heading {
+    font-size: 2.5rem;
+  }
+
+  .talent-dataset-para {
+    font-size: 2rem;
   }
 }

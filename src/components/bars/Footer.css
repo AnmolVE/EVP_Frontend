@@ -1,33 +1,8 @@
-.footer-main-container {
-  width: 100%;
-  height: 95px;
-  padding: 1rem 1rem 0 1rem;
-  background-color: #fafafa;
-}
-
 .footer-container {
-  height: 100%;
   width: 100%;
+  height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-}
-
-.footer-content {
-  height: 100%;
-  width: 18rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.footer-content-para-heading {
-  font-family: "Roboto";
-  font-size: 1rem;
-}
-
-.footer-content-para {
-  font-family: "Roboto";
-  font-size: 0.9rem;
-  color: #918e8e;
+  padding: 1rem;
+  background-color: #fafafa;
 }
