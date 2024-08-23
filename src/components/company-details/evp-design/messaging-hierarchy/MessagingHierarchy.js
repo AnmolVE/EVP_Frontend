@@ -1,7 +1,74 @@
 import React, { useState, useEffect } from "react";
+import { DndProvider, useDrag, useDrop } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+
 import "./MessagingHierarchy.css";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
+const ItemTypes = {
+  THEME: "theme",
+};
+
+const Theme = ({ theme, index }) => {
+  const [{ isDragging }, drag] = useDrag({
+    type: ItemTypes.THEME,
+    item: { theme, index, from: "left" }, // Add `from` to identify the source
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
+
+  return (
+    <div
+      ref={drag}
+      style={{ opacity: isDragging ? 0.5 : 1, cursor: "move" }}
+      className="messaging-hierarchy-container-left-pillars-content"
+    >
+      <p>{theme}</p>
+    </div>
+  );
+};
+
+const MiddlePillar = ({ theme, index, moveTheme }) => {
+  const [, drop] = useDrop({
+    accept: ItemTypes.THEME,
+    drop: (item) => {
+      if (item.from === "middle" && item.index !== index) {
+        // Moving within middle section
+        moveTheme(item.index, index, "middle");
+      } else if (item.from !== "middle") {
+        // Moving from left or main to middle
+        moveTheme(item.index, index, item.from);
+      }
+    },
+  });
+
+  return (
+    <div
+      ref={drop}
+      className="messaging-hierarchy-container-middle-pillars-supporting-content"
+    >
+      {theme ? <p>{theme}</p> : "Supporting Pillar"}
+    </div>
+  );
+};
+
+const MainPillar = ({ theme, moveTheme }) => {
+  const [, drop] = useDrop({
+    accept: ItemTypes.THEME,
+    drop: (item) => moveTheme(item.index, "main", item.from),
+  });
+
+  return (
+    <div
+      ref={drop}
+      className="messaging-hierarchy-container-middle-pillars-main"
+    >
+      {theme ? <p>{theme}</p> : "Overarching Theme Box"}
+    </div>
+  );
+};
 
 function MessagingHierarchy({
   setPageLoading,
@@ -10,70 +77,47 @@ function MessagingHierarchy({
   companyName,
   accessToken,
 }) {
-  const [mainTheme, setMainTheme] = useState("");
-  const [selectedPillars, setSelectedPillars] = useState(["", "", ""]);
+  const [themes] = useState(newPillars);
+  const [mainTheme, setMainTheme] = useState(null);
+  const [middleThemes, setMiddleThemes] = useState([null, null, null]);
+
   const [tagline, setTagline] = useState("");
-  const [storedPillars, setStoredPillars] = useState([]);
-  const [storedNewPillars, setStoredNewPillars] = useState([]);
 
-  useEffect(() => {
-    setStoredPillars(pillars);
-    setStoredNewPillars(newPillars);
-  }, [pillars, newPillars]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      setPageLoading(true);
-      try {
-        const response = await fetch(
-          `${REACT_APP_BASE_URL}/messaging-hierarchy/${companyName}/`,
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${accessToken}`,
-            },
-          }
-        );
-        if (response.ok) {
-          const responseData = await response.json();
-          setMainTheme(responseData.main_theme || "");
-          setSelectedPillars([
-            responseData.pillar_1 || "",
-            responseData.pillar_2 || "",
-            responseData.pillar_3 || "",
-          ]);
-          setTagline(responseData.tagline || "");
-        }
-        setPageLoading(false);
-      } catch (error) {
-        console.log("Error fetching data:", error);
+  const moveTheme = (fromIndex, toIndex, from) => {
+    if (from === "left") {
+      const theme = themes[fromIndex];
+
+      if (toIndex === "main") {
+        setMainTheme(theme);
+      } else {
+        const newMiddleThemes = [...middleThemes];
+        newMiddleThemes[toIndex] = theme;
+        setMiddleThemes(newMiddleThemes);
       }
-    };
-    fetchData();
-  }, []);
-
-  const handleMainThemeChange = (e) => {
-    setMainTheme(e.target.value);
+    } else if (from === "middle") {
+      const newMiddleThemes = [...middleThemes];
+      const [movedTheme] = newMiddleThemes.splice(fromIndex, 1);
+      newMiddleThemes.splice(toIndex, 0, movedTheme);
+      setMiddleThemes(newMiddleThemes);
+    } else if (from === "main" && toIndex !== "main") {
+      const newMiddleThemes = [...middleThemes];
+      newMiddleThemes[toIndex] = mainTheme;
+      setMainTheme(null);
+      setMiddleThemes(newMiddleThemes);
+    }
   };
 
-  const handlePillarChange = (index, e) => {
-    const newSelectedPillars = [...selectedPillars];
-    newSelectedPillars[index] = e.target.value;
-    setSelectedPillars(newSelectedPillars);
-  };
-
-  const handleGenerateTagline = async (e) => {
+  const generateTagline = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const requestBody = {
         company_name: companyName,
         main_theme: mainTheme,
-        pillars: selectedPillars,
+        pillars: middleThemes.filter((theme) => theme !== null),
       };
-      console.log(requestBody);
-
-      console.log("Request Body:", requestBody);
 
       const response = await fetch(`${REACT_APP_BASE_URL}/tagline/`, {
         method: "POST",
@@ -88,84 +132,99 @@ function MessagingHierarchy({
         const responseData = await response.json();
         setTagline(responseData.tagline || "");
       }
+      setLoading(false);
     } catch (error) {
-      alert(`Error: ${error.message}`);
+      console.error("Error while generating tagline:", error);
     }
   };
 
   const handleSubmitTagline = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
+      const requestBody = {
+        company_name: companyName,
+        main_theme: mainTheme,
+        pillars: middleThemes,
+        tagline: tagline,
+      };
+      console.log(middleThemes);
+
       const response = await fetch(`${REACT_APP_BASE_URL}/tagline/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${accessToken}`,
         },
-        body: JSON.stringify({
-          company_name: companyName,
-          main_theme: mainTheme,
-          pillars: selectedPillars,
-          tagline: tagline,
-        }),
+        body: JSON.stringify(requestBody),
       });
+
       if (response.ok) {
+        const responseData = await response.json();
+        setTagline(responseData.tagline || "");
         alert("Data submitted successfully");
       }
+      setLoading(false);
     } catch (error) {
-      alert(`Error: ${error.message}`);
+      console.error("Error while generating tagline:", error);
     }
   };
 
+  if (loading) {
+    return <div>Hello</div>;
+  }
+
   return (
-    <div className="messaging-hierarchy">
-      <p>
-        Choose the option to select the main theme and 3 pillars to generate a
-        tagline
-      </p>
-      <div className="messaging-hierarchy-themes-and-pillars">
-        <div className="messaging-hierarchy-themes-and-pillars-inside">
-          <label>Overarching Theme</label>
-          <select onChange={handleMainThemeChange} value={mainTheme}>
-            {storedPillars.map((pillar) => (
-              <option key={pillar.tab_name} value={pillar.tab_name}>
-                {pillar.tab_name}
-              </option>
-            ))}
-          </select>
-        </div>
-        {selectedPillars.map((pillar, index) => (
-          <div
-            key={index}
-            className="messaging-hierarchy-themes-and-pillars-inside"
-          >
-            <label>Pillar {index + 1}</label>
-            <select
-              value={pillar}
-              onChange={(e) => handlePillarChange(index, e)}
-            >
-              <option value="">{""}</option>
-              {storedNewPillars.map((pillar) => (
-                <option key={pillar} value={pillar}>
-                  {pillar}
-                </option>
+    <DndProvider backend={HTML5Backend}>
+      <div className="messaging-hierarchy-main-container">
+        <div className="messaging-hierarchy-container">
+          <div className="messaging-hierarchy-container-left">
+            <div className="messaging-hierarchy-container-left-pillars">
+              {themes.map((theme, index) => (
+                <Theme key={index} theme={theme} index={index} />
               ))}
-            </select>
+            </div>
+            <div className="messaging-hierarchy-container-left-info">
+              <p>
+                Drag and drop the most important and relevant theme into the
+                overarching theme box
+              </p>
+            </div>
           </div>
-        ))}
-        <button onClick={handleGenerateTagline}>Generate Tagline</button>
+          <div className="messaging-hierarchy-container-middle">
+            <div className="messaging-hierarchy-container-middle-pillars">
+              <MainPillar theme={mainTheme} moveTheme={moveTheme} />
+              <div className="messaging-hierarchy-container-middle-pillars-supporting">
+                {middleThemes.map((theme, index) => (
+                  <MiddlePillar
+                    key={index}
+                    theme={theme}
+                    index={index}
+                    moveTheme={moveTheme}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="messaging-hierarchy-container-middle-button">
+              <button onClick={generateTagline}>Generate EVP</button>
+            </div>
+          </div>
+          <div className="messaging-hierarchy-container-right">
+            <div className="messaging-hierarchy-container-right-textarea">
+              <textarea
+                type="text"
+                name="tagline"
+                value={tagline}
+                onChange={(e) => setTagline(e.target.value)}
+              />
+            </div>
+            <div className="messaging-hierarchy-container-right-button">
+              <button onClick={handleSubmitTagline}>Submit</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="messaging-hierarchy-content">
-        <textarea
-          onChange={(e) => setTagline(e.target.value)}
-          name="tagline"
-          value={tagline}
-        />
-        <button onClick={handleSubmitTagline} className="tagline-submit-button">
-          Submit
-        </button>
-      </div>
-    </div>
+    </DndProvider>
   );
 }
 

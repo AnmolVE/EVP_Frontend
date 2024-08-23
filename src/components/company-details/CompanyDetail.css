@@ -153,9 +153,24 @@
 }
 
 .company-detail-next-button {
+  height: 4rem;
+  width: 4rem;
   position: absolute;
   top: 90%;
-  left: 96%;
+  left: 95%;
+  background-color: #e1ebee;
+  border-radius: 50%;
+}
+
+.company-detail-next-button button {
+  height: 100%;
+  width: 100%;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 @media (max-width: 1440px) {
