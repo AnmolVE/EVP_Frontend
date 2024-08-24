@@ -1,4 +1,4 @@
-.evp-embedment-container {
+/* .evp-embedment-container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -76,4 +76,126 @@
     max-height: 31rem;
     width: 84%;
   }
+} */
+
+.evp-embedment-main-container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.evp-embedment-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5rem 1fr 2.5rem;
+  gap: 0.5rem;
+}
+
+.evp-embedment-tabs {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0.2rem;
+}
+
+.evp-embedment-tab {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d5d4d4;
+  cursor: pointer;
+}
+
+.evp-embedment-tab:hover {
+  background-color: #247d97;
+}
+
+.evp-embedment-tab.active {
+  color: #fff;
+  background-color: #247d97;
+}
+
+.evp-embedment-tab p {
+  font-family: "Roboto";
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.evp-embedment-table-container {
+  height: 27rem;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.evp-embedment-table {
+  height: 100%;
+  width: 100%;
+}
+
+.evp-embedment-table th,
+.evp-embedment-table td {
+  padding: 8px 12px;
+  text-align: left;
+  font-family: "Roboto";
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+}
+
+.evp-embedment-table th {
+  background-color: #dfdede;
+  font-size: 1.4rem;
+}
+
+.evp-embedment-table td:nth-child(1),
+.evp-embedment-table th:nth-child(1) {
+  width: 20%;
+}
+
+.evp-embedment-table td:nth-child(2),
+.evp-embedment-table th:nth-child(2) {
+  width: 60%;
+}
+
+.evp-embedment-table td:nth-child(3),
+.evp-embedment-table th:nth-child(3) {
+  width: 20%;
+  text-align: center;
+}
+
+.evp-embedment-table tr:nth-child(odd) {
+  background-color: #f7f6f6;
+}
+
+.evp-embedment-table tr:nth-child(even) {
+  background-color: #dfdede;
+}
+
+.evp-embedment-table input[type="checkbox"] {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.evp-embedment-table tr.selected {
+  background-color: #5fa95f;
+  color: white;
+}
+
+.evp-embedment-button {
+  width: 10%;
+  height: 100%;
+}
+
+.evp-embedment-button button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
 }

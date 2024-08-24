@@ -117,6 +117,25 @@ function CompanyDetail() {
     }
   };
 
+  const sectionMappings = {
+    DISCOVER,
+    DEVELOP,
+    DISSECT,
+    DESIGN,
+    DELIVER,
+  };
+
+  const getNextSection = (currentSection) => {
+    const sectionNames = Object.keys(sectionMappings);
+    const currentIndex = sectionNames.indexOf(currentSection);
+
+    if (currentIndex !== -1 && currentIndex < sectionNames.length - 1) {
+      return sectionNames[currentIndex + 1];
+    }
+
+    return null;
+  };
+
   const handleNextClick = () => {
     const currentIndex = listItems.findIndex(
       (item) => item.name === currentListItem
@@ -124,7 +143,17 @@ function CompanyDetail() {
 
     if (currentIndex !== -1 && currentIndex < listItems.length - 1) {
       const nextElement = listItems[currentIndex + 1];
+      console.log(nextElement);
       setCurrentListItem(nextElement?.name);
+    } else {
+      const nextSection = getNextSection(pageName);
+      console.log(nextSection);
+
+      if (nextSection) {
+        setPageName(nextSection);
+        setListItems(sectionMappings[nextSection]);
+        setCurrentListItem(sectionMappings[nextSection][0]?.name);
+      }
     }
   };
 
