@@ -263,7 +263,12 @@ function CompanyDetail() {
                 accessToken={accessToken}
               />
             ) : pageName === "DELIVER" ? (
-              <Deliver currentListItem={currentListItem} />
+              <Deliver
+                setPageLoading={setPageLoading}
+                companyName={companyName}
+                accessToken={accessToken}
+                currentListItem={currentListItem}
+              />
             ) : (
               ""
             )}

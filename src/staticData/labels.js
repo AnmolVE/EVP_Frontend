@@ -30,13 +30,13 @@ export const DESIGN = [
   { name: "EVP Promise", icon: CompanyInfoIcon },
   { name: "EVP Audit", icon: CompanyInfoIcon },
   { name: "EVP Embedment", icon: CompanyInfoIcon },
-  { name: "EVP Handbook", icon: CompanyInfoIcon },
 ];
 
 export const DELIVER = [
   { name: "EVP Statement & Pillars", icon: CompanyInfoIcon },
   { name: "EVP Hero Creative", icon: CompanyInfoIcon },
   { name: "EVP Talking Points", icon: CompanyInfoIcon },
+  { name: "EVP Handbook", icon: CompanyInfoIcon },
   { name: "EVP Execution Plan", icon: CompanyInfoIcon },
 ];
 

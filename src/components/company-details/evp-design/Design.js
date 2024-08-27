@@ -8,7 +8,6 @@ import EVPDefinition from "./evp-definition/EVPDefinition";
 import EVPPromise from "./evp-promise/EVPPromise";
 import EVPAudit from "./evp-audit/EVPAudit";
 import EVPEmbedment from "./evp-embedment/EVPEmbedment";
-import EVPHandbook from "./evp-handbook/EVPHandbook";
 
 function Design({
   setPageLoading,
@@ -48,12 +47,6 @@ function Design({
         <EVPAudit />
       ) : currentListItem === "EVP Embedment" ? (
         <EVPEmbedment companyName={companyName} accessToken={accessToken} />
-      ) : currentListItem === "EVP Handbook" ? (
-        <EVPHandbook
-          setPageLoading={setPageLoading}
-          companyName={companyName}
-          accessToken={accessToken}
-        />
       ) : null}
     </>
   );

@@ -20,13 +20,13 @@ const Theme = ({ theme, index }) => {
   });
 
   return (
-    <div
+    <li
       ref={drag}
       style={{ opacity: isDragging ? 0.5 : 1, cursor: "move" }}
       className="messaging-hierarchy-container-left-pillars-content"
     >
-      <p>{theme}</p>
-    </div>
+      {theme}
+    </li>
   );
 };
 
@@ -49,7 +49,7 @@ const MiddlePillar = ({ theme, index, moveTheme }) => {
       ref={drop}
       className="messaging-hierarchy-container-middle-pillars-supporting-content"
     >
-      {theme ? <p>{theme}</p> : "Supporting Pillar"}
+      {theme ? <p>{theme}</p> : `Pillar ${index + 1}`}
     </div>
   );
 };
@@ -65,7 +65,7 @@ const MainPillar = ({ theme, moveTheme }) => {
       ref={drop}
       className="messaging-hierarchy-container-middle-pillars-main"
     >
-      {theme ? <p>{theme}</p> : "Overarching Theme Box"}
+      {theme ? <p>{theme}</p> : "Main Theme"}
     </div>
   );
 };
@@ -178,35 +178,37 @@ function MessagingHierarchy({
     <DndProvider backend={HTML5Backend}>
       <div className="messaging-hierarchy-main-container">
         <div className="messaging-hierarchy-container">
-          <div className="messaging-hierarchy-container-left">
-            <div className="messaging-hierarchy-container-left-pillars">
-              {themes.map((theme, index) => (
-                <Theme key={index} theme={theme} index={index} />
-              ))}
-            </div>
-            <div className="messaging-hierarchy-container-left-info">
-              <p>
-                Drag and drop the most important and relevant theme into the
-                overarching theme box
-              </p>
-            </div>
-          </div>
-          <div className="messaging-hierarchy-container-middle">
-            <div className="messaging-hierarchy-container-middle-pillars">
-              <MainPillar theme={mainTheme} moveTheme={moveTheme} />
-              <div className="messaging-hierarchy-container-middle-pillars-supporting">
-                {middleThemes.map((theme, index) => (
-                  <MiddlePillar
-                    key={index}
-                    theme={theme}
-                    index={index}
-                    moveTheme={moveTheme}
-                  />
+          <div className="messaging-hierarchy-container-left-part">
+            <div className="messaging-hierarchy-container-left">
+              <ul className="messaging-hierarchy-container-left-pillars">
+                {themes.map((theme, index) => (
+                  <Theme key={index} theme={theme} index={index} />
                 ))}
+              </ul>
+              <div className="messaging-hierarchy-container-left-info">
+                <p>
+                  Drag and drop the most important and relevant theme into the
+                  Main Theme box
+                </p>
               </div>
             </div>
-            <div className="messaging-hierarchy-container-middle-button">
-              <button onClick={generateTagline}>Generate EVP</button>
+            <div className="messaging-hierarchy-container-middle">
+              <div className="messaging-hierarchy-container-middle-pillars">
+                <MainPillar theme={mainTheme} moveTheme={moveTheme} />
+                <div className="messaging-hierarchy-container-middle-pillars-supporting">
+                  {middleThemes.map((theme, index) => (
+                    <MiddlePillar
+                      key={index}
+                      theme={theme}
+                      index={index}
+                      moveTheme={moveTheme}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="messaging-hierarchy-container-middle-button">
+                <button onClick={generateTagline}>Generate EVP</button>
+              </div>
             </div>
           </div>
           <div className="messaging-hierarchy-container-right">

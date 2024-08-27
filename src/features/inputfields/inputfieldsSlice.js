@@ -22,9 +22,9 @@ const apiEndpoints = {
     "EVP Definition": `${REACT_APP_BASE_URL}/evp-definition/`,
     "EVP Promise": `${REACT_APP_BASE_URL}/evp-promise/`,
     "EVP Audit": `${REACT_APP_BASE_URL}/evp-audit/`,
-    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
   },
   deliver: {
+    "EVP Handbook": `${REACT_APP_BASE_URL}/evp-handbook/`,
     "EVP Execution Plan": `${REACT_APP_BASE_URL}/evp-execution-plan/`,
     "EVP Statement & Pillars": `${REACT_APP_BASE_URL}/evp-statement-and-pillars/`,
   },
