@@ -13,7 +13,6 @@ function Navbar() {
           <figure className="navbar-stimulai-img">
             <img src={NavbarStimulaiImage} alt="Stimulai" />
           </figure>
-          <p>EVP Generating Module</p>
         </div>
         <div className="navbar-right">
           <figure className="navbar-user-img">

@@ -7,9 +7,11 @@ import CustomerDetail from "./components/customer-details/CustomerDetail";
 import CompanyDetail from "./components/company-details/CompanyDetail";
 import UserProfile from "./components/user-profile/UserProfile";
 import PrivateRoutes from "./components/utils/privateroutes/PrivateRoutes";
-import LandingPage from "./components/landingpage/LandingPage";
+import LandingPage from "./components/home/LandingPage";
 import MasterVectorDatabase from "./components/admin/master-vector-database/MasterVectorDatabase";
 import Footer from "./components/bars/Footer";
+import TalentInsights from "./components/home/talent-insights/TalentInsights";
+import IndustryTrends from "./components/home/industry-trends/IndustryTrends";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route element={<Login />} path="/login" />
           <Route element={<Navbar />} path="/navbar" />
           <Route element={<Footer />} path="/footer" />
+          <Route element={<TalentInsights />} path="/talent-insights" />
+          <Route element={<IndustryTrends />} path="/industry-trends" />
         </Routes>
       </BrowserRouter>
     </>

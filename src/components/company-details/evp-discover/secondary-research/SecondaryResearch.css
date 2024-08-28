@@ -57,30 +57,61 @@
   list-style-type: decimal;
 }
 
-.secondaryResearch-right {
+.secondaryResearch-dataGather {
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  gap: 1rem;
+  grid-template-rows: 50px 1fr;
+  gap: 0.5rem;
 }
 
-.secondaryResearch-uploadContainer {
+.secondaryResearch-dataGather-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.2rem;
+}
+
+.secondaryResearch-dataGather-tabs-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.secondaryResearch-dataGather-tabs-name p {
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.secondaryResearch-dataGather-tabs-name:hover {
+  background-color: #d5d4d4;
+}
+
+.secondaryResearch-dataGather-tabs-name.active {
+  background-color: #d5d4d4;
+}
+
+.secondaryResearch-dataGather-content {
+  background-color: #f5f5f5;
+}
+
+.company-container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 1rem;
-  background-color: #efeeee;
+  padding: 3rem 1rem 1rem 1rem;
 }
 
-.secondaryResearch-uploadContainer h1 {
+.company-container h1 {
   font-family: "Roboto";
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
-.secondaryResearch-form {
+.company-form {
   height: 100%;
   width: 50%;
   display: flex;
@@ -89,7 +120,7 @@
   gap: 1rem;
 }
 
-.secondaryResearch-form input {
+.company-form input {
   width: 100%;
   padding: 0.5rem;
   border-radius: 0.4rem;
@@ -99,7 +130,7 @@
   text-align: center;
 }
 
-.secondaryResearch-button {
+.company-button {
   width: 60%;
   height: 2.6rem;
   font-family: "Roboto";
@@ -110,7 +141,7 @@
   cursor: pointer;
 }
 
-.secondaryResearch-file-display-area {
+.company-file-display-area {
   width: 100%;
   min-height: 2.5rem;
   max-height: 5rem;
@@ -126,56 +157,67 @@
   cursor: pointer;
 }
 
-.secondaryResearch-file-name {
+.company-file-name {
   font-size: 1rem;
   color: #655c5c;
   font-weight: 500;
 }
 
-.secondaryResearch-design-principles-container {
+.design-container {
   height: 100%;
-  padding: 1rem;
-  background-color: #efeeee;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 45px;
+  justify-items: center;
+  gap: 1rem;
+  padding: 3rem 1rem 1rem 1rem;
 }
 
-.secondaryResearch-design-principles {
+.design-content {
   height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr 3fr;
-  justify-items: center;
+  grid-template-rows: 8rem 1fr;
+}
+
+.design-content-top {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 
-.secondaryResearch-design-principles h1 {
+.design-content-top h1 {
   font-family: "Roboto";
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 
-.secondaryResearch-design-principles label {
+.design-content-top p {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 1rem;
 }
 
-.secondaryResearch-add-design-principles-container {
-  height: 100%;
+.design-content-add-container {
+  height: 18rem;
   width: 100%;
-  max-height: 8rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  overflow: auto;
+  overflow-y: auto;
 }
 
-.secondaryResearch-add-design-principles {
+.design-content-add {
   width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  gap: 1rem;
 }
 
-.secondaryResearch-add-design-principles textarea {
+.design-content-add textarea {
   min-width: 90%;
   padding: 0.5rem;
   background-color: #f8f8f8;
@@ -187,7 +229,88 @@
   overflow-y: hidden;
 }
 
-.secondaryResearch-add-design-principles button {
+.design-content-add button {
+  font-family: "Roboto";
+  font-size: 2rem;
+  font-weight: 500;
+  color: #6f6d6d;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.design-button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.design-button button {
+  height: 100%;
+  width: 30%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* .design-top {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 4rem 1fr;
+  justify-items: center;
+  gap: 1rem;
+} */
+
+/* .design-top h1 {
+  font-family: "Roboto";
+  font-size: 2rem;
+} */
+
+/* .design-top label {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+} */
+
+/* .design-bottom {
+  height: 100%;
+  width: 100%;
+  max-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: auto;
+} */
+
+/* .design-bottom-textarea {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+} */
+
+/* .design-bottom-textarea textarea {
+  min-width: 90%;
+  padding: 0.5rem;
+  background-color: #f8f8f8;
+  font-family: "Roboto";
+  font-size: 1rem;
+  border: 1px solid #dddcdc;
+  color: #918e8e;
+  resize: vertical;
+  overflow-y: hidden;
+} */
+
+/* .design-bottom-textarea button {
   font-family: "Roboto";
   font-size: 2rem;
   font-weight: 500;
@@ -197,7 +320,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
+} */
 
 @media (max-width: 1440px) {
   .secondaryResearch-main-container {

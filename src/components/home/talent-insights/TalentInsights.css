@@ -1,0 +1,53 @@
+.talent-insights-main-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  padding: 5rem;
+}
+
+.talent-insights-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 5rem 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-heading h1 {
+  font-family: "Roboto";
+  font-size: 2.5rem;
+}
+
+.talent-insights-below {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.talent-insights-below-left {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.talent-insights-below-left-data {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: 2px solid #dddcdc;
+}
+
+.talent-insights-below-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: 2px solid #dddcdc;
+}

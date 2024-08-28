@@ -1,8 +1,12 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import "./LandingPage.css";
 
 function LandingPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="landing-page-main-container">
       <section className="landing-page-section-1">
@@ -39,7 +43,9 @@ function LandingPage() {
         <div className="landing-page-section-2-left">
           <ul>
             <li>Employer Brand Index</li>
-            <li>Employee Value Proposition</li>
+            <li onClick={() => navigate("/company-detail")}>
+              Employee Value Proposition
+            </li>
             <li>Recruitment Campaign</li>
             <li>Social & Digital Content</li>
             <li>Internal Communications</li>

@@ -5,13 +5,7 @@
   width: 100%;
   background-color: #232020;
   color: white;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
-}
-
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .navbar-stimulai-img {
