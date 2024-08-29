@@ -1,38 +1,48 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useCheckboxSelection } from "./useCheckboxSelection";
-import {
-  contentTypes,
-  compensationAndBenefitsContentAssets,
-} from "./embedment-constants";
-
-function CompensationAndBenefits({ onAssetsSelected }) {
-  const { selectedRows, handleCheckboxChange, getSelectedContentAssets } =
-    useCheckboxSelection(compensationAndBenefitsContentAssets);
-
-  useEffect(() => {
-    onAssetsSelected(getSelectedContentAssets());
-  }, [selectedRows]);
-
+function CompensationAndBenefits() {
   return (
-    <tbody className="evp-embedment-table-tbody">
-      {contentTypes.map((type, index) => (
-        <tr
-          key={index}
-          className={selectedRows.includes(index) ? "selected" : ""}
-        >
-          <td>{type}</td>
-          <td>{compensationAndBenefitsContentAssets[index]}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={selectedRows.includes(index)}
-              onChange={() => handleCheckboxChange(index)}
-            />
-          </td>
-        </tr>
-      ))}
-    </tbody>
+    <div className="evp-embedment-content">
+      <div className="evp-embedment-left">
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 1</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 2</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 3</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 4</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 5</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 6</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 7</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 8</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 9</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 10</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 11</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Compensation & Benefits 12</p>
+        </div>
+      </div>
+      <div className="evp-embedment-right">Compensation & Benefits Content</div>
+    </div>
   );
 }
 

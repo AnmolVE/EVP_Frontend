@@ -1,35 +1,48 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useCheckboxSelection } from "./useCheckboxSelection";
-import { contentTypes, onBoardingContentAssets } from "./embedment-constants";
-
-function OnBoarding({ onAssetsSelected }) {
-  const { selectedRows, handleCheckboxChange, getSelectedContentAssets } =
-    useCheckboxSelection(onBoardingContentAssets);
-
-  useEffect(() => {
-    onAssetsSelected(getSelectedContentAssets());
-  }, [selectedRows]);
-
+function OnBoarding() {
   return (
-    <tbody className="evp-embedment-table-tbody">
-      {contentTypes.map((type, index) => (
-        <tr
-          key={index}
-          className={selectedRows.includes(index) ? "selected" : ""}
-        >
-          <td>{type}</td>
-          <td>{onBoardingContentAssets[index]}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={selectedRows.includes(index)}
-              onChange={() => handleCheckboxChange(index)}
-            />
-          </td>
-        </tr>
-      ))}
-    </tbody>
+    <div className="evp-embedment-content">
+      <div className="evp-embedment-left">
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 1</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 2</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 3</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 4</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 5</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 6</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 7</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 8</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 9</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 10</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 11</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Onboarding 12</p>
+        </div>
+      </div>
+      <div className="evp-embedment-right">Onboarding Content</div>
+    </div>
   );
 }
 

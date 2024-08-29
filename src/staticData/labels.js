@@ -13,7 +13,7 @@ export const DISCOVER = [
 export const DEVELOP = [
   { name: "Attributes of Great Place", icon: CompanyInfoIcon },
   { name: "Key Themes", icon: CompanyInfoIcon },
-  { name: "Primary Research Results", icon: CompanyInfoIcon },
+  { name: "Audience Wise Messaging", icon: CompanyInfoIcon },
   { name: "Talent Insights", icon: CompanyInfoIcon },
 ];
 
@@ -50,7 +50,7 @@ export const listItemEndpointMapping = {
   Brand: `${REACT_APP_BASE_URL}/brand`,
   "Attributes of Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace`,
   "Key Themes": `${REACT_APP_BASE_URL}/key-themes`,
-  "Audience-Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging`,
+  "Audience Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging`,
   Analysis: `${REACT_APP_BASE_URL}/swot-analysis`,
   Alignment: `${REACT_APP_BASE_URL}/alignment`,
 };

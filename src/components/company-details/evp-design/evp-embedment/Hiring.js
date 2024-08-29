@@ -1,35 +1,48 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useCheckboxSelection } from "./useCheckboxSelection";
-import { contentTypes, hiringContentAssets } from "./embedment-constants";
-
-function Hiring({ onAssetsSelected }) {
-  const { selectedRows, handleCheckboxChange, getSelectedContentAssets } =
-    useCheckboxSelection(hiringContentAssets);
-
-  useEffect(() => {
-    onAssetsSelected(getSelectedContentAssets());
-  }, [selectedRows]);
-
+function Hiring() {
   return (
-    <tbody className="evp-embedment-table-tbody">
-      {contentTypes.map((type, index) => (
-        <tr
-          key={index}
-          className={selectedRows.includes(index) ? "selected" : ""}
-        >
-          <td>{type}</td>
-          <td>{hiringContentAssets[index]}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={selectedRows.includes(index)}
-              onChange={() => handleCheckboxChange(index)}
-            />
-          </td>
-        </tr>
-      ))}
-    </tbody>
+    <div className="evp-embedment-content">
+      <div className="evp-embedment-left">
+        <div className="evp-embedment-left-box">
+          <p>Hiring 1</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 2</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 3</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 4</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 5</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 6</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 7</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 8</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 9</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 10</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 11</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Hiring 12</p>
+        </div>
+      </div>
+      <div className="evp-embedment-right">Hiring Content</div>
+    </div>
   );
 }
 

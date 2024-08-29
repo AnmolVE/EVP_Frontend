@@ -3,7 +3,7 @@ import React from "react";
 import "./Develop.css";
 import AttributeOfGreatPlace from "./attribute-of-great-place/AttributeOfGreatPlace";
 import KeyThemes from "./key-themes/KeyThemes";
-import PrimaryResearchResults from "./primary-research-results/PrimaryResearchResults";
+import AudienceWiseMessaging from "./audience-wise-messaging/AudienceWiseMessaging";
 import TalentInsights from "./talent-insights/TalentInsights";
 
 function Develop({
@@ -33,9 +33,9 @@ function Develop({
             accessToken={accessToken}
           />
         </div>
-      ) : currentListItem === "Primary Research Results" ? (
+      ) : currentListItem === "Audience Wise Messaging" ? (
         <div className="develop-main-container">
-          <PrimaryResearchResults
+          <AudienceWiseMessaging
             currentListItem={currentListItem}
             listItemEndpointMapping={listItemEndpointMapping}
             companyName={companyName}

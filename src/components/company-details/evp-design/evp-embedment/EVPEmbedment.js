@@ -13,41 +13,6 @@ import AlumniRelations from "./AlumniRelations";
 
 function EVPEmbedment({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState("Pre-hiring");
-  const [selectedAssets, setSelectedAssets] = useState([]);
-
-  const handleAssetsSelected = (assets) => {
-    setSelectedAssets(assets);
-  };
-
-  const handleSubmit = async () => {
-    const payload = {
-      [activeTab]: selectedAssets,
-    };
-
-    try {
-      const response = await fetch("http://127.0.0.1:8000/api/evp-embedmen/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({
-          company_name: companyName,
-          touchpoints: payload,
-        }),
-      });
-
-      if (response.ok) {
-        const responseData = await response.json();
-        console.log(responseData);
-        console.log("Data submitted successfully");
-      } else {
-        console.error("Failed to submit data");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
 
   return (
     <div className="evp-embedment-main-container">
@@ -126,48 +91,23 @@ function EVPEmbedment({ companyName, accessToken }) {
             <p>Alumni Relations</p>
           </div>
         </div>
-        <div className="evp-embedment-table-container">
-          <table className="evp-embedment-table">
-            <thead>
-              <tr>
-                <th>Type of Content</th>
-                <th>Content Asset</th>
-                <th>Select</th>
-              </tr>
-            </thead>
-            {activeTab === "Pre-hiring" && (
-              <PreHiring onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Hiring" && (
-              <Hiring onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Onboarding" && (
-              <OnBoarding onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Learning & Development" && (
-              <LearningAndDevelopment onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Compensation & Benefits" && (
-              <CompensationAndBenefits
-                onAssetsSelected={handleAssetsSelected}
-              />
-            )}
-            {activeTab === "Internal Communications" && (
-              <InternalCommunications onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Employee Engagement" && (
-              <EmployeeEngagement onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Separation/Exit" && (
-              <SeparationExit onAssetsSelected={handleAssetsSelected} />
-            )}
-            {activeTab === "Alumni Relations" && (
-              <AlumniRelations onAssetsSelected={handleAssetsSelected} />
-            )}
-          </table>
+        <div className="evp-embedment-content-container">
+          {activeTab === "Pre-hiring" && <PreHiring />}
+          {activeTab === "Hiring" && <Hiring />}
+          {activeTab === "Onboarding" && <OnBoarding />}
+          {activeTab === "Learning & Development" && <LearningAndDevelopment />}
+          {activeTab === "Compensation & Benefits" && (
+            <CompensationAndBenefits />
+          )}
+          {activeTab === "Internal Communications" && (
+            <InternalCommunications />
+          )}
+          {activeTab === "Employee Engagement" && <EmployeeEngagement />}
+          {activeTab === "Separation/Exit" && <SeparationExit />}
+          {activeTab === "Alumni Relations" && <AlumniRelations />}
         </div>
         <div className="evp-embedment-button">
-          <button onClick={handleSubmit}>Submit</button>
+          <button>Submit</button>
         </div>
       </div>
     </div>

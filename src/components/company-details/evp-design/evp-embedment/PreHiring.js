@@ -1,35 +1,27 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useCheckboxSelection } from "./useCheckboxSelection";
-import { contentTypes, preHiringContentAssets } from "./embedment-constants";
+import { preHiringFields } from "./embedment-constants";
 
-function PreHiring({ onAssetsSelected }) {
-  const { selectedRows, handleCheckboxChange, getSelectedContentAssets } =
-    useCheckboxSelection(preHiringContentAssets);
-
-  useEffect(() => {
-    onAssetsSelected(getSelectedContentAssets());
-  }, [selectedRows]);
+function PreHiring() {
+  const handleClick = (field) => {
+    console.log(field);
+  };
 
   return (
-    <tbody className="evp-embedment-table-tbody">
-      {contentTypes.map((type, index) => (
-        <tr
-          key={index}
-          className={selectedRows.includes(index) ? "selected" : ""}
-        >
-          <td>{type}</td>
-          <td>{preHiringContentAssets[index]}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={selectedRows.includes(index)}
-              onChange={() => handleCheckboxChange(index)}
-            />
-          </td>
-        </tr>
-      ))}
-    </tbody>
+    <div className="evp-embedment-content">
+      <div className="evp-embedment-left">
+        {preHiringFields.map((field, index) => (
+          <div
+            key={index}
+            className="evp-embedment-left-box"
+            onClick={() => handleClick(field)}
+          >
+            <p>{field}</p>
+          </div>
+        ))}
+      </div>
+      <div className="evp-embedment-right">PreHiring Content</div>
+    </div>
   );
 }
 

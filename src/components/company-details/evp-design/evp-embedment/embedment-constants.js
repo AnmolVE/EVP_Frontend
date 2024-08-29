@@ -1,31 +1,16 @@
-export const contentTypes = [
-  "Job Descriptions",
-  "Articles / Blogs",
-  "Brochures",
-  "Digital Assets (e.g., Infographics)",
-  "Letters / Emails",
-  "Videos",
-  "Surveys",
-  "Handbooks & Guides",
-  "Social Media Posts",
-  "Newsletters",
-  "Events & Webinars",
-  "Interactive Content",
-];
-
-export const preHiringContentAssets = [
-  "Posting on career sites, social media ads",
-  "Employer brand blog posts",
-  "Company overview brochures, culture brochures",
-  "Employer branding infographics, job role graphics",
-  "Recruitment emails, outreach letters",
-  "Culture videos, employee testimonials",
-  "Candidate feedback surveys",
-  "-",
-  "Employer brand posts, job ads",
-  "Employer brand-focused newsletters",
-  "Career fairs, pre-hire webinars",
-  "Career quizzes, skill assessments",
+export const preHiringFields = [
+  "Social Media Ads",
+  "EVP Blog Post",
+  "EVP Brochure",
+  "EVP Infographic",
+  "Outreach letter to talent",
+  "Culture Video",
+  "Candidate feedback survey",
+  "Employee Testimonial Format",
+  "Referral Letter",
+  "Webinar - Get to know us",
+  "Career Fair",
+  "Skills Assessment Quiz",
 ];
 
 export const hiringContentAssets = [

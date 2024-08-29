@@ -10,7 +10,7 @@ const apiEndpoints = {
   develop: {
     "Attributes of Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
     "Key Themes": `${REACT_APP_BASE_URL}/key-themes/`,
-    "Primary Research Results": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
+    "Audience Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
     "Talent Insights": `${REACT_APP_BASE_URL}/talent-insights/`,
   },
   dissect: {

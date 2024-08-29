@@ -1,38 +1,48 @@
-import React, { useEffect } from "react";
+import React from "react";
 
-import { useCheckboxSelection } from "./useCheckboxSelection";
-import {
-  contentTypes,
-  employeeEngagementContentAssets,
-} from "./embedment-constants";
-
-function EmployeeEngagement({ onAssetsSelected }) {
-  const { selectedRows, handleCheckboxChange, getSelectedContentAssets } =
-    useCheckboxSelection(employeeEngagementContentAssets);
-
-  useEffect(() => {
-    onAssetsSelected(getSelectedContentAssets());
-  }, [selectedRows]);
-
+function EmployeeEngagement() {
   return (
-    <tbody className="evp-embedment-table-tbody">
-      {contentTypes.map((type, index) => (
-        <tr
-          key={index}
-          className={selectedRows.includes(index) ? "selected" : ""}
-        >
-          <td>{type}</td>
-          <td>{employeeEngagementContentAssets[index]}</td>
-          <td>
-            <input
-              type="checkbox"
-              checked={selectedRows.includes(index)}
-              onChange={() => handleCheckboxChange(index)}
-            />
-          </td>
-        </tr>
-      ))}
-    </tbody>
+    <div className="evp-embedment-content">
+      <div className="evp-embedment-left">
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 1</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 2</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 3</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 4</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 5</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 6</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 7</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 8</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 9</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 10</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 11</p>
+        </div>
+        <div className="evp-embedment-left-box">
+          <p>Employee Engagement 12</p>
+        </div>
+      </div>
+      <div className="evp-embedment-right">Employee Engagement Content</div>
+    </div>
   );
 }
 
