@@ -1,10 +1,10 @@
 import React from "react";
 
-import { EVPJourneyImage } from "../../../../assets/images/images";
+import { EVPJourneyImage } from "../../../assets/images/images";
 
 import "./EVPJourney.css";
 
-function EVPJourney({ setCurrentListItem }) {
+function EVPJourney() {
   return (
     <div className="evp-journey-main-container">
       <div className="evp-journey-information">

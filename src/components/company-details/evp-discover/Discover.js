@@ -5,7 +5,7 @@ import PrimaryResearch from "./primary-research/PrimaryResearch";
 import SecondaryResearch from "./secondary-research/SecondaryResearch";
 import CompanyInfo from "./company-info/CompanyInfo";
 import TalentDataset from "./talent-dataset/TalentDataset";
-import EVPJourney from "./evp-journey/EVPJourney";
+import DesignPrinciples from "./design-principles/DesignPrinciples";
 
 function Discover({
   setPageLoading,
@@ -17,8 +17,8 @@ function Discover({
 }) {
   return (
     <>
-      {currentListItem === "EVP Journey" ? (
-        <EVPJourney setCurrentListItem={setCurrentListItem} />
+      {currentListItem === "Design Principles" ? (
+        <DesignPrinciples />
       ) : currentListItem === "Primary Research" ? (
         <PrimaryResearch />
       ) : currentListItem === "Secondary Research" ? (

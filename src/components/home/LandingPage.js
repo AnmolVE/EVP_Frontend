@@ -43,7 +43,7 @@ function LandingPage() {
         <div className="landing-page-section-2-left">
           <ul>
             <li>Employer Brand Index</li>
-            <li onClick={() => navigate("/company-detail")}>
+            <li onClick={() => navigate("/evp-journey")}>
               Employee Value Proposition
             </li>
             <li>Recruitment Campaign</li>

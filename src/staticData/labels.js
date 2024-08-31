@@ -3,7 +3,7 @@ import { CompanyInfoIcon } from "../assets/icons/icons";
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const DISCOVER = [
-  { name: "EVP Journey", icon: CompanyInfoIcon },
+  { name: "Design Principles", icon: CompanyInfoIcon },
   { name: "Primary Research", icon: CompanyInfoIcon },
   { name: "Secondary Research", icon: CompanyInfoIcon },
   { name: "Company Dataset", icon: CompanyInfoIcon },

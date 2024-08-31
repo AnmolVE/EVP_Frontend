@@ -13,13 +13,6 @@ function CompanyInput({ setPageLoading }) {
   const [files, setFiles] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const [activeTab, setActiveTab] = useState("Company Docs");
-
-  const [designPrinciplesTextAreas, setDesignPrinciplesTextAreas] = useState([
-    { id: 1, value: "" },
-  ]);
-  const maxCharacters = 50;
-
   const fileInputRef = useRef(null);
 
   const navigate = useNavigate();
@@ -75,21 +68,6 @@ function CompanyInput({ setPageLoading }) {
     }
   };
 
-  const handleDesignTextChange = (index, value) => {
-    if (value.length <= maxCharacters) {
-      const newDesignPrinciplesTextAreas = [...designPrinciplesTextAreas];
-      newDesignPrinciplesTextAreas[index].value = value;
-      setDesignPrinciplesTextAreas(newDesignPrinciplesTextAreas);
-    }
-  };
-
-  const handleDesignPrinciplesAddTextArea = () => {
-    setDesignPrinciplesTextAreas([
-      ...designPrinciplesTextAreas,
-      { id: designPrinciplesTextAreas.length + 1, value: "" },
-    ]);
-  };
-
   if (loading) {
     return <Loading />;
   }
@@ -128,90 +106,42 @@ function CompanyInput({ setPageLoading }) {
         </div>
         <div className="secondaryResearch-dataGather">
           <div className="secondaryResearch-dataGather-tabs">
-            <div
-              className={`secondaryResearch-dataGather-tabs-name ${
-                activeTab === "Company Docs" ? "active" : ""
-              }`}
-              onClick={() => setActiveTab("Company Docs")}
-            >
+            <div className={`secondaryResearch-dataGather-tabs-name`}>
               <p>Company Docs</p>
-            </div>
-            <div
-              className={`secondaryResearch-dataGather-tabs-name ${
-                activeTab === "Design Principles" ? "active" : ""
-              }`}
-              onClick={() => setActiveTab("Design Principles")}
-            >
-              <p>Design Principles</p>
             </div>
           </div>
           <div className="secondaryResearch-dataGather-content">
-            {activeTab === "Company Docs" ? (
-              <div className="company-container">
-                <h1>Add Documents</h1>
-                <form className="company-form" onSubmit={handleSubmit}>
-                  <input
-                    type="text"
-                    placeholder="Company Name"
-                    value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                  />
-                  <input
-                    type="file"
-                    ref={fileInputRef}
-                    onChange={handleFileChange}
-                    style={{ display: "none" }}
-                    multiple
-                  />
-                  <div
-                    className="company-file-display-area"
-                    onClick={handleSVGClick}
-                  >
-                    {fileNames.map((name, index) => (
-                      <div key={index} className="company-file-name">
-                        {name}
-                      </div>
-                    ))}
-                  </div>
-                  <button type="submit" className="company-button">
-                    Submit
-                  </button>
-                </form>
-              </div>
-            ) : activeTab === "Design Principles" ? (
-              <div className="design-container">
-                <div className="design-content">
-                  <div className="design-content-top">
-                    <h1>Add Principles</h1>
-                    <p>
-                      List up to 5 things you would like your organization to be
-                      known for as an employer
-                    </p>
-                  </div>
-                  <div className="design-content-add-container">
-                    {designPrinciplesTextAreas.map((textArea, index) => (
-                      <div className="design-content-add">
-                        <textarea
-                          type="text"
-                          value={textArea.value}
-                          onChange={(e) =>
-                            handleDesignTextChange(index, e.target.value)
-                          }
-                        />
-                        {index === designPrinciplesTextAreas.length - 1 && (
-                          <button onClick={handleDesignPrinciplesAddTextArea}>
-                            +
-                          </button>
-                        )}
-                      </div>
-                    ))}
-                  </div>
+            <div className="company-container">
+              <h1>Add Documents</h1>
+              <form className="company-form" onSubmit={handleSubmit}>
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                />
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                  style={{ display: "none" }}
+                  multiple
+                />
+                <div
+                  className="company-file-display-area"
+                  onClick={handleSVGClick}
+                >
+                  {fileNames.map((name, index) => (
+                    <div key={index} className="company-file-name">
+                      {name}
+                    </div>
+                  ))}
                 </div>
-                <div className="design-button">
-                  <button>Submit</button>
-                </div>
-              </div>
-            ) : null}
+                <button type="submit" className="company-button">
+                  Submit
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

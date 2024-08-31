@@ -106,9 +106,6 @@ function EVPEmbedment({ companyName, accessToken }) {
           {activeTab === "Separation/Exit" && <SeparationExit />}
           {activeTab === "Alumni Relations" && <AlumniRelations />}
         </div>
-        <div className="evp-embedment-button">
-          <button>Submit</button>
-        </div>
       </div>
     </div>
   );

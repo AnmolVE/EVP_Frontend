@@ -12,6 +12,7 @@ import MasterVectorDatabase from "./components/admin/master-vector-database/Mast
 import Footer from "./components/bars/Footer";
 import TalentInsights from "./components/home/talent-insights/TalentInsights";
 import IndustryTrends from "./components/home/industry-trends/IndustryTrends";
+import EVPJourney from "./components/home/evp-journey/EVPJourney";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route element={<Footer />} path="/footer" />
           <Route element={<TalentInsights />} path="/talent-insights" />
           <Route element={<IndustryTrends />} path="/industry-trends" />
+          <Route element={<EVPJourney />} path="/evp-journey" />
         </Routes>
       </BrowserRouter>
     </>

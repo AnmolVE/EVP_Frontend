@@ -30,6 +30,7 @@ function CompanyDetailsLeftbar({
   const onItemClick = (index) => {
     const selectedItem = listItems[index];
     handleListItemClick(selectedItem.name);
+    console.log(selectedItem.name);
     setSelectedItemIndex(index);
     dispatch(fetchDataForSelectedItem(selectedItem.name));
   };

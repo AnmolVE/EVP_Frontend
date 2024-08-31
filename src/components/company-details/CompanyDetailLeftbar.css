@@ -48,11 +48,11 @@
 }
 
 .active {
-  background-color: #f5f3f3;
+  background-color: #e1ebee;
 }
 
 .company-detail-below-firstContainer-list-items:hover {
-  background-color: #f5f3f3;
+  background-color: #e1ebee;
 }
 
 @media (max-width: 1024px) {
