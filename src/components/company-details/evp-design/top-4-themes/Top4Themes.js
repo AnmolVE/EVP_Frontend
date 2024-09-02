@@ -70,6 +70,7 @@ function Top4Themes({ pillars, companyName, accessToken }) {
       </div>
       <div className="top-4-themes-buttons">
         <button onClick={handleThemesSubmit}>Submit</button>
+        <button>Regenerate</button>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ const MiddlePillar = ({ theme, index, moveTheme }) => {
       ref={drop}
       className="messaging-hierarchy-container-middle-pillars-supporting-content"
     >
-      {theme ? <p>{theme}</p> : `Pillar ${index + 1}`}
+      {theme ? <p>{theme}</p> : `+ Pillar ${index + 1}`}
     </div>
   );
 };
@@ -65,7 +65,7 @@ const MainPillar = ({ theme, moveTheme }) => {
       ref={drop}
       className="messaging-hierarchy-container-middle-pillars-main"
     >
-      {theme ? <p>{theme}</p> : "Main Theme"}
+      {theme ? <p>{theme}</p> : "+ Main Theme"}
     </div>
   );
 };

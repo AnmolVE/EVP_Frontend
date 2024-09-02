@@ -2,10 +2,13 @@ import React, { useState } from "react";
 
 import "./DesignPrinciples.css";
 
-function DesignPrinciples() {
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
+function DesignPrinciples({ companyName, accessToken }) {
   const [designPrinciplesTextAreas, setDesignPrinciplesTextAreas] = useState([
     { id: 1, value: "" },
   ]);
+  const maxDesignPrinciplesTextAreas = 5;
   const maxCharacters = 50;
 
   const handleDesignTextChange = (index, value) => {
@@ -23,6 +26,33 @@ function DesignPrinciples() {
     ]);
   };
 
+  const handleDesignPrinciplesSubmit = async () => {
+    const design_principles = designPrinciplesTextAreas.map(
+      (textArea) => textArea.value
+    );
+
+    try {
+      const response = await fetch(
+        `${REACT_APP_BASE_URL}/design-principles/${companyName}/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: JSON.stringify({ design_principles: design_principles }),
+        }
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+      }
+    } catch (error) {
+      console.error("Error", error);
+    }
+  };
+
   return (
     <div className="design-container">
       <div className="design-content">
@@ -35,21 +65,23 @@ function DesignPrinciples() {
         </div>
         <div className="design-content-add-container">
           {designPrinciplesTextAreas.map((textArea, index) => (
-            <div className="design-content-add">
+            <div key={index} className="design-content-add">
               <textarea
                 type="text"
                 value={textArea.value}
                 onChange={(e) => handleDesignTextChange(index, e.target.value)}
               />
-              {index === designPrinciplesTextAreas.length - 1 && (
-                <button onClick={handleDesignPrinciplesAddTextArea}>+</button>
-              )}
+              {index === designPrinciplesTextAreas.length - 1 &&
+                designPrinciplesTextAreas.length <
+                  maxDesignPrinciplesTextAreas && (
+                  <button onClick={handleDesignPrinciplesAddTextArea}>+</button>
+                )}
             </div>
           ))}
         </div>
       </div>
       <div className="design-button">
-        <button>Submit</button>
+        <button onClick={handleDesignPrinciplesSubmit}>Submit</button>
       </div>
     </div>
   );

@@ -51,12 +51,14 @@
 }
 
 .top-4-themes-buttons {
-  width: 10%;
+  width: 100%;
   height: 100%;
+  display: flex;
+  gap: 1rem;
 }
 
 .top-4-themes-buttons button {
-  width: 100%;
+  width: 10%;
   height: 100%;
   font-family: "Roboto";
   font-size: 1.3rem;

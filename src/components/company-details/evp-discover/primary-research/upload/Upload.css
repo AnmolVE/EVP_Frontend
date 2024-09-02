@@ -7,15 +7,15 @@
 }
 
 .upload-container {
+  height: 100%;
   width: 70%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .upload-header {
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,6 +29,7 @@
 }
 
 .upload-header-para {
+  width: 70%;
   font-family: "Roboto";
   font-size: 1.3rem;
   text-align: center;
@@ -39,22 +40,36 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .upload-file-display-area {
   width: 100%;
   min-height: 2.5rem;
-  max-height: 10rem;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  padding: 0.5rem;
+  max-height: 8rem;
+  display: grid;
+  grid-template-columns: 2rem 1fr;
+  align-items: center;
+  gap: 1rem;
   border: 1px solid #ccc;
   border-radius: 0.4rem;
-  text-align: center;
   cursor: pointer;
+}
+
+.upload-file-svg {
+  height: 100%;
+  width: 100%;
+  align-content: center;
+}
+
+.upload-files {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
 }
 
 .upload-file-name {

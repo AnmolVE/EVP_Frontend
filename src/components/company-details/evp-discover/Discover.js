@@ -18,7 +18,7 @@ function Discover({
   return (
     <>
       {currentListItem === "Design Principles" ? (
-        <DesignPrinciples />
+        <DesignPrinciples companyName={companyName} accessToken={accessToken} />
       ) : currentListItem === "Primary Research" ? (
         <PrimaryResearch />
       ) : currentListItem === "Secondary Research" ? (

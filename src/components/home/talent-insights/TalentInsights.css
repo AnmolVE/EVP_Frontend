@@ -30,17 +30,26 @@
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .talent-insights-below-left-data {
+  height: 100%;
+  width: 100%;
+  border: 2px solid #dddcdc;
+}
+
+.talent-insights-below-left-data-fields {
+  height: 100%;
+  width: 60%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
+  gap: 0.5rem;
   font-family: "Roboto";
   font-size: 1.3rem;
-  border: 2px solid #dddcdc;
+  padding: 4rem;
 }
 
 .talent-insights-below-right {

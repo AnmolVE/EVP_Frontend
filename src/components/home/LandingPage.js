@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -6,6 +6,32 @@ import "./LandingPage.css";
 
 function LandingPage() {
   const navigate = useNavigate();
+
+  const [homePageData, setHomePageData] = useState([]);
+
+  const companyName = localStorage.getItem("companyName");
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/home-page/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ company_name: companyName }),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setHomePageData(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
     <div className="landing-page-main-container">
@@ -56,34 +82,31 @@ function LandingPage() {
         <div className="landing-page-section-2-right">
           <div className="landing-page-section-2-right-container">
             <div className="landing-page-section-2-right-container-info">
-              <p>Your EBI Score is 56% Learn Competitor's score</p>
+              <p>{homePageData?.fact1}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Your Sales Team is on a hiring spree</p>
+              <p>{homePageData?.fact2}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Your Sales Team is on a hiring spree</p>
+              <p>{homePageData?.fact3}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Data Scientists in the Philippines are talking about...</p>
+              <p>{homePageData?.fact4}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Your Positioning Statement is ready to be viewed!</p>
+              <p>{homePageData?.fact5}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Your Sales Team is on a hiring spree</p>
+              <p>{homePageData?.fact6}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Your quarterly results are coming up inform...</p>
+              <p>{homePageData?.fact7}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>
-                Transparency and open communication are working for Get more
-                such insights
-              </p>
+              <p>{homePageData?.fact8}</p>
             </div>
             <div className="landing-page-section-2-right-container-info">
-              <p>Your Sales Team is on a hiring spree</p>
+              <p>{homePageData?.fact9}</p>
             </div>
           </div>
         </div>
