@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "./TalentInsights.css";
 
+import { NavbarUserImage } from "../../../assets/images/images";
+
 import {
   talentInsightsFields,
   talentInsightsGeographies,
@@ -79,12 +81,14 @@ function TalentInsights() {
 
       if (response.ok) {
         const responseData = await response.json();
-        setCandidatePersona(responseData.candidate_persona);
+        setCandidatePersona(responseData);
       }
     } catch (error) {
       console.error("Error", error);
     }
   };
+
+  console.log(candidatePersona);
 
   return (
     <div className="talent-insights-main-container">
@@ -167,49 +171,84 @@ function TalentInsights() {
             <div className="talent-insights-below-right-first">
               <div className="talent-insights-below-right-first-top">
                 <figure className="talent-insights-below-right-first-top-image">
-                  <img src="" alt="user" />
+                  <img src={NavbarUserImage} alt="user" />
                 </figure>
                 <div className="talent-insights-below-right-first-top-info">
-                  <p>Name: </p>
-                  <p>Age: </p>
-                  <p>Location: </p>
-                  <p>Highest Qualification: </p>
-                  <p>Work Experience: </p>
-                  <p>Previous Companies: </p>
-                  <p>Salary INR: </p>
+                  <p>
+                    <span>Name: </span>
+                    {candidatePersona?.name}
+                  </p>
+                  <p>
+                    <span>Age: </span>
+                    {candidatePersona?.age}
+                  </p>
+                  <p>
+                    <span>Location: </span>
+                    {candidatePersona?.location}
+                  </p>
+                  <p>
+                    <span>Highest Qualification: </span>
+                    {candidatePersona?.highest_qualification}
+                  </p>
+                  <p>
+                    <span>Work Experience: </span>
+                    {candidatePersona?.work_experience}
+                  </p>
+                  <p>
+                    <span>Previous Companies: </span>
+                    {candidatePersona?.previous_companies}
+                  </p>
+                  <p>
+                    <span>Salary INR: </span>
+                    {candidatePersona?.salary_inr}
+                  </p>
                 </div>
               </div>
               <div className="talent-insights-below-right-first-bottom">
-                <p>Personality</p>
-                <div></div>
+                <div className="talent-insights-below-right-first-bottom-content">
+                  <h2>Personality</h2>
+                  <p>{candidatePersona?.personality}</p>
+                </div>
               </div>
             </div>
             <div className="talent-insights-below-right-second">
               <div className="talent-insights-below-right-second-top">
-                <p>Goals</p>
-                <div></div>
+                <div className="talent-insights-below-right-second-top-content">
+                  <h2>Goals</h2>
+                  <p>{candidatePersona?.goals}</p>
+                </div>
               </div>
               <div className="talent-insights-below-right-second-middle">
-                <p>Frustration</p>
-                <div></div>
+                <div className="talent-insights-below-right-second-middle-content">
+                  <h2>Frustration</h2>
+                  <p>{candidatePersona?.frustration}</p>
+                </div>
               </div>
               <div className="talent-insights-below-right-second-bottom">
-                <p>Bio</p>
-                <div></div>
+                <div className="talent-insights-below-right-second-bottom-content">
+                  <h2>Bio</h2>
+                  <p>{candidatePersona?.bio}</p>
+                </div>
               </div>
             </div>
             <div className="talent-insights-below-right-third">
               <div className="talent-insights-below-right-third-top">
-                <p>Motivation</p>
-                <div></div>
+                <div className="talent-insights-below-right-third-top-content">
+                  <h2>Motivation</h2>
+                  <p>{candidatePersona?.motivation}</p>
+                </div>
               </div>
               <div className="talent-insights-below-right-third-middle">
-                <p>Topics of Interest</p>
-                <div></div>
+                <div className="talent-insights-below-right-third-middle-content">
+                  <h2>Topics of Interest</h2>
+                  <p>{candidatePersona?.topics_of_interest}</p>
+                </div>
               </div>
               <div className="talent-insights-below-right-third-bottom">
-                <p>Preferred Channels</p>
-                <div></div>
+                <div className="talent-insights-below-right-third-bottom-content">
+                  <h2>Preferred Channels</h2>
+                  <p>{candidatePersona?.preferred_channels}</p>
+                </div>
               </div>
             </div>
           </div>

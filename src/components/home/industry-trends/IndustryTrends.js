@@ -5,8 +5,6 @@ import "./IndustryTrends.css";
 import { industryTrendsFields } from "./industry_trends_constant";
 
 function IndustryTrends() {
-  const companyName = localStorage.getItem("companyName");
-
   const [selectedIndustry, setSelectedIndustry] = useState("");
   const [selectedSubIndustry, setSelectedSubIndustry] = useState("");
   const [availableSubIndustry, setAvailableSubIndustry] = useState([]);
@@ -32,7 +30,6 @@ function IndustryTrends() {
 
   const handleGenerateClick = async () => {
     const requestBody = {
-      company_name: companyName,
       industry_trends: {
         industry: selectedIndustry,
         sub_industry: selectedSubIndustry,

@@ -13,6 +13,7 @@ import Footer from "./components/bars/Footer";
 import TalentInsights from "./components/home/talent-insights/TalentInsights";
 import IndustryTrends from "./components/home/industry-trends/IndustryTrends";
 import EVPJourney from "./components/home/evp-journey/EVPJourney";
+import InternalCommunications from "./components/internal-communications/InternalCommunications";
 
 function App() {
   return (
@@ -37,6 +38,10 @@ function App() {
           <Route element={<TalentInsights />} path="/talent-insights" />
           <Route element={<IndustryTrends />} path="/industry-trends" />
           <Route element={<EVPJourney />} path="/evp-journey" />
+          <Route
+            element={<InternalCommunications />}
+            path="/internal-communications"
+          />
         </Routes>
       </BrowserRouter>
     </>

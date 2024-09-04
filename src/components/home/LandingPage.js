@@ -74,7 +74,9 @@ function LandingPage() {
             </li>
             <li>Recruitment Campaign</li>
             <li>Social & Digital Content</li>
-            <li>Internal Communications</li>
+            <li onClick={() => navigate("/internal-communications")}>
+              Internal Communications
+            </li>
             <li>Leadership Brand</li>
             <li>Integration Comms</li>
           </ul>

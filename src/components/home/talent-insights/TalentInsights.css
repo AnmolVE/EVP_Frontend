@@ -82,24 +82,136 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   border: 2px solid #dddcdc;
 }
 
 .talent-insights-below-right-first {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-first-top {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 6rem 1fr;
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-first-top-image {
+  height: 100%;
+  width: 30%;
+}
+
+.talent-insights-below-right-first-top-image img {
+  height: 100%;
+  width: 100%;
+}
+
+.talent-insights-below-right-first-top-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.talent-insights-below-right-first-bottom {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-first-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .talent-insights-below-right-second {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-second-top {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-second-top-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-second-middle {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-second-middle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-second-bottom {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-second-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .talent-insights-below-right-third {
   height: 100%;
   width: 100%;
-  border: 1px solid red;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-third-top {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-third-top-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-third-middle {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-third-middle-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.talent-insights-below-right-third-bottom {
+  padding: 0.5rem;
+  background-color: #f7f6f6;
+}
+
+.talent-insights-below-right-third-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+span {
+  font-family: "Roboto";
 }
