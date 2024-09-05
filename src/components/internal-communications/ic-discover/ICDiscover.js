@@ -2,21 +2,27 @@ import React, { useState } from "react";
 
 import "./ICDiscover.css";
 import ICDesignPrinciples from "./ic-design-principles/ICDesignPrinciples";
+import ICPrimaryResearch from "./ic-primary-research/ICPrimaryResearch";
+import ICSecondaryResearch from "./ic-secondary-research/ICSecondaryResearch";
 
 function ICDiscover() {
-  const [activeTab, setActiveTab] = useState("Design Principles");
+  const [activeTab, setActiveTab] = useState(
+    "Internal Communication Strategy Inputs"
+  );
 
   return (
     <div className="ic-discover">
       <div className="ic-discover-left-nav">
         <div
           className={`ic-discover-left-nav-tab ${
-            activeTab === "Design Principles" ? "active" : ""
+            activeTab === "Internal Communication Strategy Inputs"
+              ? "active"
+              : ""
           }`}
-          onClick={() => setActiveTab("Design Principles")}
+          onClick={() => setActiveTab("Internal Communication Strategy Inputs")}
         >
           <div className="ic-discover-left-nav-tab-content">
-            <p>Design Principles</p>
+            <p>Internal Communication Strategy Inputs</p>
           </div>
         </div>
         <div
@@ -41,9 +47,11 @@ function ICDiscover() {
         </div>
       </div>
       <div className="ic-discover-main-content">
-        {activeTab === "Design Principles" && <ICDesignPrinciples />}
-        {activeTab === "Primary Research" && <div>Primary Research</div>}
-        {activeTab === "Secondary Research" && <div>Secondary Research</div>}
+        {activeTab === "Internal Communication Strategy Inputs" && (
+          <ICDesignPrinciples />
+        )}
+        {activeTab === "Primary Research" && <ICPrimaryResearch />}
+        {activeTab === "Secondary Research" && <ICSecondaryResearch />}
       </div>
     </div>
   );

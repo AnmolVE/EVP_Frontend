@@ -7,10 +7,7 @@ function ICDesignPrinciples() {
     <div className="ic-designPrinciples-main-container">
       <div className="ic-designPrinciples-header">
         <p className="ic-designPrinciples-header-paraHeading">
-          Design Principles
-        </p>
-        <p className="ic-designPrinciples-header-para">
-          Validate your Design Principles before goes to next step
+          Internal Communications Strategy Inputs
         </p>
       </div>
       <div className="ic-designPrinciples-content">

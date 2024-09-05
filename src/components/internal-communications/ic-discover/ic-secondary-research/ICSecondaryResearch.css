@@ -1,0 +1,55 @@
+.ic-secondaryResearch-main-container {
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
+}
+
+.ic-secondaryResearch-container {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.ic-secondaryResearch-info {
+  height: 100%;
+  width: 100%;
+  border: 1px solid red;
+}
+
+.ic-secondaryResearch-upload {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  gap: 0.5rem;
+}
+
+.ic-secondaryResearch-upload-tabs {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.ic-secondaryResearch-upload-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #f5f5f5;
+}
+
+.ic-secondaryResearch-upload-tab:hover {
+  background-color: #d5d4d4;
+}
+
+.ic-secondaryResearch-upload-tab.active {
+  background-color: #d5d4d4;
+}
+
+.ic-secondaryResearch-upload-container {
+  background-color: #f5f5f5;
+}

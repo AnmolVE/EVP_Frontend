@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 
 import "./ICDesign.css";
+import ICCurrentStrategy from "./ic-current-strategy/ICCurrentStrategy";
+import ICCalendar from "./ic-calendar/ICCalendar";
+import ICCreateCommunication from "./ic-create-communication/ICCreateCommunication";
 
 function ICDesign() {
   const [activeTab, setActiveTab] = useState("Current Strategy");
@@ -40,11 +43,9 @@ function ICDesign() {
         </div>
       </div>
       <div className="ic-design-main-content">
-        {activeTab === "Current Strategy" && <div>Current Strategy</div>}
-        {activeTab === "Calendar" && <div>Calendar</div>}
-        {activeTab === "Create Communication" && (
-          <div>Create Communication</div>
-        )}
+        {activeTab === "Current Strategy" && <ICCurrentStrategy />}
+        {activeTab === "Calendar" && <ICCalendar />}
+        {activeTab === "Create Communication" && <ICCreateCommunication />}
       </div>
     </div>
   );

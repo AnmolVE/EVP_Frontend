@@ -43,5 +43,6 @@
 }
 
 .ic-design-main-content {
-  border: 1px solid red;
+  height: 100%;
+  width: 100%;
 }
