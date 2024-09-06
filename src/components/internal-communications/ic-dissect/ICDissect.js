@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import "./ICDissect.css";
 import ICKeyThemes from "./ic-key-themes/ICKeyThemes";
+import ICAlignment from "./ic-alignment/ICAlignment";
 
 function ICDissect() {
   const [activeTab, setActiveTab] = useState("Key Themes");
@@ -21,12 +22,12 @@ function ICDissect() {
         </div>
         <div
           className={`ic-dissect-left-nav-tab ${
-            activeTab === "Tab 2" ? "active" : ""
+            activeTab === "Alignment" ? "active" : ""
           }`}
-          onClick={() => setActiveTab("Tab 2")}
+          onClick={() => setActiveTab("Alignment")}
         >
           <div className="ic-dissect-left-nav-tab-content">
-            <p>Tab 2</p>
+            <p>Alignment</p>
           </div>
         </div>
         <div
@@ -42,7 +43,7 @@ function ICDissect() {
       </div>
       <div className="ic-dissect-main-content">
         {activeTab === "Key Themes" && <ICKeyThemes />}
-        {activeTab === "Tab 2" && <div>Tab 2</div>}
+        {activeTab === "Alignment" && <ICAlignment />}
         {activeTab === "Tab 3" && <div>Tab 3</div>}
       </div>
     </div>

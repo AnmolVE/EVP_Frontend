@@ -13,7 +13,11 @@ function ICKeyThemes() {
       </div>
       <div className="ic-keyThemes-content">
         <div className="ic-keyThemes-content-fields">
-          <label>Key Themes</label>
+          <label>Themes being getting communicated</label>
+          <textarea />
+        </div>
+        <div className="ic-keyThemes-content-fields">
+          <label>Themes not getting communicated</label>
           <textarea />
         </div>
       </div>

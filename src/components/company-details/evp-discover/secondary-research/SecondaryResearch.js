@@ -98,9 +98,6 @@ function CompanyInput({ setPageLoading }) {
               <li>ESAT survey results</li>
               <li>Current / frequently hired for job positions</li>
               <li>Brand Guidelines</li>
-              <li>
-                Design Principles: Up to 5 themes you'd like to be known for
-              </li>
             </ul>
           </div>
         </div>
