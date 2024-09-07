@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import "./Top4Themes.css";
 
+import { Top4ThemesEditIcon } from "../../../../assets/icons/icons";
+
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 function Top4Themes({ pillars, companyName, accessToken }) {
@@ -15,6 +17,44 @@ function Top4Themes({ pillars, companyName, accessToken }) {
       return pillar;
     });
     setPillarState(newPillars);
+  };
+
+  const handleRegenerateClick = async (id, tab_name, tabs_data) => {
+    const theme_to_regenerate = {
+      tab_name: tab_name,
+      tabs_data: tabs_data,
+    };
+
+    try {
+      const response = await fetch(`${REACT_APP_BASE_URL}/themes-regenerate/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          company_name: companyName,
+          theme_to_regenerate: theme_to_regenerate,
+        }),
+      });
+
+      if (response.ok) {
+        const responseData = await response.json();
+        setPillarState((prevPillars) =>
+          prevPillars.map((pillar) =>
+            pillar.id === id
+              ? {
+                  ...pillar,
+                  tab_name: responseData.tab_name,
+                  tabs_data: responseData.tabs_data,
+                }
+              : pillar
+          )
+        );
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleThemesSubmit = async () => {
@@ -47,15 +87,29 @@ function Top4Themes({ pillars, companyName, accessToken }) {
       <div className="top-4-themes-data">
         {pillarState.map((pillar) => (
           <div className="top-4-themes-tabs" key={pillar.id}>
-            <textarea
-              className="top-4-themes-tabs-input-1"
-              type="text"
-              placeholder="Enter Theme name"
-              value={pillar.tab_name}
-              onChange={(e) =>
-                handleThemesInputChange(pillar.id, "tab_name", e.target.value)
-              }
-            />
+            <div className="top-4-themes-tab">
+              <textarea
+                className="top-4-themes-tabs-input-1"
+                type="text"
+                placeholder="Enter Theme name"
+                value={pillar.tab_name}
+                onChange={(e) =>
+                  handleThemesInputChange(pillar.id, "tab_name", e.target.value)
+                }
+              />
+              <div
+                className="top-4-themes-tab-icon"
+                onClick={() =>
+                  handleRegenerateClick(
+                    pillar.id,
+                    pillar.tab_name,
+                    pillar.tabs_data
+                  )
+                }
+              >
+                {<Top4ThemesEditIcon />}
+              </div>
+            </div>
             <textarea
               className="top-4-themes-tabs-input-2"
               type="text"
@@ -70,7 +124,6 @@ function Top4Themes({ pillars, companyName, accessToken }) {
       </div>
       <div className="top-4-themes-buttons">
         <button onClick={handleThemesSubmit}>Submit</button>
-        <button>Regenerate</button>
       </div>
     </div>
   );
