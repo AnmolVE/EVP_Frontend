@@ -91,16 +91,16 @@ function TalentInsights() {
   console.log(candidatePersona);
 
   return (
-    <div className="talent-insights-main-container">
-      <div className="talent-insights-container">
-        <div className="talent-insights-heading">
+    <div className="talent-insights-home-main-container">
+      <div className="talent-insights-home-container">
+        <div className="talent-insights-home-heading">
           <h1>Talent Insights</h1>
         </div>
-        <div className="talent-insights-below">
-          <div className="talent-insights-below-left">
-            <div className="talent-insights-below-left-top">
-              <div className="talent-insights-below-left-data">
-                <div className="talent-insights-below-left-data-fields">
+        <div className="talent-insights-home-below">
+          <div className="talent-insights-home-below-left">
+            <div className="talent-insights-home-below-left-top">
+              <div className="talent-insights-home-below-left-data">
+                <div className="talent-insights-home-below-left-data-fields">
                   <label>Skill</label>
                   <select value={selectedSkill} onChange={handleSkillChange}>
                     <option value="">Select Skill</option>
@@ -112,8 +112,8 @@ function TalentInsights() {
                   </select>
                 </div>
               </div>
-              <div className="talent-insights-below-left-data">
-                <div className="talent-insights-below-left-data-fields">
+              <div className="talent-insights-home-below-left-data">
+                <div className="talent-insights-home-below-left-data-fields">
                   <label>Sub Skill</label>
                   <select
                     value={selectedSubSkill}
@@ -129,8 +129,8 @@ function TalentInsights() {
                   </select>
                 </div>
               </div>
-              <div className="talent-insights-below-left-data">
-                <div className="talent-insights-below-left-data-fields">
+              <div className="talent-insights-home-below-left-data">
+                <div className="talent-insights-home-below-left-data-fields">
                   <label>Role</label>
                   <select
                     value={selectedRole}
@@ -146,8 +146,8 @@ function TalentInsights() {
                   </select>
                 </div>
               </div>
-              <div className="talent-insights-below-left-data">
-                <div className="talent-insights-below-left-data-fields">
+              <div className="talent-insights-home-below-left-data">
+                <div className="talent-insights-home-below-left-data-fields">
                   <label>Geography</label>
                   <select
                     value={selectedGeography}
@@ -163,17 +163,17 @@ function TalentInsights() {
                 </div>
               </div>
             </div>
-            <div className="talent-insights-button">
+            <div className="talent-insights-home-button">
               <button onClick={handleGenerateClick}>Generate</button>
             </div>
           </div>
-          <div className="talent-insights-below-right">
-            <div className="talent-insights-below-right-first">
-              <div className="talent-insights-below-right-first-top">
-                <figure className="talent-insights-below-right-first-top-image">
+          <div className="talent-insights-home-below-right">
+            <div className="talent-insights-home-below-right-first">
+              <div className="talent-insights-home-below-right-first-top">
+                <figure className="talent-insights-home-below-right-first-top-image">
                   <img src={NavbarUserImage} alt="user" />
                 </figure>
-                <div className="talent-insights-below-right-first-top-info">
+                <div className="talent-insights-home-below-right-first-top-info">
                   <p>
                     <span>Name: </span>
                     {candidatePersona?.name}
@@ -204,48 +204,48 @@ function TalentInsights() {
                   </p>
                 </div>
               </div>
-              <div className="talent-insights-below-right-first-bottom">
-                <div className="talent-insights-below-right-first-bottom-content">
+              <div className="talent-insights-home-below-right-first-bottom">
+                <div className="talent-insights-home-below-right-first-bottom-content">
                   <h2>Personality</h2>
                   <p>{candidatePersona?.personality}</p>
                 </div>
               </div>
             </div>
-            <div className="talent-insights-below-right-second">
-              <div className="talent-insights-below-right-second-top">
-                <div className="talent-insights-below-right-second-top-content">
+            <div className="talent-insights-home-below-right-second">
+              <div className="talent-insights-home-below-right-second-top">
+                <div className="talent-insights-home-below-right-second-top-content">
                   <h2>Goals</h2>
                   <p>{candidatePersona?.goals}</p>
                 </div>
               </div>
-              <div className="talent-insights-below-right-second-middle">
-                <div className="talent-insights-below-right-second-middle-content">
+              <div className="talent-insights-home-below-right-second-middle">
+                <div className="talent-insights-home-below-right-second-middle-content">
                   <h2>Frustration</h2>
                   <p>{candidatePersona?.frustration}</p>
                 </div>
               </div>
-              <div className="talent-insights-below-right-second-bottom">
-                <div className="talent-insights-below-right-second-bottom-content">
+              <div className="talent-insights-home-below-right-second-bottom">
+                <div className="talent-insights-home-below-right-second-bottom-content">
                   <h2>Bio</h2>
                   <p>{candidatePersona?.bio}</p>
                 </div>
               </div>
             </div>
-            <div className="talent-insights-below-right-third">
-              <div className="talent-insights-below-right-third-top">
-                <div className="talent-insights-below-right-third-top-content">
+            <div className="talent-insights-home-below-right-third">
+              <div className="talent-insights-home-below-right-third-top">
+                <div className="talent-insights-home-below-right-third-top-content">
                   <h2>Motivation</h2>
                   <p>{candidatePersona?.motivation}</p>
                 </div>
               </div>
-              <div className="talent-insights-below-right-third-middle">
-                <div className="talent-insights-below-right-third-middle-content">
+              <div className="talent-insights-home-below-right-third-middle">
+                <div className="talent-insights-home-below-right-third-middle-content">
                   <h2>Topics of Interest</h2>
                   <p>{candidatePersona?.topics_of_interest}</p>
                 </div>
               </div>
-              <div className="talent-insights-below-right-third-bottom">
-                <div className="talent-insights-below-right-third-bottom-content">
+              <div className="talent-insights-home-below-right-third-bottom">
+                <div className="talent-insights-home-below-right-third-bottom-content">
                   <h2>Preferred Channels</h2>
                   <p>{candidatePersona?.preferred_channels}</p>
                 </div>
