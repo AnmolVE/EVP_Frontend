@@ -27,6 +27,11 @@
   font-size: 1.5rem;
 }
 
+.evp-definition-table-thead-th:nth-child(2),
+.evp-definition-table-thead-th:nth-child(3) {
+  width: 40%;
+}
+
 .evp-definition-table-tbody-td {
   color: #918e8e;
 }

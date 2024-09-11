@@ -1,10 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import { EVPJourneyImage } from "../../../assets/images/images";
 
 import "./EVPJourney.css";
 
 function EVPJourney() {
+  const navigate = useNavigate();
+
   return (
     <div className="evp-journey-main-container">
       <div className="evp-journey-information">
@@ -32,6 +35,11 @@ function EVPJourney() {
             <li>Arrange themes into desired hierarchy</li>
             <li>Get final outcomes after human validation</li>
           </ul>
+        </div>
+        <div className="evp-journey-button">
+          <button onClick={() => navigate("/company-detail")}>
+            Get Started
+          </button>
         </div>
       </div>
       <div className="evp-journey-image">

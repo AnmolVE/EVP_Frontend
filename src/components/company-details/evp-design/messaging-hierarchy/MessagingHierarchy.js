@@ -85,6 +85,37 @@ function MessagingHierarchy({
 
   const [loading, setLoading] = useState(false);
 
+  const getMessagingHierarchy = async () => {
+    try {
+      const response = await fetch(
+        `${REACT_APP_BASE_URL}/messaging-hierarchy/${companyName}/`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+        }
+      );
+
+      if (response.ok) {
+        const responseData = await response.json();
+        setMainTheme(responseData.main_theme);
+        setMiddleThemes([
+          responseData.pillar_1,
+          responseData.pillar_2,
+          responseData.pillar_3,
+        ]);
+        setTagline(responseData.tagline);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getMessagingHierarchy();
+  }, []);
+
   const moveTheme = (fromIndex, toIndex, from) => {
     if (from === "left") {
       const theme = themes[fromIndex];

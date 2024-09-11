@@ -55,6 +55,22 @@
   list-style-type: decimal;
 }
 
+.evp-journey-button {
+  width: 20%;
+  height: 2.5rem;
+}
+
+.evp-journey-button button {
+  width: 100%;
+  height: 100%;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  border: none;
+  background-color: #247d97;
+  color: #fff;
+  cursor: pointer;
+}
+
 .evp-journey-image {
   height: 100%;
   width: 100%;

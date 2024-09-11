@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import "./DesignPrinciples.css";
 
@@ -10,34 +10,55 @@ function DesignPrinciples({ companyName, accessToken }) {
 
   const fileInputRef = useRef(null);
 
-  const [designPrinciples, setDesignPrinciples] = useState(Array(15).fill(""));
+  const [designPrinciples, setDesignPrinciples] = useState({});
 
-  const handleInputChange = (e) => {
-    const updatedResponses = [...designPrinciples];
-    const index = parseInt(e.target.name.split("_")[1], 10) - 1; // Extract index from name
-    updatedResponses[index] = e.target.value;
-    setDesignPrinciples(updatedResponses);
-  };
-
-  const handleSubmit = async () => {
-    // Mapping responses to the required format
-    const payload = {};
-    designPrinciples.forEach((response, index) => {
-      payload[`question_${index + 1}`] = response;
-    });
-
+  const getDesignPrinciples = async () => {
     try {
       const response = await fetch(
         `${BASE_URL}/design-principles/${companyName}/`,
         {
-          method: "POST",
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${accessToken}`,
           },
-          body: JSON.stringify({ design_principles: payload }),
         }
       );
+
+      if (response.ok) {
+        const responseData = await response.json();
+        setDesignPrinciples(responseData);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+  useEffect(() => {
+    getDesignPrinciples();
+  }, []);
+
+  const handleInputChange = (e) => {
+    setDesignPrinciples({
+      ...designPrinciples,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch(`${BASE_URL}/design-principles/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({
+          company_name: companyName,
+          design_principles: designPrinciples,
+        }),
+      });
 
       if (response.ok) {
         alert("Data submitted successfully!");
@@ -78,7 +99,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_1"
-                value={designPrinciples[0]}
+                value={designPrinciples?.question_1}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -89,7 +110,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_2"
-                value={designPrinciples[1]}
+                value={designPrinciples?.question_2}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -100,7 +121,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_3"
-                value={designPrinciples[2]}
+                value={designPrinciples?.question_3}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -108,7 +129,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_4"
-                value={designPrinciples[3]}
+                value={designPrinciples?.question_4}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -119,7 +140,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_5"
-                value={designPrinciples[4]}
+                value={designPrinciples?.question_5}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -130,7 +151,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_6"
-                value={designPrinciples[5]}
+                value={designPrinciples?.question_6}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -141,7 +162,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_7"
-                value={designPrinciples[6]}
+                value={designPrinciples?.question_7}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -151,7 +172,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_8"
-                value={designPrinciples[7]}
+                value={designPrinciples?.question_8}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -162,7 +183,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_9"
-                value={designPrinciples[8]}
+                value={designPrinciples?.question_9}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -173,7 +194,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_10"
-                value={designPrinciples[9]}
+                value={designPrinciples?.question_10}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -184,7 +205,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_11"
-                value={designPrinciples[10]}
+                value={designPrinciples?.question_11}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -195,7 +216,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_12"
-                value={designPrinciples[11]}
+                value={designPrinciples?.question_12}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -206,7 +227,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_13"
-                value={designPrinciples[12]}
+                value={designPrinciples?.question_13}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -217,7 +238,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_14"
-                value={designPrinciples[13]}
+                value={designPrinciples?.question_14}
               />
             </div>
             <div className="designPrinciples-input-fields">
@@ -228,7 +249,7 @@ function DesignPrinciples({ companyName, accessToken }) {
               <textarea
                 onChange={handleInputChange}
                 name="question_15"
-                value={designPrinciples[14]}
+                value={designPrinciples?.question_15}
               />
             </div>
           </div>
