@@ -10,6 +10,10 @@ import ICDesign from "./ic-design/ICDesign";
 import ICDeliver from "./ic-deliver/ICDeliver";
 
 function InternalCommunications() {
+  const companyName = localStorage.getItem("companyName");
+  const tokens = JSON.parse(localStorage.getItem("tokens"));
+  const accessToken = tokens.access;
+
   const [activeTab, setActiveTab] = useState("DISCOVER");
 
   return (
@@ -61,11 +65,21 @@ function InternalCommunications() {
           </div>
         </div>
         <div className="ic-content">
-          {activeTab === "DISCOVER" && <ICDiscover />}
-          {activeTab === "DEVELOP" && <ICDevelop />}
-          {activeTab === "DISSECT" && <ICDissect />}
-          {activeTab === "DESIGN" && <ICDesign />}
-          {activeTab === "DELIVER" && <ICDeliver />}
+          {activeTab === "DISCOVER" && (
+            <ICDiscover companyName={companyName} accessToken={accessToken} />
+          )}
+          {activeTab === "DEVELOP" && (
+            <ICDevelop companyName={companyName} accessToken={accessToken} />
+          )}
+          {activeTab === "DISSECT" && (
+            <ICDissect companyName={companyName} accessToken={accessToken} />
+          )}
+          {activeTab === "DESIGN" && (
+            <ICDesign companyName={companyName} accessToken={accessToken} />
+          )}
+          {activeTab === "DELIVER" && (
+            <ICDeliver companyName={companyName} accessToken={accessToken} />
+          )}
         </div>
         <Footer />
       </div>

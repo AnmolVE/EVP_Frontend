@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
 import "./ICDiscover.css";
-import ICDesignPrinciples from "./ic-design-principles/ICDesignPrinciples";
+import ICICSI from "./ic-internal-communication-strategy-inputs/ICICSI";
 import ICPrimaryResearch from "./ic-primary-research/ICPrimaryResearch";
 import ICSecondaryResearch from "./ic-secondary-research/ICSecondaryResearch";
 
-function ICDiscover() {
+function ICDiscover({ companyName, accessToken }) {
   const [activeTab, setActiveTab] = useState(
     "Internal Communication Strategy Inputs"
   );
@@ -48,7 +48,7 @@ function ICDiscover() {
       </div>
       <div className="ic-discover-main-content">
         {activeTab === "Internal Communication Strategy Inputs" && (
-          <ICDesignPrinciples />
+          <ICICSI companyName={companyName} accessToken={accessToken} />
         )}
         {activeTab === "Primary Research" && <ICPrimaryResearch />}
         {activeTab === "Secondary Research" && <ICSecondaryResearch />}
