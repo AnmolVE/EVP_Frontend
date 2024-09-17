@@ -29,11 +29,26 @@ function EVPJourney() {
         <div className="evp-journey-information-bottom">
           <h4>5-Step-Process</h4>
           <ul className="evp-journey-information-bottom-unordered-list">
-            <li>Conducting primary and secondary research</li>
-            <li>Segment data into talent categories</li>
-            <li>SWOT and Sentiment analysis</li>
-            <li>Arrange themes into desired hierarchy</li>
-            <li>Get final outcomes after human validation</li>
+            <li>
+              DISCOVER: This is the data collection stage of the EVP process via
+              primary and secondary research
+            </li>
+            <li>
+              DEVELOP: The data is segmented into talent categories that are
+              relevant to building a value proposition
+            </li>
+            <li>
+              DISSECT: The data is analysed by conducting SWOT and Sentiment
+              analyses and provides insights
+            </li>
+            <li>
+              DESIGN: The data and insights are converted to messaging and final
+              positioning in the design stage
+            </li>
+            <li>
+              DELIVER: The messaging is taken offline and refined by the
+              humans-in-loop to provide final outcomes
+            </li>
           </ul>
         </div>
         <div className="evp-journey-button">

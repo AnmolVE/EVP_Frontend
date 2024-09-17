@@ -4,6 +4,8 @@ import "./IndustryTrends.css";
 
 import { industryTrendsFields } from "./industry_trends_constant";
 
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
 function IndustryTrends() {
   const [selectedIndustry, setSelectedIndustry] = useState("");
   const [selectedSubIndustry, setSelectedSubIndustry] = useState("");
@@ -38,7 +40,7 @@ function IndustryTrends() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/industry-trends-home/",
+        `${REACT_APP_BASE_URL}/industry-trends-home/`,
         {
           method: "POST",
           headers: {

@@ -1,15 +1,13 @@
 .evp-definition-main-container {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-rows: 1fr 3rem;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
 .evp-definition-table-container {
   width: 100%;
-  height: 34rem;
-  overflow-y: auto;
 }
 
 .evp-definition-table {

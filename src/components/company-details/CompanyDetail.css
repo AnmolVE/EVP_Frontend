@@ -1,16 +1,24 @@
-.company-detail-main-container {
+.evp-module {
   height: 100vh;
-  width: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  width: 100vw;
   position: relative;
+  overflow-x: hidden;
 }
 
-.company-detail-container {
+.evp-main-container {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-rows: 90px 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.evp-headers {
+  height: auto;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .company-detail-navbar {
@@ -72,13 +80,20 @@
   transition: background-color 0.8s ease;
 }
 
-.company-detail-below {
-  height: 42rem;
+.evp-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  top: 15rem;
+}
+
+.evp-content-top {
   width: 100%;
   display: grid;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: auto 1fr;
   gap: 4rem;
-  padding: 3rem 1rem 1rem 0;
 }
 
 .company-detail-below-secondContainer {

@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  padding: 3rem;
 }
 
 .evp-journey-information {
@@ -49,10 +50,9 @@
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
-  padding-left: 1.5rem;
   font-family: "Roboto";
   font-size: 1.3rem;
-  list-style-type: decimal;
+  list-style-type: none;
 }
 
 .evp-journey-button {

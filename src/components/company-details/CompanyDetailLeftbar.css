@@ -2,7 +2,7 @@
 
 .company-detail-below-firstContainer {
   height: 100%;
-  width: 100%;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   padding-top: 2rem;

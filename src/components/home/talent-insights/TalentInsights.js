@@ -9,6 +9,8 @@ import {
   talentInsightsGeographies,
 } from "./talent_insights_constant";
 
+const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
+
 function TalentInsights() {
   const [selectedSkill, setSelectedSkill] = useState("");
   const [selectedSubSkill, setSelectedSubSkill] = useState("");
@@ -69,7 +71,7 @@ function TalentInsights() {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:8000/api/talent-insights-home/",
+        `${REACT_APP_BASE_URL}/talent-insights-home/`,
         {
           method: "POST",
           headers: {

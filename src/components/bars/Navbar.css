@@ -6,6 +6,9 @@
   background-color: #232020;
   color: white;
   padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-stimulai-img {

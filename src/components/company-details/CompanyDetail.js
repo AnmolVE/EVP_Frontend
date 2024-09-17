@@ -162,120 +162,124 @@ function CompanyDetail() {
   }
 
   return (
-    <div className="company-detail-main-container">
-      <Navbar />
-      <div className="company-detail-container">
-        <div className="company-detail-navbar">
-          <ul>
-            <li
-              onClick={() => {
-                setPageName("DISCOVER");
-                setListItems(DISCOVER);
-              }}
-              className={pageName === "DISCOVER" ? "active" : ""}
-            >
-              DISCOVER
-            </li>
-            <li
-              onClick={() => {
-                handleDevelopClick();
-                setPageName("DEVELOP");
-                setListItems(DEVELOP);
-                setCurrentListItem(DEVELOP[0]?.name);
-              }}
-              className={pageName === "DEVELOP" ? "active" : ""}
-            >
-              DEVELOP
-            </li>
-            <li
-              onClick={() => {
-                handleDissectClick();
-                setPageName("DISSECT");
-                setListItems(DISSECT);
-                setCurrentListItem(DISSECT[0]?.name);
-              }}
-              className={pageName === "DISSECT" ? "active" : ""}
-            >
-              DISSECT
-            </li>
-            <li
-              onClick={() => {
-                handleDesignClick();
-                setPageName("DESIGN");
-                setListItems(DESIGN);
-                setCurrentListItem(DESIGN[0]?.name);
-              }}
-              className={pageName === "DESIGN" ? "active" : ""}
-            >
-              DESIGN
-            </li>
-            <li
-              onClick={() => {
-                setPageName("DELIVER");
-                setListItems(DELIVER);
-                setCurrentListItem(DELIVER[0]?.name);
-              }}
-              className={pageName === "DELIVER" ? "active" : ""}
-            >
-              DELIVER
-            </li>
-          </ul>
-        </div>
-        <div className="company-detail-below">
-          <CompanyDetailsLeftbar
-            listItems={listItems}
-            currentListItem={currentListItem}
-            handleListItemClick={handleListItemClick}
-          />
-          <div className="company-detail-below-secondContainer">
-            {pageName === "DISCOVER" ? (
-              <Discover
-                setPageLoading={setPageLoading}
-                currentListItem={currentListItem}
-                setCurrentListItem={setCurrentListItem}
-                listItemEndpointMapping={listItemEndpointMapping}
-                companyName={companyName}
-                accessToken={accessToken}
-              />
-            ) : pageName === "DEVELOP" ? (
-              <Develop
-                currentListItem={currentListItem}
-                listItemEndpointMapping={listItemEndpointMapping}
-                companyName={companyName}
-                accessToken={accessToken}
-              />
-            ) : pageName === "DISSECT" ? (
-              <Dissect
-                currentListItem={currentListItem}
-                listItemEndpointMapping={listItemEndpointMapping}
-                companyName={companyName}
-                accessToken={accessToken}
-              />
-            ) : pageName === "DESIGN" ? (
-              <Design
-                setPageLoading={setPageLoading}
-                currentListItem={currentListItem}
-                pillars={pillars}
-                newPillars={newPillars}
-                setPillars={setPillars}
-                setNewPillars={setNewPillars}
-                companyName={companyName}
-                accessToken={accessToken}
-              />
-            ) : pageName === "DELIVER" ? (
-              <Deliver
-                setPageLoading={setPageLoading}
-                companyName={companyName}
-                accessToken={accessToken}
-                currentListItem={currentListItem}
-              />
-            ) : (
-              ""
-            )}
+    <div className="evp-module">
+      <div className="evp-main-container">
+        <div className="evp-headers">
+          <Navbar />
+          <div className="company-detail-navbar">
+            <ul>
+              <li
+                onClick={() => {
+                  setPageName("DISCOVER");
+                  setListItems(DISCOVER);
+                }}
+                className={pageName === "DISCOVER" ? "active" : ""}
+              >
+                DISCOVER
+              </li>
+              <li
+                onClick={() => {
+                  handleDevelopClick();
+                  setPageName("DEVELOP");
+                  setListItems(DEVELOP);
+                  setCurrentListItem(DEVELOP[0]?.name);
+                }}
+                className={pageName === "DEVELOP" ? "active" : ""}
+              >
+                DEVELOP
+              </li>
+              <li
+                onClick={() => {
+                  handleDissectClick();
+                  setPageName("DISSECT");
+                  setListItems(DISSECT);
+                  setCurrentListItem(DISSECT[0]?.name);
+                }}
+                className={pageName === "DISSECT" ? "active" : ""}
+              >
+                DISSECT
+              </li>
+              <li
+                onClick={() => {
+                  handleDesignClick();
+                  setPageName("DESIGN");
+                  setListItems(DESIGN);
+                  setCurrentListItem(DESIGN[0]?.name);
+                }}
+                className={pageName === "DESIGN" ? "active" : ""}
+              >
+                DESIGN
+              </li>
+              <li
+                onClick={() => {
+                  setPageName("DELIVER");
+                  setListItems(DELIVER);
+                  setCurrentListItem(DELIVER[0]?.name);
+                }}
+                className={pageName === "DELIVER" ? "active" : ""}
+              >
+                DELIVER
+              </li>
+            </ul>
           </div>
         </div>
+        <div className="evp-content">
+          <div className="evp-content-top">
+            <CompanyDetailsLeftbar
+              listItems={listItems}
+              currentListItem={currentListItem}
+              handleListItemClick={handleListItemClick}
+            />
+            <div className="company-detail-below-secondContainer">
+              {pageName === "DISCOVER" ? (
+                <Discover
+                  setPageLoading={setPageLoading}
+                  currentListItem={currentListItem}
+                  setCurrentListItem={setCurrentListItem}
+                  listItemEndpointMapping={listItemEndpointMapping}
+                  companyName={companyName}
+                  accessToken={accessToken}
+                />
+              ) : pageName === "DEVELOP" ? (
+                <Develop
+                  currentListItem={currentListItem}
+                  listItemEndpointMapping={listItemEndpointMapping}
+                  companyName={companyName}
+                  accessToken={accessToken}
+                />
+              ) : pageName === "DISSECT" ? (
+                <Dissect
+                  currentListItem={currentListItem}
+                  listItemEndpointMapping={listItemEndpointMapping}
+                  companyName={companyName}
+                  accessToken={accessToken}
+                />
+              ) : pageName === "DESIGN" ? (
+                <Design
+                  setPageLoading={setPageLoading}
+                  currentListItem={currentListItem}
+                  pillars={pillars}
+                  newPillars={newPillars}
+                  setPillars={setPillars}
+                  setNewPillars={setNewPillars}
+                  companyName={companyName}
+                  accessToken={accessToken}
+                />
+              ) : pageName === "DELIVER" ? (
+                <Deliver
+                  setPageLoading={setPageLoading}
+                  companyName={companyName}
+                  accessToken={accessToken}
+                  currentListItem={currentListItem}
+                />
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          <Footer />
+        </div>
       </div>
-      <Footer />
       <div className="company-detail-next-button">
         <button onClick={handleNextClick}>
           <svg

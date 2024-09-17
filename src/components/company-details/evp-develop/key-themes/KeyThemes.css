@@ -1,7 +1,7 @@
 .keyThemes-main-container {
   height: 100%;
-  display: grid;
-  grid-template-rows: 7rem 1fr 2rem;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -25,8 +25,7 @@
 
 .keyThemes-information {
   height: 100%;
-  max-height: 25rem;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -105,12 +104,11 @@
 
 .keyThemes-buttons {
   width: 10%;
-  height: 2.5rem;
 }
 
 .keyThemes-buttons button {
   width: 100%;
-  height: 100%;
+  height: 2.5rem;
   font-family: "Roboto";
   font-size: 1.3rem;
   border: none;
