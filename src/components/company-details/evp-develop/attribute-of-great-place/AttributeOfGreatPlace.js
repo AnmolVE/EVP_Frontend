@@ -150,7 +150,7 @@ function AttributeOfGreatPlace({
         </div>
         <div className="attributeOfGreatPlace-buttons">
           <button type="submit" onClick={handleSubmit}>
-            Submit
+            Save
           </button>
         </div>
       </div>

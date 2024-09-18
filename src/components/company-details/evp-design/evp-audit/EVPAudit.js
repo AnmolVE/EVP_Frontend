@@ -48,7 +48,7 @@ function EVPAudit() {
         </table>
       </div>
       <div className="evp-audit-buttons">
-        <button>Submit</button>
+        <button>Save</button>
       </div>
     </div>
   );

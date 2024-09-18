@@ -156,7 +156,7 @@ function AudienceWiseMessaging({
         </div>
         <div className="audienceWiseMessaging-buttons">
           <button type="submit" onClick={handleSubmit}>
-            Submit
+            Save
           </button>
         </div>
       </div>

@@ -47,7 +47,7 @@ function EVPDefinition() {
         </table>
       </div>
       <div className="evp-definition-buttons">
-        <button>Submit</button>
+        <button>Save</button>
       </div>
     </div>
   );

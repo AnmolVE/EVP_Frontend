@@ -170,7 +170,7 @@
 .company-detail-next-button {
   height: 4rem;
   width: 4rem;
-  position: absolute;
+  position: fixed;
   top: 90%;
   left: 95%;
   background-color: #e1ebee;

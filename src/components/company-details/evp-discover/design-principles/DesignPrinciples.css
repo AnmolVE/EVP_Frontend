@@ -1,8 +1,8 @@
 .designPrinciples-main-container {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-rows: 6rem 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 

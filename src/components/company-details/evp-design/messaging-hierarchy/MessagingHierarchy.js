@@ -252,7 +252,7 @@ function MessagingHierarchy({
               />
             </div>
             <div className="messaging-hierarchy-container-right-button">
-              <button onClick={handleSubmitTagline}>Submit</button>
+              <button onClick={handleSubmitTagline}>Save</button>
             </div>
           </div>
         </div>

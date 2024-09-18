@@ -254,7 +254,7 @@ function CompanyInfo({
         </div>
         <div className="company-info-buttons">
           <button type="submit" onClick={handleSubmit}>
-            Submit
+            Save
           </button>
         </div>
       </div>

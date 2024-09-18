@@ -68,7 +68,7 @@ function CreativeDirection({ setPageLoading, companyName, accessToken }) {
         ></textarea>
       </div>
       <div className="creative-direction-buttons">
-        <button onClick={handleCreativeDirectionSubmit}>Submit</button>
+        <button onClick={handleCreativeDirectionSubmit}>Save</button>
       </div>
     </div>
   );

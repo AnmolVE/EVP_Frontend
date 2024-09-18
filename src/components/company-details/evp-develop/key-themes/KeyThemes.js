@@ -136,7 +136,7 @@ function KeyThemes({
           ))}
         </div>
         <div className="keyThemes-buttons">
-          <button type="submit">Submit</button>
+          <button type="submit">Save</button>
         </div>
       </div>
     </>

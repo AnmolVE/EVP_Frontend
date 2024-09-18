@@ -37,8 +37,8 @@
 }
 
 .top-4-themes-tabs-input-1 {
-  width: 100%;
   min-height: 6rem;
+  width: 100%;
   border: none;
   background-color: #fff;
   font-family: "Roboto";
@@ -46,12 +46,14 @@
   font-weight: 500;
   font-size: 1.3rem;
   text-align: center;
+  align-content: center;
   padding: 0.5rem;
   resize: none;
   overflow: hidden;
 }
 
 .top-4-themes-tabs-input-2 {
+  height: 23rem;
   width: 100%;
   border: 1px solid #dddcdc;
   background-color: #fff;

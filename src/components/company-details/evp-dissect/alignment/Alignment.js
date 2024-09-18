@@ -73,7 +73,7 @@ function Alignment({
         </div>
         <div className="alignment-buttons">
           <button type="submit" onClick={handleSubmit}>
-            Submit
+            Save
           </button>
         </div>
       </div>

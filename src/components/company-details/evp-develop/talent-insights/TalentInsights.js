@@ -66,7 +66,7 @@ function TalentInsights() {
         </table>
       </div>
       <div className="talent-insights-buttons">
-        <button>Submit</button>
+        <button>Save</button>
       </div>
     </div>
   );

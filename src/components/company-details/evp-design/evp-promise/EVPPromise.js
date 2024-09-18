@@ -49,7 +49,7 @@ function EVPPromise() {
         </table>
       </div>
       <div className="evp-promise-buttons">
-        <button>Submit</button>
+        <button>Save</button>
       </div>
     </div>
   );

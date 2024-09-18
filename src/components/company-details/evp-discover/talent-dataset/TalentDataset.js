@@ -56,7 +56,7 @@ function TalentDataset() {
         </table>
       </div>
       <div className="talent-dataset-buttons">
-        <button>Submit</button>
+        <button>Save</button>
       </div>
     </div>
   );

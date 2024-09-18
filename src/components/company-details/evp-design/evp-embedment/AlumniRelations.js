@@ -230,7 +230,7 @@ function AlumniRelations() {
           </div>
         )}
         <div className="evp-embedment-button">
-          <button>Submit</button>
+          <button>Save</button>
         </div>
       </div>
     </div>
