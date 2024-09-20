@@ -5,6 +5,7 @@ import "./PrimaryResearch.css";
 import Interview from "./interview/Interview";
 import ThinkTank from "./think-tank/ThinkTank";
 import Survey from "./survey/Survey";
+import Upload from "./upload/Upload";
 
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -148,103 +149,71 @@ function PrimaryResearch() {
             <p className="primaryResearch-para">
               First-hand information adds credibility and depth to your research
             </p>
+            <p className="primaryResearch-info-para">
+              The result is a strong and compelling EVP that is equal parts
+              credible as well as aspirational and accurately represents the
+              views of the most important stakeholders.
+            </p>
           </div>
-          <div className="primaryResearch-conduct">
-            <div className="primaryResearch-conduct-tabs">
-              <div
-                className={`primaryResearch-conduct-tabs-name ${
-                  activeTab === "Interview" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("Interview")}
-              >
-                <p>Interview</p>
-              </div>
-              <div
-                className={`primaryResearch-conduct-tabs-name ${
-                  activeTab === "Think Tank" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("Think Tank")}
-              >
-                <p>Think Tank</p>
-              </div>
-              <div
-                className={`primaryResearch-conduct-tabs-name ${
-                  activeTab === "Survey" ? "active" : ""
-                }`}
-                onClick={() => setActiveTab("Survey")}
-              >
-                <p>Survey</p>
-              </div>
-            </div>
-            <div className="primaryResearch-conduct-content">
-              {activeTab === "Interview" ? (
-                <Interview />
-              ) : activeTab === "Think Tank" ? (
-                <ThinkTank />
-              ) : activeTab === "Survey" ? (
-                <Survey />
-              ) : null}
-            </div>
+          <hr />
+          <div className="primaryResearch-information-bottom">
+            <h4>Talent Cohorts to Cover</h4>
+            <ul className="primaryResearch-information-bottom-unordered-list">
+              <li>Current Employees</li>
+              <li>Ex-Employees</li>
+              <li>Interviewing Candidates</li>
+              <li>Candidates who refused to offer</li>
+              <li>Clients (if possible)</li>
+              <li>Headhunters and recruiters</li>
+              <li>Core EVP team</li>
+            </ul>
           </div>
         </div>
-        <div className="primaryResearch-upload-container">
-          <div className="designPrinciples-content-right-container">
-            <h1>Add Documents</h1>
-            <form
-              className="designPrinciples-content-right-container-form"
-              onSubmit={handleTranscriptSubmit}
+        <div className="primaryResearch-dataGather">
+          <div className="primaryResearch-dataGather-tabs">
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Interview" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Interview")}
             >
-              <input
-                type="file"
-                ref={fileInputRef}
-                onChange={handleTranscriptFileChange}
-                style={{ display: "none" }}
-                multiple
-              />
-              <div
-                className="designPrinciples-content-right-container-file-display-area"
-                onClick={handleTranscriptSVGClick}
-              >
-                <div className="designPrinciples-content-right-container-file-svg">
-                  <svg
-                    fill="#000000"
-                    height="20"
-                    width="20"
-                    version="1.1"
-                    id="Layer_1"
-                    viewBox="0 0 512 512"
-                  >
-                    <g>
-                      <g>
-                        <path
-                          d="M256,0c-54.013,0-97.955,43.943-97.955,97.955v338.981c0,41.39,33.674,75.064,75.064,75.064
-                        c41.39,0,75.064-33.674,75.064-75.064V122.511c0-28.327-23.046-51.375-51.375-51.375c-28.327,0-51.374,23.047-51.374,51.375
-                        v296.911h31.347V122.511c0-11.042,8.984-20.028,20.028-20.028s20.028,8.985,20.028,20.028v314.424
-                        c0,24.106-19.612,43.717-43.718,43.717c-24.106,0-43.717-19.612-43.717-43.717V97.955c0-36.727,29.88-66.608,66.608-66.608
-                        s66.608,29.881,66.608,66.608v321.467h31.347V97.955C353.955,43.943,310.013,0,256,0z"
-                        />
-                      </g>
-                    </g>
-                  </svg>
-                </div>
-                <div className="designPrinciples-content-right-container-files">
-                  {fileNames.map((name, index) => (
-                    <div
-                      key={index}
-                      className="designPrinciples-content-right-container-file-name"
-                    >
-                      {name}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="designPrinciples-content-right-container-button"
-              >
-                Submit
-              </button>
-            </form>
+              <p>Interview</p>
+            </div>
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Think Tank" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Think Tank")}
+            >
+              <p>Think Tank</p>
+            </div>
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Survey" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Survey")}
+            >
+              <p>Survey</p>
+            </div>
+            <div
+              className={`primaryResearch-dataGather-tabs-name ${
+                activeTab === "Upload" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("Upload")}
+            >
+              <p>Upload</p>
+            </div>
+          </div>
+          <div className="primaryResearch-dataGather-content">
+            {activeTab === "Interview" ? (
+              <Interview />
+            ) : activeTab === "Think Tank" ? (
+              <ThinkTank />
+            ) : activeTab === "Survey" ? (
+              <Survey />
+            ) : activeTab === "Upload" ? (
+              <Upload />
+            ) : null}
           </div>
         </div>
       </div>

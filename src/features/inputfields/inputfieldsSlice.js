@@ -3,11 +3,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const REACT_APP_BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const apiEndpoints = {
-  discover: {
-    "Company Dataset": `${REACT_APP_BASE_URL}/companies/`,
-    "Talent Dataset": `${REACT_APP_BASE_URL}/talent-dataset/`,
-  },
   develop: {
+    "Company Dataset": `${REACT_APP_BASE_URL}/companies/`,
     "Attributes of Great Place": `${REACT_APP_BASE_URL}/attributes-of-great-workplace/`,
     "Key Themes": `${REACT_APP_BASE_URL}/key-themes/`,
     "Audience Wise Messaging": `${REACT_APP_BASE_URL}/audience-wise-messaging/`,
@@ -44,7 +41,6 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     const apiUrl =
-      apiEndpoints.discover[selectedItem] ||
       apiEndpoints.develop[selectedItem] ||
       apiEndpoints.dissect[selectedItem] ||
       apiEndpoints.design[selectedItem] ||
@@ -55,7 +51,9 @@ export const fetchDataForSelectedItem = createAsyncThunk(
     }
 
     if (
-      selectedItem === "Talent Dataset" ||
+      selectedItem === "Attributes of Great Place" ||
+      selectedItem === "Key Themes" ||
+      selectedItem === "Audience Wise Messaging" ||
       selectedItem === "Talent Insights" ||
       selectedItem === "Creative Direction" ||
       selectedItem === "EVP Definition" ||

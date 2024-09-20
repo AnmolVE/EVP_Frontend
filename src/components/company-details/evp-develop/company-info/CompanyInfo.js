@@ -5,7 +5,6 @@ import "./CompanyInfo.css";
 
 function CompanyInfo({
   currentListItem,
-  setCurrentListItem,
   listItemEndpointMapping,
   companyName,
   accessToken,
@@ -43,7 +42,6 @@ function CompanyInfo({
         body: JSON.stringify(companyInfoData),
       });
       const responseData = await response.json();
-      setCurrentListItem("Talent Dataset");
       // alert("Data updated successfully!");
     } catch (error) {
       alert(`Error: ${error.message}`);

@@ -47,29 +47,6 @@ function CompanyDetail() {
     setCurrentListItem(listItem);
   };
 
-  const handleDevelopClick = async () => {
-    setPageLoading(true);
-    try {
-      const response = await fetch(`${REACT_APP_BASE_URL}/develop/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({ company_name: companyName }),
-      });
-      console.log(response);
-      if (!response.ok) {
-        throw new Error(response.message || "Error");
-      }
-      const responseData = await response.json();
-      console.log(responseData);
-      setPageLoading(false);
-    } catch (error) {
-      alert(`Error: ${error.message}`);
-    }
-  };
-
   const handleDissectClick = async () => {
     setPageLoading(true);
     try {
@@ -179,7 +156,6 @@ function CompanyDetail() {
               </li>
               <li
                 onClick={() => {
-                  handleDevelopClick();
                   setPageName("DEVELOP");
                   setListItems(DEVELOP);
                   setCurrentListItem(DEVELOP[0]?.name);

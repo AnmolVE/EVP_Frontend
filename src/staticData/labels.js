@@ -6,11 +6,10 @@ export const DISCOVER = [
   { name: "Design Principles", icon: CompanyInfoIcon },
   { name: "Primary Research", icon: CompanyInfoIcon },
   { name: "Secondary Research", icon: CompanyInfoIcon },
-  { name: "Company Dataset", icon: CompanyInfoIcon },
-  { name: "Talent Dataset", icon: CompanyInfoIcon },
 ];
 
 export const DEVELOP = [
+  { name: "Company Dataset", icon: CompanyInfoIcon },
   { name: "Attributes of Great Place", icon: CompanyInfoIcon },
   { name: "Key Themes", icon: CompanyInfoIcon },
   { name: "Audience Wise Messaging", icon: CompanyInfoIcon },

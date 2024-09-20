@@ -15,8 +15,8 @@ function AudienceWiseMessaging({
     useState(null);
 
   useEffect(() => {
-    if (data && data.length > 0) {
-      setAudienceWiseMessagingData(data[0]);
+    if (data) {
+      setAudienceWiseMessagingData(data);
     }
   }, [data]);
 

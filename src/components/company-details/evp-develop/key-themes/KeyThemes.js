@@ -71,8 +71,8 @@ function KeyThemes({
   // const [keyThemesData, setKeyThemesData] = useState(null);
 
   // useEffect(() => {
-  //   if (data && data.length > 0) {
-  //     setKeyThemesData(data[0]);
+  //   if (data) {
+  //     setKeyThemesData(data);
   //   }
   // }, [data]);
 

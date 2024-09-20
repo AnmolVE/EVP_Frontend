@@ -15,8 +15,8 @@ function AttributeOfGreatPlace({
     useState(null);
 
   useEffect(() => {
-    if (data && data.length > 0) {
-      setAttributeOfGreatPlaceData(data[0]);
+    if (data) {
+      setAttributeOfGreatPlaceData(data);
     }
   }, [data]);
 
