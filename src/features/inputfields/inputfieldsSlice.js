@@ -55,6 +55,8 @@ export const fetchDataForSelectedItem = createAsyncThunk(
       selectedItem === "Key Themes" ||
       selectedItem === "Audience Wise Messaging" ||
       selectedItem === "Talent Insights" ||
+      selectedItem === "Analysis" ||
+      selectedItem === "Alignment" ||
       selectedItem === "Creative Direction" ||
       selectedItem === "EVP Definition" ||
       selectedItem === "EVP Promise" ||

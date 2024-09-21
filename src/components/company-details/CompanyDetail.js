@@ -47,29 +47,6 @@ function CompanyDetail() {
     setCurrentListItem(listItem);
   };
 
-  const handleDissectClick = async () => {
-    setPageLoading(true);
-    try {
-      const response = await fetch(`${REACT_APP_BASE_URL}/dissect/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({ company_name: companyName }),
-      });
-      console.log(response);
-      if (!response.ok) {
-        throw new Error(response.message || "Error");
-      }
-      const responseData = await response.json();
-      console.log(responseData);
-      setPageLoading(false);
-    } catch (error) {
-      alert(`Error: ${error.message}`);
-    }
-  };
-
   const handleDesignClick = async () => {
     setPageLoading(true);
     try {
@@ -166,7 +143,6 @@ function CompanyDetail() {
               </li>
               <li
                 onClick={() => {
-                  handleDissectClick();
                   setPageName("DISSECT");
                   setListItems(DISSECT);
                   setCurrentListItem(DISSECT[0]?.name);

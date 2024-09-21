@@ -14,8 +14,8 @@ function Analysis({
   const [analysisData, setAnalysisData] = useState(null);
 
   useEffect(() => {
-    if (data && data.length > 0) {
-      setAnalysisData(data[0]);
+    if (data) {
+      setAnalysisData(data);
     }
   }, [data]);
 

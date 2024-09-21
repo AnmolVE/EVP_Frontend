@@ -14,8 +14,8 @@ function Alignment({
   const [alignmentData, setAlignmentData] = useState(null);
 
   useEffect(() => {
-    if (data && data.length > 0) {
-      setAlignmentData(data[0]);
+    if (data) {
+      setAlignmentData(data);
     }
   }, [data]);
 
