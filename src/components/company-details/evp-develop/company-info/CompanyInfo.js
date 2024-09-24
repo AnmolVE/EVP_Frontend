@@ -163,11 +163,11 @@ function CompanyInfo({
                 ></textarea>
               </div>
               <div className="company-info-information-top-right-fields">
-                <label>Tiktok</label>
+                <label>Instagram</label>
                 <textarea
                   onChange={handleInputChange}
-                  name="tiktok_info"
-                  value={companyInfoData?.tiktok_info}
+                  name="instagram_info"
+                  value={companyInfoData?.instagram_info}
                 ></textarea>
               </div>
               <div className="company-info-information-top-right-fields">
